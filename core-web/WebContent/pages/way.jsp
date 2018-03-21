@@ -17,7 +17,7 @@ String mainSysBasePath = ApplicationSiteUtils.getBasePath(Constants.getMainSyste
 
     <base href="<%=basePath%>">
     
-    <title>qifu</title>
+    <title>qifu2</title>
 	<meta http-equiv="pragma" content="no-cache">
 	<meta http-equiv="cache-control" content="no-cache">
 	<meta http-equiv="expires" content="0">    

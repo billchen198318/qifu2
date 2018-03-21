@@ -2,7 +2,6 @@
 <div class="app-title">
 	<div>
 		<h1>${programName}</h1>
-		<p>${programId}</p>  
 		
 		<div>		
 			
@@ -28,4 +27,9 @@
 
 		</div>
 	</div>    
+	
+        <ul class="app-breadcrumb breadcrumb">
+          <li class="breadcrumb-item">${programId}</li>
+        </ul>
+        		
 </div>        
