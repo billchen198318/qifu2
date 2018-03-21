@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mappings xmlns="http://dozer.sourceforge.net"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://dozer.sourceforge.net
+	http://dozer.sourceforge.net/schema/beanmapping.xsd">
+	
+	<mapping map-id="sysIcon.po2vo" >
+		<class-a>org.qifu.po.TbSysIcon</class-a>
+		<class-b>org.qifu.vo.SysIconVO</class-b>
+		<field>
+			<a>oid</a>
+			<b>oid</b>
+		</field>
+		<field>
+			<a>iconId</a>
+			<b>iconId</b>
+		</field>
+		<field>
+			<a>fileName</a>
+			<b>fileName</b>
+		</field>														
+	</mapping>
+
+	<mapping map-id="sysIcon.vo2po" >
+		<class-a>org.qifu.vo.SysIconVO</class-a>
+		<class-b>org.qifu.po.TbSysIcon</class-b>
+		<field>
+			<a>oid</a>
+			<b>oid</b>
+		</field>
+		<field>
+			<a>iconId</a>
+			<b>iconId</b>
+		</field>
+		<field>
+			<a>fileName</a>
+			<b>fileName</b>
+		</field>
+	</mapping>
+	
+</mappings>

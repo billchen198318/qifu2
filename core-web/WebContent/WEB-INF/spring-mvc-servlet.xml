@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:aop="http://www.springframework.org/schema/aop"
+    xmlns:tx="http://www.springframework.org/schema/tx"
+    xmlns:context="http://www.springframework.org/schema/context"
+    xmlns:mvc="http://www.springframework.org/schema/mvc"
+    xsi:schemaLocation="
+    http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.0.xsd
+    http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-4.0.xsd
+    http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-4.0.xsd
+    http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-4.0.xsd
+	http://www.springframework.org/schema/mvc
+	http://www.springframework.org/schema/mvc/spring-mvc-4.0.xsd">
+    
+    <mvc:annotation-driven />
+    
+    <context:component-scan base-package="org.qifu.controller" />
+
+	<bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+		<property name="prefix">
+			<value>/pages/</value>
+		</property>
+		<property name="suffix">
+			<value>.jsp</value>
+		</property>
+	</bean>    
+	
+	
+	<bean class="org.springframework.web.servlet.mvc.annotation.AnnotationMethodHandlerAdapter"/>  
+	<bean class="org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping"/>   	
+	<bean class="org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter"/> 
+	
+    <bean id="multipartResolver" class="org.springframework.web.multipart.commons.CommonsMultipartResolver">
+    	<property name="defaultEncoding" value="utf-8" />
+        <property name="maxUploadSize" value="8388608" /> <!-- 8MB, please set value equals with org.qifu.util.UploadSupportUtils.UPLOAD_MAX_SIZE -->
+    </bean>	
+	
+	
+	<mvc:interceptors>
+	
+    	<mvc:interceptor>  
+        	<mvc:mapping path="/**"/>
+        	<mvc:exclude-mapping path="/"/>  
+        	<mvc:exclude-mapping path="/login.do"/>
+        	<mvc:exclude-mapping path="/logout.do"/>
+        	<mvc:exclude-mapping path="/configJs.do"/>
+        	<mvc:exclude-mapping path="/bootbox*"/>
+        	<mvc:exclude-mapping path="/bootstrap-4.0.0-alpha.6*"/>
+        	<mvc:exclude-mapping path="/bootstrap-4*"/>
+        	<mvc:exclude-mapping path="/popper-js*"/>
+        	<mvc:exclude-mapping path="/images*"/>
+        	<mvc:exclude-mapping path="/icons*"/>
+        	<mvc:exclude-mapping path="/jquery*"/>
+        	<mvc:exclude-mapping path="/jquery-bootstrap-scrolling-tabs*"/>
+        	<mvc:exclude-mapping path="/font-awesome*"/>
+        	<mvc:exclude-mapping path="/froala_editor*"/>
+        	<mvc:exclude-mapping path="/tether*"/>
+        	<mvc:exclude-mapping path="/js*"/>
+        	<mvc:exclude-mapping path="/css*"/>
+        	<bean class="org.qifu.base.interceptor.LoginHandlerInterceptor"/>
+    	</mvc:interceptor>
+    	
+    	<mvc:interceptor>  
+        	<mvc:mapping path="/**"/>
+        	<mvc:exclude-mapping path="/bootbox*"/>
+        	<mvc:exclude-mapping path="/bootstrap-4.0.0-alpha.6*"/>
+        	<mvc:exclude-mapping path="/bootstrap-4*"/>
+        	<mvc:exclude-mapping path="/popper-js*"/>
+        	<mvc:exclude-mapping path="/images*"/>
+        	<mvc:exclude-mapping path="/icons*"/>
+        	<mvc:exclude-mapping path="/jquery*"/>
+        	<mvc:exclude-mapping path="/jquery-bootstrap-scrolling-tabs*"/>
+        	<mvc:exclude-mapping path="/font-awesome*"/>
+        	<mvc:exclude-mapping path="/froala_editor*"/>
+        	<mvc:exclude-mapping path="/tether*"/>
+        	<mvc:exclude-mapping path="/js*"/>
+        	<mvc:exclude-mapping path="/css*"/>        	      	
+        	<bean class="org.qifu.base.interceptor.NoCacheHeaderInterceptor"/>
+    	</mvc:interceptor>
+    	
+    	<mvc:interceptor>  
+        	<mvc:mapping path="/**"/>
+        	<mvc:exclude-mapping path="/"/>  
+        	<mvc:exclude-mapping path="/login.do"/>
+        	<mvc:exclude-mapping path="/logout.do"/>
+        	<mvc:exclude-mapping path="/configJs.do"/>
+        	<mvc:exclude-mapping path="/bootbox*"/>
+        	<mvc:exclude-mapping path="/bootstrap-4.0.0-alpha.6*"/>
+        	<mvc:exclude-mapping path="/bootstrap-4*"/>
+        	<mvc:exclude-mapping path="/popper-js*"/>
+        	<mvc:exclude-mapping path="/images*"/>
+        	<mvc:exclude-mapping path="/icons*"/>
+        	<mvc:exclude-mapping path="/jquery*"/>
+        	<mvc:exclude-mapping path="/jquery-bootstrap-scrolling-tabs*"/>
+        	<mvc:exclude-mapping path="/font-awesome*"/>
+        	<mvc:exclude-mapping path="/froala_editor*"/>
+        	<mvc:exclude-mapping path="/tether*"/>
+        	<mvc:exclude-mapping path="/js*"/>
+        	<mvc:exclude-mapping path="/css*"/>        	  
+        	<bean class="org.qifu.base.interceptor.ControllerAuthorityCheckInterceptor"/>
+    	</mvc:interceptor>    	
+    	
+    	<mvc:interceptor>  
+        	<mvc:mapping path="/**"/>
+        	<mvc:exclude-mapping path="/"/>  
+        	<mvc:exclude-mapping path="/login.do"/>
+        	<mvc:exclude-mapping path="/logout.do"/>
+        	<mvc:exclude-mapping path="/configJs.do"/>
+        	<mvc:exclude-mapping path="/bootbox*"/>
+        	<mvc:exclude-mapping path="/bootstrap-4.0.0-alpha.6*"/>
+        	<mvc:exclude-mapping path="/bootstrap-4*"/>
+        	<mvc:exclude-mapping path="/popper-js*"/>
+        	<mvc:exclude-mapping path="/images*"/>
+        	<mvc:exclude-mapping path="/icons*"/>
+        	<mvc:exclude-mapping path="/jquery*"/>
+        	<mvc:exclude-mapping path="/jquery-bootstrap-scrolling-tabs*"/>
+        	<mvc:exclude-mapping path="/font-awesome*"/>
+        	<mvc:exclude-mapping path="/froala_editor*"/>
+        	<mvc:exclude-mapping path="/tether*"/>
+        	<mvc:exclude-mapping path="/js*"/>
+        	<mvc:exclude-mapping path="/css*"/>        	  
+        	<bean class="org.qifu.base.interceptor.QueryParamInspectInterceptor"/>
+    	</mvc:interceptor>
+    	    	
+	</mvc:interceptors>  	
+	
+	
+</beans>

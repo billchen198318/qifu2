@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<dynamic-hql>
+
+	<query name="findSysLoginLogPageGrid-select">	
+	<![CDATA[
+		FROM TbSysLoginLog l
+		WHERE 1=1
+		
+		<#if user??>
+		and l.user = :user
+		</#if>
+				
+		ORDER BY l.cdate DESC
+	]]>
+	</query>
+	
+	<query name="findSysLoginLogPageGrid-count">
+	<![CDATA[
+		SELECT
+			count(*)
+		FROM TbSysLoginLog l
+		WHERE 1=1
+		
+		<#if user??>
+		and l.user = :user
+		</#if>	
+	]]>		
+	</query>
+
+</dynamic-hql>

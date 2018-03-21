@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:aop="http://www.springframework.org/schema/aop"
+    xmlns:tx="http://www.springframework.org/schema/tx"
+    xmlns:context="http://www.springframework.org/schema/context"
+    xsi:schemaLocation="
+    http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-4.1.xsd
+    http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-4.1.xsd
+    http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-4.1.xsd
+    http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.1.xsd">
+    
+    <context:annotation-config />
+    
+	<bean id="mapper" class="org.dozer.spring.DozerBeanMapperFactoryBean">
+		<property name="mappingFiles"> 
+			<list>
+				<value>classpath*:dozer/dozerBeanMapping.xml</value>
+				
+                <!-- #################################################### -->
+                <!-- CORE-SYSTEM -->
+                <!-- #################################################### -->  							
+				<value>classpath*:dozer/dozerBeanMapping-account.xml</value> 	
+				<value>classpath*:dozer/dozerBeanMapping-sysCode.xml</value>					
+				<value>classpath*:dozer/dozerBeanMapping-role.xml</value>
+				<value>classpath*:dozer/dozerBeanMapping-userRole.xml</value>
+				<value>classpath*:dozer/dozerBeanMapping-rolePermission.xml</value>
+				<value>classpath*:dozer/dozerBeanMapping-sys.xml</value>
+				<value>classpath*:dozer/dozerBeanMapping-sysIcon.xml</value>
+				<value>classpath*:dozer/dozerBeanMapping-sysProg.xml</value>
+				<value>classpath*:dozer/dozerBeanMapping-sysMenu.xml</value>
+				<value>classpath*:dozer/dozerBeanMapping-sysMenuRole.xml</value>
+				<value>classpath*:dozer/dozerBeanMapping-sysTemplate.xml</value>
+				<value>classpath*:dozer/dozerBeanMapping-sysTemplateParam.xml</value>
+				<value>classpath*:dozer/dozerBeanMapping-sysUpload.xml</value>
+				<value>classpath*:dozer/dozerBeanMapping-sysUploadTran.xml</value>
+				<value>classpath*:dozer/dozerBeanMapping-sysUploadTranSegm.xml</value>
+				<value>classpath*:dozer/dozerBeanMapping-sysJreport.xml</value>
+				<value>classpath*:dozer/dozerBeanMapping-sysJreportParam.xml</value>
+				<value>classpath*:dozer/dozerBeanMapping-sysCtxBean.xml</value>
+				<value>classpath*:dozer/dozerBeanMapping-sysWsConfig.xml</value>
+				<value>classpath*:dozer/dozerBeanMapping-sysWsService.xml</value>
+				<value>classpath*:dozer/dozerBeanMapping-sysExpression.xml</value>
+				<value>classpath*:dozer/dozerBeanMapping-sysBeanHelp.xml</value>
+				<value>classpath*:dozer/dozerBeanMapping-sysBeanHelpExpr.xml</value>
+				<value>classpath*:dozer/dozerBeanMapping-sysBeanHelpExprMap.xml</value>
+				<value>classpath*:dozer/dozerBeanMapping-sysBpmnResource.xml</value>
+				<value>classpath*:dozer/dozerBeanMapping-sysBpmnResourceRole.xml</value>
+				<value>classpath*:dozer/dozerBeanMapping-sysExprJob.xml</value>
+				<value>classpath*:dozer/dozerBeanMapping-sysExprJobLog.xml</value>
+				<value>classpath*:dozer/dozerBeanMapping-sysMailHelper.xml</value>
+				<value>classpath*:dozer/dozerBeanMapping-sysQfieldLog.xml</value>
+				
+				
+			</list> 
+		</property> 
+	</bean>
+	
+</beans>
