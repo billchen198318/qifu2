@@ -98,7 +98,9 @@ function clearUpdate() {
 	saveEnabel="Y" 
 	saveJsMethod="btnUpdate();" 	
 	cancelEnable="Y" 
-	cancelJsMethod="parent.closeTab('CORE_PROG003D0002E');" >
+	cancelJsMethod="parent.closeTab('CORE_PROG003D0002E');"
+	programName="${programName}"
+	programId="${programId}" >		
 </q:toolBar>
 <jsp:include page="../common-f-head.jsp"></jsp:include>
 

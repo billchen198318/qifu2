@@ -46,6 +46,8 @@ public class ToolBarTag implements Tag {
 	private String cancelJsMethod="";
 	private String exportJsMethod="";
 	private String importJsMethod="";	
+	private String programName="";
+	private String programId="";
 	
 	private ToolBar handler() {
 		ToolBar toolBar = new ToolBar();
@@ -63,6 +65,8 @@ public class ToolBarTag implements Tag {
 		toolBar.setCancelJsMethod(this.cancelJsMethod);
 		toolBar.setExportJsMethod(this.exportJsMethod);
 		toolBar.setImportJsMethod(this.importJsMethod);
+		toolBar.setProgramName(this.programName);
+		toolBar.setProgramId(this.programId);
 		return toolBar;
 	}
 	
@@ -211,6 +215,22 @@ public class ToolBarTag implements Tag {
 
 	public PageContext getPageContext() {
 		return pageContext;
+	}
+
+	public String getProgramName() {
+		return programName;
+	}
+
+	public void setProgramName(String programName) {
+		this.programName = programName;
+	}
+
+	public String getProgramId() {
+		return programId;
+	}
+
+	public void setProgramId(String programId) {
+		this.programId = programId;
 	}
 	
 }

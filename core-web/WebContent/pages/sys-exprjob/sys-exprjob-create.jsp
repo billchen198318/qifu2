@@ -97,7 +97,9 @@ function clearSave() {
 	saveEnabel="Y" 
 	saveJsMethod="btnSave();" 	
 	cancelEnable="Y" 
-	cancelJsMethod="parent.closeTab('CORE_PROG003D0006A');" >
+	cancelJsMethod="parent.closeTab('CORE_PROG003D0006A');"
+	programName="${programName}"
+	programId="${programId}" >		
 </q:toolBar>
 <jsp:include page="../common-f-head.jsp"></jsp:include>
 

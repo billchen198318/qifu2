@@ -79,7 +79,17 @@
 			<name>importJsMethod</name>
 			<required>false</required>
 			<rtexprvalue>true</rtexprvalue>
-		</attribute>																	
+		</attribute>
+		<attribute>
+			<name>programName</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+		<attribute>
+			<name>programId</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>											
 	</tag>		
 	
 	<!-- Grid -->

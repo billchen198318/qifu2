@@ -82,7 +82,9 @@ function updateSave() {
 	saveEnabel="Y" 
 	saveJsMethod="btnUpdate();" 	
 	cancelEnable="Y" 
-	cancelJsMethod="parent.closeTab('CORE_PROG001D0004E');" >
+	cancelJsMethod="parent.closeTab('CORE_PROG001D0004E');"
+	programName="${programName}"
+	programId="${programId}" >		
 </q:toolBar>
 <jsp:include page="../common-f-head.jsp"></jsp:include>
 

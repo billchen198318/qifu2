@@ -86,7 +86,9 @@ function uploadModal() {
 	saveEnabel="Y" 
 	saveJsMethod="btnSave();" 	
 	cancelEnable="Y" 
-	cancelJsMethod="parent.closeTab('CORE_PROG001D0005A');" >
+	cancelJsMethod="parent.closeTab('CORE_PROG001D0005A');"
+	programName="${programName}"
+	programId="${programId}" >		
 </q:toolBar>
 <jsp:include page="../common-f-head.jsp">
 	<jsp:param value="Y" name="commonUploadEnable"/>

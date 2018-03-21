@@ -45,6 +45,8 @@ public class ToolBar implements UIComponent {
 	private String cancelJsMethod="";
 	private String exportJsMethod="";
 	private String importJsMethod="";	
+	private String programName="";
+	private String programId="";
 	private StringBuilder htmlOut=new StringBuilder();	
 	
 	private Map<String, Object> getParameters(String type) {
@@ -62,6 +64,8 @@ public class ToolBar implements UIComponent {
 		paramMap.put("cancelJsMethod", this.cancelJsMethod);		
 		paramMap.put("exportJsMethod", this.exportJsMethod);
 		paramMap.put("importJsMethod", this.importJsMethod);
+		paramMap.put("programName", this.programName);
+		paramMap.put("programId", this.programId);
 		return paramMap;
 	}
 	
@@ -206,6 +210,22 @@ public class ToolBar implements UIComponent {
 
 	public void setImportJsMethod(String importJsMethod) {
 		this.importJsMethod = importJsMethod;
+	}
+
+	public String getProgramName() {
+		return programName;
+	}
+
+	public void setProgramName(String programName) {
+		this.programName = programName;
+	}
+
+	public String getProgramId() {
+		return programId;
+	}
+
+	public void setProgramId(String programId) {
+		this.programId = programId;
 	}			
 	
 }

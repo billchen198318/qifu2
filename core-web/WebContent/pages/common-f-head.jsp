@@ -16,13 +16,6 @@ if (!Constants.getMainSystem().equals( Constants.getSystem() ) ) {
 String commonUploadEnable = request.getParameter("commonUploadEnable");
 
 %>
-<table border="0" width="100%" cellspacing="2" cellpadding="2">
-	<tr valign="top" align="left">
-		<td align="left" width="100%">
-			<span class="badge badge-dark">${programName}</span> &nbsp; <font color="#ffffff" size="2">ID:&nbsp;${programId}</font>
-		</td>
-	</tr>	
-</table>
 
 <!-- 主要給 modal 模式的表單處理 xhr submit 出現 please wait 用的 -->
 <!-- Modal Start here -->
