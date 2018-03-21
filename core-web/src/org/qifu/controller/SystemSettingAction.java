@@ -46,7 +46,7 @@ public class SystemSettingAction extends BaseController {
 	private void init(String type, HttpServletRequest request, ModelAndView mv) throws ServiceException, ControllerException, Exception {
 		request.setAttribute("mailFrom", SystemSettingConfigureUtils.getMailDefaultFromValue().trim());
 		request.setAttribute("mailEnable", SystemSettingConfigureUtils.getMailEnableValue().trim());
-		request.setAttribute("leftMenu", SystemSettingConfigureUtils.getLeftAccordionContainerEnableValue().trim());
+		//request.setAttribute("leftMenu", SystemSettingConfigureUtils.getLeftAccordionContainerEnableValue().trim());
 	}
 	
 	@ControllerMethodAuthority(check = true, programId = "CORE_PROG001D0007Q")
@@ -71,13 +71,13 @@ public class SystemSettingAction extends BaseController {
 	private void update(DefaultControllerJsonResultObj<Boolean> result, HttpServletRequest request) throws AuthorityException, ControllerException, ServiceException, Exception {
 		String mailFrom = request.getParameter("mailFrom");
 		String mailEnable = request.getParameter("mailEnable");
-		String leftMenu = request.getParameter("leftMenu");
+		//String leftMenu = request.getParameter("leftMenu");
 		if (StringUtils.isBlank(mailFrom)) {
 			mailFrom = SystemSettingConfigureUtils.getMailDefaultFromValue().trim();
 		}
 		SystemSettingConfigureUtils.updateMailDefaultFromValue(mailFrom);
 		SystemSettingConfigureUtils.updateMailEnableValue( (YES.equals(mailEnable) ? YES : NO) );
-		SystemSettingConfigureUtils.updateLeftAccordionContainerEnableValue( (YES.equals(leftMenu) ? YES : NO) );
+		//SystemSettingConfigureUtils.updateLeftAccordionContainerEnableValue( (YES.equals(leftMenu) ? YES : NO) );
 		result.setSuccess( YES );
 		result.setValue( true );
 		result.setMessage( SysMessageUtil.get(SysMsgConstants.UPDATE_SUCCESS) );				

@@ -63,11 +63,13 @@ function updateSuccess(data) {
 			<q:checkbox name="mailEnable" id="mailEnable" checkedTest=" \"Y\" == mailEnable " label="Mail sender enable"></q:checkbox>
 		</div>
 	</div>
+	<!-- 
 	<div class="row">
 		<div class="col-xs-6 col-md-6 col-lg-6">
 			<q:checkbox name="leftMenu" id="leftMenu" checkedTest=" \"Y\" == leftMenu " label="Left menu enable (need re-login to change)"></q:checkbox>
 		</div>
 	</div>	
+	-->
 	<div class="row">
 		<div class="col-xs-6 col-md-6 col-lg-6">
 		
@@ -76,8 +78,8 @@ function updateSuccess(data) {
 			xhrParameter="
 			{
 				'mailFrom'		:	$('#mailFrom').val(),	
-				'mailEnable'	:	( $('#mailEnable').is(':checked') ? 'Y' : 'N' ),
-				'leftMenu'		:	( $('#leftMenu').is(':checked') ? 'Y' : 'N' )
+				'mailEnable'	:	( $('#mailEnable').is(':checked') ? 'Y' : 'N' ) /*,
+				'leftMenu'		:	( $('#leftMenu').is(':checked') ? 'Y' : 'N' ) */
 			}
 			"
 			onclick="btnUpdate();"

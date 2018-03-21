@@ -7,8 +7,6 @@
 String path = request.getContextPath();
 String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.getServerPort()+path+"/";
 
-String leftMenuEnable = SystemSettingConfigureUtils.getLeftAccordionContainerEnableValue();
-
 %>
 
 <!DOCTYPE html>
@@ -16,6 +14,7 @@ String leftMenuEnable = SystemSettingConfigureUtils.getLeftAccordionContainerEna
 <head>
 <title>qifu</title>
 <meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
 <link rel="stylesheet" href="./tether/tether.min.css?ver=${jsVerBuild}" crossorigin="anonymous">
@@ -25,6 +24,10 @@ String leftMenuEnable = SystemSettingConfigureUtils.getLeftAccordionContainerEna
 <link rel="stylesheet" href="./bootstrap-vali/css/main.css?ver=${jsVerBuild}" crossorigin="anonymous">
 <link href="./font-awesome/css/font-awesome.min.css?ver=${jsVerBuild}" rel="stylesheet" type="text/css" />
 <script src="./bootstrap-vali/js/bootstrap.js?ver=${jsVerBuild}" crossorigin="anonymous"></script>
+
+<!-- The javascript plugin to display page loading on top-->
+<script src="./js/plugins/pace.min.js"></script>
+
 <script src="./bootbox/bootbox.js?ver=${jsVerBuild}" crossorigin="anonymous"></script>
 
 <link rel="stylesheet" href="./toastr/toastr.min.css?ver=${jsVerBuild}" crossorigin="anonymous">
@@ -93,7 +96,7 @@ $( document ).ready(function() {
 </head>
 
 
-<body>
+<body class="app sidebar-mini rtl">
 
 
 <!-- Modal Start here -->
@@ -131,58 +134,40 @@ $( document ).ready(function() {
 ${modalHtmlData}
 <!-- ##################### Modal for Program ##################### -->
 
-
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
-      <a class="navbar-brand" href="./index.do"><img alt="祈-qífú" src="./images/logo3.png" border="0"></a>
-      <button class="navbar-toggler collapsed" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
+    <!-- Navbar-->
+    <header class="app-header">&nbsp;&nbsp;&nbsp;<img alt="祈-qífú" src="./images/logo2.png" border="0" onclick="window.location='<%=basePath%>/index.do';"></img>&nbsp;&nbsp;&nbsp;
+      <a class="app-sidebar__toggle" href="#" data-toggle="sidebar" aria-label="Hide Sidebar"></a>
       
-      <div class="collapse navbar-collapse" id="navbarsExampleDefault">
-        <ul class="navbar-nav mr-auto">
-		  <li class="nav-item dropdown active">
-			<a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-			  <b>Application</b>
-			</a>
-			<div class="dropdown-menu scrollable-menu" aria-labelledby="navbarDropdownMenuLink">
-			  
-			  ${dropdownHtmlData}
-			  
-			  <a class="dropdown-item" href="./index.do"><img src="./icons/view-refresh.png" broder="0">&nbsp;&nbsp;<b>Refresh</b></a>
-			  
-			</div>
-		  </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#" onclick="addTab('CORE_PROG999D9999Q', null);"><b>About</b></a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#" onclick="logoutEvent();"><b>Logout</b></a>
-          </li>		  
-        </ul>
-        <!-- 
-        <form class="form-inline mt-2 mt-md-0">
-          <input class="form-control mr-sm-2" type="text" placeholder="Search">
-          <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-        </form>
-        -->
-      </div>
-    </nav>
+	  <!-- User Menu-->
+	  <!-- now no okay for User Menu -->
+	  <!--  
+	  <ul class="app-nav">
+        <li class="dropdown"><a class="app-nav__item" href="#" data-toggle="dropdown" aria-label="Open Profile Menu"><i class="fa fa-user fa-lg"></i></a>
+          <ul class="dropdown-menu settings-menu dropdown-menu-right">
+            <li><a class="dropdown-item" href="page-user.html"><i class="fa fa-cog fa-lg"></i> Settings</a></li>
+            <li><a class="dropdown-item" href="page-user.html"><i class="fa fa-user fa-lg"></i> Profile</a></li>
+            <li><a class="dropdown-item" href="page-login.html"><i class="fa fa-sign-out fa-lg"></i> Logout</a></li>
+          </ul>
+        </li>	  
+	  </ul>
+	  -->
+	  
+    </header>
 
-
-<%
-if ("Y".equals(leftMenuEnable)) { // 有啟動左邊的選單
-%> 
-    <div class="container-fluid">
-      <div class="row">
-           
-        <nav class="col-md-2 d-none d-md-block bg-light sidebar"><!-- 2018-01-24 col-sm-3 col-md-2 hidden-xs-down d-none d-sm-block bg-light -->
+    <!-- Sidebar menu-->
+    <div class="app-sidebar__overlay" data-toggle="sidebar"></div>
+	
+    <aside class="app-sidebar">
+      
+      <ul class="app-menu">
 		
-			${navItemHtmlData}
-		  
-        </nav>              
-
-        <main class="col-sm-9 offset-sm-3 col-md-10 offset-md-2 pt-3">
-		
+       	${navItemHtmlData}
+       	
+      </ul>
+    </aside>
+	
+    <main class="app-content">
+	
 			<ul class="nav nav-tabs" id="myTab" role="tablist">
 
 			</ul>
@@ -192,30 +177,13 @@ if ("Y".equals(leftMenuEnable)) { // 有啟動左邊的選單
 				
 
 			</div>
-			
-			
-        </main>
-      </div>
-    </div>
-<%
-} else { // 沒有啟動左邊的選單
-%>      
-		<main class="pt-3">
-		
-			<ul class="nav nav-tabs" id="myTab" role="tablist">
-
-			</ul>
-
-			<!-- Tab panes -->
-			<div class="tab-content" id="myTabContent">
-				
-
-			</div>
-			
-		</main>
-<%
-}
-%>
+	  
+    </main>
+    
+    
+    
+	<!-- vali-admin main js for app tree, put last -->
+	<script src="./js/main.js?ver=${jsVerBuild}"></script>    
 
 </body>
   

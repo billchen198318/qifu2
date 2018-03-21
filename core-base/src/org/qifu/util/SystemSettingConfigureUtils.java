@@ -36,7 +36,7 @@ public class SystemSettingConfigureUtils {
 	private static final String _MAIL_ENABLE_CODE = "CNF_CONF002";
 	private static final String _FIRST_LOAD_JAVASCRIPT_CODE = "CNF_CONF003";
 	//private static final String _SYS_FORM_TEMPLATE_FILE_REWRITE_CODE = "CNF_CONF004";
-	private static final String _LEFT_AccordionContainer_ENABLE_CODE = "CNF_CONF005";
+	//private static final String _LEFT_AccordionContainer_ENABLE_CODE = "CNF_CONF005";
 	private static ISysCodeService<SysCodeVO, TbSysCode, String> sysCodeService;	
 	
 	static {
@@ -126,6 +126,7 @@ public class SystemSettingConfigureUtils {
 	}
 	*/
 	
+	/*
 	public static SysCodeVO getLeftAccordionContainerEnable() {
 		return getCode(_LEFT_AccordionContainer_ENABLE_CODE);
 	}
@@ -138,5 +139,6 @@ public class SystemSettingConfigureUtils {
 	public static void updateLeftAccordionContainerEnableValue(String value) throws ServiceException, Exception {
 		updateParam1(_LEFT_AccordionContainer_ENABLE_CODE, value);
 	}
+	*/
 	
 }

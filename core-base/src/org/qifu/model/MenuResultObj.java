@@ -23,11 +23,6 @@ package org.qifu.model;
 
 public class MenuResultObj implements java.io.Serializable {
 	private static final long serialVersionUID = -8662108979333485489L;
-
-	/**
-	 * 下拉選單的 html
-	 */
-	private String dropdownHtmlData = "";
 	
 	/**
 	 * 左邊選單的 html
@@ -43,14 +38,6 @@ public class MenuResultObj implements java.io.Serializable {
 	 * modal 的 html
 	 */
 	private String modalHtmlData = "";
-
-	public String getDropdownHtmlData() {
-		return dropdownHtmlData;
-	}
-
-	public void setDropdownHtmlData(String dropdownHtmlData) {
-		this.dropdownHtmlData = dropdownHtmlData;
-	}
 
 	public String getNavItemHtmlData() {
 		return navItemHtmlData;

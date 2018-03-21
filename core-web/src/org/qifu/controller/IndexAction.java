@@ -45,7 +45,6 @@ public class IndexAction extends BaseController {
 			mv.addObject("firstLoadJavascript", MenuSupportUtils.getFirstLoadJavascript());
 			MenuResultObj menuResult = MenuSupportUtils.getMenuData(this.getBasePath(request));
 			mv.addObject("menuJavascriptData", menuResult.getJavascriptData());
-			mv.addObject("dropdownHtmlData", menuResult.getDropdownHtmlData());
 			mv.addObject("navItemHtmlData",  menuResult.getNavItemHtmlData());
 			mv.addObject("iconJavascriptData", IconUtils.getJsData());
 			mv.addObject("modalHtmlData",  menuResult.getModalHtmlData());

@@ -149,7 +149,6 @@ public class MenuSupportUtils {
 		}
 		MenuResultObj resultObj = new MenuResultObj();
 		StringBuilder jsSb = new StringBuilder();
-		StringBuilder dropdownHtmlSb = new StringBuilder();
 		StringBuilder navHtmlSb = new StringBuilder();
 		StringBuilder modalHtmlSb = new StringBuilder();
 		jsSb.append("var _prog = []; ").append("\n");
@@ -188,35 +187,24 @@ public class MenuSupportUtils {
 					throw new ServiceException(SysMessageUtil.get(SysMsgConstants.DATA_ERRORS));
 				}
 				
-				dropdownHtmlSb.append(IconUtils.getHtmlImg(basePath, pSysProg.getIcon()) + "&nbsp;<font color=\"#848484\"><b>" + pSysProg.getName() + "</b></font>");
-				
-				navHtmlSb.append("<ul class=\"nav nav-pills flex-column\">");
-				navHtmlSb.append("<li class=\"nav-item\">");
-				navHtmlSb.append(IconUtils.getHtmlImg(basePath, pSysProg.getIcon()) + "&nbsp;<font color=\"#848484\"><b>" + pSysProg.getName() + "</b></font>");
-				navHtmlSb.append("</li>");
+				navHtmlSb.append("<li class=\"treeview\"><a class=\"app-menu__item\" href=\"#\" data-toggle=\"treeview\"><i class=\"app-menu__icon fa fa-laptop\"></i><span class=\"app-menu__label\">" + pSysProg.getName() + "</span><i class=\"treeview-indicator fa fa-angle-right\"></i></a>");
+				navHtmlSb.append("<ul class=\"treeview-menu\">");
 				
 				for (SysMenuVO cMenu : childSysMenuList) {
 					TbSysProg cSysProg = searchProg(cMenu, sysProgList);
 					if (null == cSysProg) {
 						throw new ServiceException(SysMessageUtil.get(SysMsgConstants.DATA_ERRORS));
 					}
-					dropdownHtmlSb.append("<a class=\"dropdown-item\" href=\"#\" onclick=\"addTab('" + cSysProg.getProgId() + "', null);\">" + IconUtils.getHtmlImg(basePath, cSysProg.getIcon()) + "&nbsp;&nbsp;" + cSysProg.getName() + "</a>");
-					
-					navHtmlSb.append("<li class=\"nav-item\">");
-					navHtmlSb.append("<a class=\"nav-link\" href=\"#\" onclick=\"addTab('" + cSysProg.getProgId() + "', null);\">" + IconUtils.getHtmlImg(basePath, cSysProg.getIcon()) + "&nbsp;&nbsp;" + cSysProg.getName() + "</a>");
-					navHtmlSb.append("</li>");
-					
+					navHtmlSb.append("<li><a class=\"treeview-item\" href=\"#\" onclick=\"addTab('" + cSysProg.getProgId() + "', null);\"><i class=\"icon fa fa-circle-o\"></i>" + "&nbsp;&nbsp;" + cSysProg.getName() + "</a></li>");
 				}
 				
-				dropdownHtmlSb.append("<div class=\"dropdown-divider\"></div>");
-				
 				navHtmlSb.append("</ul>");
+				navHtmlSb.append("</li>");
 				
 			}
 			
 		}
 		
-		resultObj.setDropdownHtmlData(dropdownHtmlSb.toString());
 		resultObj.setNavItemHtmlData(navHtmlSb.toString());
 		resultObj.setJavascriptData(jsSb.toString());
 		resultObj.setModalHtmlData(modalHtmlSb.toString());
