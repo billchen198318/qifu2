@@ -68,7 +68,7 @@ function accountChange() {
 						chkStr = ' checked="checked" ';
 					}
 					str += '<tr>';
-					str += '<td>&nbsp;&nbsp;<label class="custom-control custom-checkbox"><input type="checkbox" class="custom-control-input" id="role' + roleAll[p].oid + '" name="role' + roleAll[p].oid + '" onclick="updateRoleEnable();" ' + chkStr + ' value="' + roleAll[p].oid + '" ><span class="custom-control-indicator"></span></label></td>';
+					str += '<td>&nbsp;&nbsp;<label class="custom-control custom-checkbox"><input type="checkbox" class="form-check-input" id="role' + roleAll[p].oid + '" name="role' + roleAll[p].oid + '" onclick="updateRoleEnable();" ' + chkStr + ' value="' + roleAll[p].oid + '" ></label></td>';
 					str += '<td>' + roleAll[p].role + '</td>';
 					str += '</tr>';
 				}
@@ -87,7 +87,7 @@ function accountChange() {
 function updateRoleEnable() {
 	var accountOid = $("#accountOid").val();
 	var roleAppendOid = '';
-	$('input.custom-control-input:checkbox:checked').each(function() {
+	$('input.form-check-input:checkbox:checked').each(function() {
 		roleAppendOid += $(this).val() + _qifu_delimiter;
 	});
 	xhrSendParameterNoPleaseWait(

@@ -100,7 +100,7 @@ function progFolderChange() {
 						chkStr = ' checked="checked" ';
 					}
 					str += '<tr>';
-					str += '<td>&nbsp;&nbsp;<label class="custom-control custom-checkbox"><input type="checkbox" class="custom-control-input" id="prog' + progAll[p].oid + '" name="prog' + progAll[p].oid + '" onclick="updateMenu();" ' + chkStr + ' value="' + progAll[p].oid + '" ><span class="custom-control-indicator"></span></label></td>';
+					str += '<td>&nbsp;&nbsp;<label class="custom-control custom-checkbox"><input type="checkbox" class="form-check-input" id="prog' + progAll[p].oid + '" name="prog' + progAll[p].oid + '" onclick="updateMenu();" ' + chkStr + ' value="' + progAll[p].oid + '" ></label></td>';
 					str += '<td><img src="' + parent.getIconUrlFromId(progAll[p].icon) + '" border="0">&nbsp;' + progAll[p].name + '</td>';
 					str += '</tr>';
 				}
@@ -119,7 +119,7 @@ function progFolderChange() {
 function updateMenu() {
 	var parentOid = $("#folderProgOid").val();
 	var progAppendOid = '';
-	$('input.custom-control-input:checkbox:checked').each(function() {
+	$('input.form-check-input:checkbox:checked').each(function() {
 	    progAppendOid += $(this).val() + _qifu_delimiter;
 	});
 	xhrSendParameterNoPleaseWait(
