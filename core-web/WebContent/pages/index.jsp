@@ -164,8 +164,8 @@ ${modalHtmlData}
        	${navItemHtmlData}
        	
        	
-       	<li><a class="app-menu__item" href="#" onclick="addTab('CORE_PROG999D9999Q', null);"><i class="app-menu__icon fa fa-circle-o"></i><span class="app-menu__label">About</span></a></li>
-       	<li><a class="app-menu__item" href="#" onclick="logoutEvent();"><i class="app-menu__icon fa fa-circle-o"></i><span class="app-menu__label">Logout</span></a></li>
+       	<li><a class="app-menu__item" href="#" onclick="addTab('CORE_PROG999D9999Q', null);"><i class="app-menu__icon fa fa-info-circle"></i><span class="app-menu__label">About</span></a></li>
+       	<li><a class="app-menu__item" href="#" onclick="logoutEvent();"><i class="app-menu__icon fa fa-power-off"></i><span class="app-menu__label">Logout</span></a></li>
        	
       </ul>
     </aside>

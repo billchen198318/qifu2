@@ -187,7 +187,7 @@ public class MenuSupportUtils {
 					throw new ServiceException(SysMessageUtil.get(SysMsgConstants.DATA_ERRORS));
 				}
 				
-				navHtmlSb.append("<li class=\"treeview\"><a class=\"app-menu__item\" href=\"#\" data-toggle=\"treeview\"><i class=\"app-menu__icon fa fa-laptop\"></i><span class=\"app-menu__label\">" + pSysProg.getName() + "</span><i class=\"treeview-indicator fa fa-angle-right\"></i></a>");
+				navHtmlSb.append("<li class=\"treeview\"><a class=\"app-menu__item\" href=\"#\" data-toggle=\"treeview\"><i class=\"app-menu__icon fa fa-folder\"></i><span class=\"app-menu__label\">" + pSysProg.getName() + "</span><i class=\"treeview-indicator fa fa-angle-right\"></i></a>");
 				navHtmlSb.append("<ul class=\"treeview-menu\">");
 				
 				for (SysMenuVO cMenu : childSysMenuList) {
