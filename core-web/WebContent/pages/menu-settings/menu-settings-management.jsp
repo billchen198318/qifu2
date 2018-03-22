@@ -176,7 +176,7 @@ function updateMenu() {
 		</div>
 	</div>		
 	<div class="row">
-		<div id="progListGrid"></div>
+		<div id="progListGrid" class="col-md-12"></div>
 	</div>			
 </div>	
 
