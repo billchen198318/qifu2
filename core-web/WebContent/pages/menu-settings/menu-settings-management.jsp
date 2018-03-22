@@ -80,7 +80,7 @@ function progFolderChange() {
 				var progEnable = data.value.enable;
 				
 				var str = '';
-				str += '<table class="table">';
+				str += '<table class="table table-hover table-bordered">';
 				str += '<thead class="thead-inverse">';
 				str += '<tr>';
 				str += '<th>&nbsp;&nbsp;#&nbsp;&nbsp;</th>';
@@ -100,7 +100,7 @@ function progFolderChange() {
 						chkStr = ' checked="checked" ';
 					}
 					str += '<tr>';
-					str += '<td><div class="custom-control custom-checkbox"><label class="custom-control custom-checkbox"><input type="checkbox" class="form-check-input" id="prog' + progAll[p].oid + '" name="prog' + progAll[p].oid + '" onclick="updateMenu();" ' + chkStr + ' value="' + progAll[p].oid + '" ></label></div></td>';
+					str += '<td><div class="form-check"><input type="checkbox" class="form-check-input" id="prog' + progAll[p].oid + '" name="prog' + progAll[p].oid + '" onclick="updateMenu();" ' + chkStr + ' value="' + progAll[p].oid + '" ></div></td>';
 					str += '<td><img src="' + parent.getIconUrlFromId(progAll[p].icon) + '" border="0">&nbsp;' + progAll[p].name + '</td>';
 					str += '</tr>';
 				}
@@ -175,6 +175,7 @@ function updateMenu() {
 			<q:select dataSource="folderProgMap" name="folderProgOid" id="folderProgOid" value="" label="Program folder" requiredFlag="Y" onchange="progFolderChange();"></q:select>
 		</div>
 	</div>		
+	<div class="row">&nbsp;</div>
 	<div class="row">
 		<div id="progListGrid" class="col-md-12"></div>
 	</div>			

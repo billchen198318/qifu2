@@ -48,7 +48,7 @@ function accountChange() {
 				var roleEnable = data.value.enable;
 				
 				var str = '';
-				str += '<table class="table">';
+				str += '<table class="table table-hover table-bordered">';
 				str += '<thead class="thead-inverse">';
 				str += '<tr>';
 				str += '<th>&nbsp;&nbsp;#&nbsp;&nbsp;</th>';
@@ -68,7 +68,7 @@ function accountChange() {
 						chkStr = ' checked="checked" ';
 					}
 					str += '<tr>';
-					str += '<td><div class="custom-control custom-checkbox"><label class="custom-control custom-checkbox"><input type="checkbox" class="form-check-input" id="role' + roleAll[p].oid + '" name="role' + roleAll[p].oid + '" onclick="updateRoleEnable();" ' + chkStr + ' value="' + roleAll[p].oid + '" ></label></div></td>';
+					str += '<td><div class="form-check"><input type="checkbox" class="form-check-input" id="role' + roleAll[p].oid + '" name="role' + roleAll[p].oid + '" onclick="updateRoleEnable();" ' + chkStr + ' value="' + roleAll[p].oid + '" ></div></td>';
 					str += '<td>' + roleAll[p].role + '</td>';
 					str += '</tr>';
 				}
@@ -137,6 +137,7 @@ function updateRoleEnable() {
 			<q:select dataSource="accountMap" name="accountOid" id="accountOid" value="" label="Account" requiredFlag="Y" onchange="accountChange();"></q:select>
 		</div>
 	</div>
+	<div class="row">&nbsp;</div>
 	<div class="row">
 		<div id="roleListGrid" class="col-md-12"></div>
 	</div>	

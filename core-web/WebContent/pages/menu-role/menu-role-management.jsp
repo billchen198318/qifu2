@@ -85,7 +85,7 @@ function progChange() {
 				var roleEnable = data.value.enable;
 				
 				var str = '';
-				str += '<table class="table">';
+				str += '<table class="table table-hover table-bordered">';
 				str += '<thead class="thead-inverse">';
 				str += '<tr>';
 				str += '<th>&nbsp;&nbsp;#&nbsp;&nbsp;</th>';
@@ -105,7 +105,7 @@ function progChange() {
 						chkStr = ' checked="checked" ';
 					}
 					str += '<tr>';
-					str += '<td><div class="custom-control custom-checkbox"><label class="custom-control custom-checkbox"><input type="checkbox" class="form-check-input" id="role' + roleAll[p].oid + '" name="role' + roleAll[p].oid + '" onclick="updateMenuRoleEnable();" ' + chkStr + ' value="' + roleAll[p].oid + '" ></label></div></td>';
+					str += '<td><div class="form-check"><input type="checkbox" class="form-check-input" id="role' + roleAll[p].oid + '" name="role' + roleAll[p].oid + '" onclick="updateMenuRoleEnable();" ' + chkStr + ' value="' + roleAll[p].oid + '" ></div></td>';
 					str += '<td>' + roleAll[p].role + '</td>';
 					str += '</tr>';
 				}
@@ -181,6 +181,7 @@ function updateMenuRoleEnable() {
 			<q:select dataSource="progMap" name="progOid" id="progOid" value="" label="System" requiredFlag="Y" onchange="progChange();"></q:select>
 		</div>
 	</div>
+	<div class="row">&nbsp;</div>
 	<div class="row">
 		<div id="roleListGrid" class="col-md-12"></div>
 	</div>		
