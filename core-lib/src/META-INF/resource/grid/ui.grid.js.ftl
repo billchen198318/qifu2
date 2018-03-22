@@ -109,7 +109,7 @@ function ${queryFunction}() {
 					return;
 				}
 				
-				var str = '<table class="table">';
+				var str = '<table class="table table-hover table-bordered">';
 				str += '<thead class="thead-inverse">';
 				str += '<tr>';
 				var girdHead = ${gridFieldStructure};
