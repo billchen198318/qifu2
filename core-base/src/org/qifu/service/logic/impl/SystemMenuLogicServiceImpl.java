@@ -225,6 +225,10 @@ public class SystemMenuLogicServiceImpl extends BaseLogicService implements ISys
 			}
 			sysProg = spResult.getValue();			
 			
+			if ("CORE_PROG999D9999Q".equals(sysProg.getProgId())) { // CORE_PROG999D9999Q program is About page.
+				throw new ServiceException("The program - CORE_PROG999D9999Q cannot settings.");
+			}			
+			
 			SysMenuVO childSysMenu = new SysMenuVO();
 			childSysMenu.setProgId(sysProg.getProgId());
 			childSysMenu.setParentOid(parentSysMenu.getOid());
