@@ -14,13 +14,16 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
-<link rel="stylesheet" href="<%=basePath%>/tether/tether.min.css" crossorigin="anonymous">
-<script type="text/javascript" src="<%=basePath%>/tether/tether.min.js"></script>
+<link rel="stylesheet" href="<%=basePath%>/tether/tether.min.css?ver=${jsVerBuild}" crossorigin="anonymous">
+<script type="text/javascript" src="<%=basePath%>/tether/tether.min.js?ver=${jsVerBuild}"></script>
 <script type="text/javascript" src="<%=basePath%>/popper-js/umd/popper.min.js?ver=${jsVerBuild}"></script>
-<script type="text/javascript" src="<%=basePath%>/jquery/jquery-3.2.1.min.js"></script>
-<link rel="stylesheet" href="<%=basePath%>/bootstrap-vali/css/main.css" crossorigin="anonymous">
-<script src="<%=basePath%>/bootstrap-vali/js/bootstrap.js" crossorigin="anonymous"></script>
+<script type="text/javascript" src="<%=basePath%>/jquery/jquery-3.2.1.min.js?ver=${jsVerBuild}"></script>
+<link rel="stylesheet" href="<%=basePath%>/bootstrap-vali/css/main.css?ver=${jsVerBuild}" crossorigin="anonymous">
+<link href="<%=basePath%>/font-awesome/css/font-awesome.min.css?ver=${jsVerBuild}" rel="stylesheet" type="text/css" />
+<script src="<%=basePath%>/bootstrap-vali/js/bootstrap.js?ver=${jsVerBuild}" crossorigin="anonymous"></script>
 
+<!-- The javascript plugin to display page loading on top-->
+<script src="<%=basePath%>/js/plugins/pace.min.js"></script>
 
 <style type="text/css">
 
@@ -79,43 +82,49 @@ function submitLoginForm() {
 </div>
 <!-- Modal ends Here -->
 
-<div class="container">   
-<form class="form-signin" name="loginForm" id="loginForm" action="./login.do" method="post">
+<section class="material-half-bg">
+	<div class="cover"></div>
+</section>
+<section class="login-content">
+	<div class="logo">
+		<h1>welcome qifu2</h1>
+	</div>
+	<div class="login-box">
 
-    <div><img src="./images/logo2.png" width="48" height="48" border="0"/>&nbsp;&nbsp;&nbsp;<b><font color="#041431">qifu2 web admin</font></b></div>
-   
-    <br/>
-   
-   
-    <c:if test="${ \"Y\" == loginCaptchaCodeEnable }">    
-    <div class="form-group">
-          <label for="captcha">Captcha code <img src="./kaptcha.jpg?n=<%=System.currentTimeMillis()%>"/></label>
-          <input class="form-control" type="text" id="captcha" name="captcha">
-    </div>       
-    </c:if>
-    
-    <div class="form-group">
-          <label for="username">Username</label>
-          <input class="form-control" type="text" id="username" name="username" maxlength="12">
-    </div>   
-    <div class="form-group">
-          <label for="password">Password</label>
-          <input class="form-control" type="password" id="password" name="password" maxlength="25">
-    </div>   
-   	
-   	
-   	<c:if test="${\"\" != pageMessage && null != pageMessage}">
-   	<p class="bg-warning"><c:out value="${pageMessage}" ></c:out></p>
-   	</c:if>
-   
-    <button type="button" class="btn btn-lg btn-primary btn-block" name="btnSubmit" onclick="submitLoginForm()">Login</button>
-   
-    <br/>
-    
-    <label>qifu2 0.2 version</label>
-
-</form>
-</div>
+	<form class="form-signin" name="loginForm" id="loginForm" action="./login.do" method="post">
+	   
+	    <c:if test="${ \"Y\" == loginCaptchaCodeEnable }">    
+	    <div class="form-group">
+	          <label for="captcha">Captcha code <img src="./kaptcha.jpg?n=<%=System.currentTimeMillis()%>"/></label>
+	          <input class="form-control" type="text" id="captcha" name="captcha">
+	    </div>       
+	    </c:if>
+	    
+	    <div class="form-group">
+	          <label for="username">Username</label>
+	          <input class="form-control" type="text" id="username" name="username" maxlength="12">
+	    </div>   
+	    <div class="form-group">
+	          <label for="password">Password</label>
+	          <input class="form-control" type="password" id="password" name="password" maxlength="25">
+	    </div>   
+	   	
+	   	
+	   	<c:if test="${\"\" != pageMessage && null != pageMessage}">
+	   	<p class="bg-warning"><c:out value="${pageMessage}" ></c:out></p>
+	   	</c:if>
+	   
+	    <button type="button" class="btn btn-lg btn-primary btn-block" name="btnSubmit" onclick="submitLoginForm()">Login</button>
+	   
+	   	<br/>
+	    
+	    <div class="row"><img src="./images/logo2.png" width="48" height="48" border="0"/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<label>qifu2 0.2 version</label></div>
+	    
+	
+	</form>
+	
+	</div>
+</section>
 
 </body>
 </html>
