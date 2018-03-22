@@ -112,7 +112,7 @@ function submitLoginForm() {
    
     <br/>
     
-    <label>qifu 0.1 version</label>
+    <label>qifu2 0.2 version</label>
 
 </form>
 </div>
