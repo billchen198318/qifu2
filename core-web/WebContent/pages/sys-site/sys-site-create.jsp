@@ -85,7 +85,8 @@ function clearSave() {
 	cancelEnable="Y" 
 	cancelJsMethod="parent.closeTab('CORE_PROG001D0001A');"
 	programName="${programName}"
-	programId="${programId}" >	
+	programId="${programId}"
+	description="Create system site module config item.">	
 </q:toolBar>
 <jsp:include page="../common-f-head.jsp"></jsp:include>
 

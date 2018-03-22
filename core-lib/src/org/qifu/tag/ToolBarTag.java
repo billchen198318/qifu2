@@ -48,6 +48,7 @@ public class ToolBarTag implements Tag {
 	private String importJsMethod="";	
 	private String programName="";
 	private String programId="";
+	private String description="";
 	
 	private ToolBar handler() {
 		ToolBar toolBar = new ToolBar();
@@ -67,6 +68,7 @@ public class ToolBarTag implements Tag {
 		toolBar.setImportJsMethod(this.importJsMethod);
 		toolBar.setProgramName(this.programName);
 		toolBar.setProgramId(this.programId);
+		toolBar.setDescription(this.description);
 		return toolBar;
 	}
 	
@@ -231,6 +233,14 @@ public class ToolBarTag implements Tag {
 
 	public void setProgramId(String programId) {
 		this.programId = programId;
+	}
+
+	public String getDescription() {
+		return description;
+	}
+
+	public void setDescription(String description) {
+		this.description = description;
 	}
 	
 }

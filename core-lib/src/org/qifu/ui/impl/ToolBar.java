@@ -47,6 +47,7 @@ public class ToolBar implements UIComponent {
 	private String importJsMethod="";	
 	private String programName="";
 	private String programId="";
+	private String description="";
 	private StringBuilder htmlOut=new StringBuilder();	
 	
 	private Map<String, Object> getParameters(String type) {
@@ -66,6 +67,7 @@ public class ToolBar implements UIComponent {
 		paramMap.put("importJsMethod", this.importJsMethod);
 		paramMap.put("programName", this.programName);
 		paramMap.put("programId", this.programId);
+		paramMap.put("description", this.description);
 		return paramMap;
 	}
 	
@@ -226,6 +228,14 @@ public class ToolBar implements UIComponent {
 
 	public void setProgramId(String programId) {
 		this.programId = programId;
+	}
+
+	public String getDescription() {
+		return description;
+	}
+
+	public void setDescription(String description) {
+		this.description = description;
 	}			
 	
 }

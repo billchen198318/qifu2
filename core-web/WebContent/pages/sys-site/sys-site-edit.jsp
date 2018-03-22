@@ -83,7 +83,8 @@ function clearUpdate() {
 	cancelEnable="Y" 
 	cancelJsMethod="parent.closeTab('CORE_PROG001D0001E');"
 	programName="${programName}"
-	programId="${programId}" >	
+	programId="${programId}"
+	description="Modify system site module config item.">	
 </q:toolBar>
 <jsp:include page="../common-f-head.jsp"></jsp:include>
 

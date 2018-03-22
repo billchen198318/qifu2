@@ -89,7 +89,12 @@
 			<name>programId</name>
 			<required>false</required>
 			<rtexprvalue>true</rtexprvalue>
-		</attribute>											
+		</attribute>
+		<attribute>
+			<name>description</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>						
 	</tag>		
 	
 	<!-- Grid -->

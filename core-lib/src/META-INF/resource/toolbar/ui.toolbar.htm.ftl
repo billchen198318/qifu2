@@ -2,7 +2,9 @@
 <div class="app-title">
 	<div>
 		<h1>${programName}</h1>
-		
+<#if description?? && description != "">
+		<p>${description}</p>
+</#if>		
 		<div>		
 			
 <#if refreshEnable == "Y" >					
