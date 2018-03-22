@@ -105,7 +105,7 @@ function progChange() {
 						chkStr = ' checked="checked" ';
 					}
 					str += '<tr>';
-					str += '<td>&nbsp;&nbsp;<label class="custom-control custom-checkbox"><input type="checkbox" class="form-check-input" id="role' + roleAll[p].oid + '" name="role' + roleAll[p].oid + '" onclick="updateMenuRoleEnable();" ' + chkStr + ' value="' + roleAll[p].oid + '" ></label></td>';
+					str += '<td><div class="custom-control custom-checkbox"><label class="custom-control custom-checkbox"><input type="checkbox" class="form-check-input" id="role' + roleAll[p].oid + '" name="role' + roleAll[p].oid + '" onclick="updateMenuRoleEnable();" ' + chkStr + ' value="' + roleAll[p].oid + '" ></label></div></td>';
 					str += '<td>' + roleAll[p].role + '</td>';
 					str += '</tr>';
 				}
