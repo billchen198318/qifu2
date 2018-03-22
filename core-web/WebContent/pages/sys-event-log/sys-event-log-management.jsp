@@ -99,7 +99,8 @@ function deleteRecord(oid) {
 	cancelEnable="Y" 
 	cancelJsMethod="parent.closeTab('CORE_PROG004D0001Q');"
 	programName="${programName}"
-	programId="${programId}" >		
+	programId="${programId}"
+	description="Event history log.">		
 </q:toolBar>
 <jsp:include page="../common-f-head.jsp"></jsp:include>
 

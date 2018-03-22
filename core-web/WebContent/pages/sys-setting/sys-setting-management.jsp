@@ -50,7 +50,8 @@ function updateSuccess(data) {
 	cancelEnable="Y" 
 	cancelJsMethod="parent.closeTab('CORE_PROG001D0007Q');"
 	programName="${programName}"
-	programId="${programId}" >		
+	programId="${programId}"
+	description="Settings some config base items.">		
 </q:toolBar>
 <jsp:include page="../common-f-head.jsp"></jsp:include>
 

@@ -166,7 +166,8 @@ function updateMenuRoleEnable() {
 	cancelEnable="Y" 
 	cancelJsMethod="parent.closeTab('CORE_PROG002D0003Q');"
 	programName="${programName}"
-	programId="${programId}" >		
+	programId="${programId}"
+	description="Settings menu-tree item's role.">		
 </q:toolBar>
 <jsp:include page="../common-f-head.jsp"></jsp:include>
 

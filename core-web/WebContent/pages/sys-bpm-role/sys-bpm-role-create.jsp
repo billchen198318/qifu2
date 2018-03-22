@@ -74,7 +74,8 @@ function clearSave() {
 	cancelEnable="Y" 
 	cancelJsMethod="parent.closeTab('CORE_PROG003D0005A');"
 	programName="${programName}"
-	programId="${programId}" >		
+	programId="${programId}"
+	description="Create settings BPM process role.">		
 </q:toolBar>
 <jsp:include page="../common-f-head.jsp"></jsp:include>
 

@@ -69,7 +69,8 @@ function loadDiagram(type, objId) {
 	cancelEnable="Y" 
 	cancelJsMethod="parent.closeTab('CORE_PROG003D0004S01Q');"
 	programName="${programName}"
-	programId="${programId}" >		
+	programId="${programId}"
+	description="View BPM ( Activiti ) process list diagram.">		
 </q:toolBar>
 <jsp:include page="../common-f-head.jsp"></jsp:include>
 

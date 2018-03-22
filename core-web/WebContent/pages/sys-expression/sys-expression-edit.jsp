@@ -100,7 +100,8 @@ function clearUpdate() {
 	cancelEnable="Y" 
 	cancelJsMethod="parent.closeTab('CORE_PROG003D0002E');"
 	programName="${programName}"
-	programId="${programId}" >		
+	programId="${programId}"
+	description="Modify expression content.">		
 </q:toolBar>
 <jsp:include page="../common-f-head.jsp"></jsp:include>
 
@@ -125,7 +126,7 @@ function clearUpdate() {
 <div class="form-group" id="form-group2">
 	<div class="row">
 		<div class="col-xs-6 col-md-6 col-lg-6">
-			<q:textarea name="description" value="sysExpression.description" id="description" label="Description" rows="3" placeholder="Enter descripnion"></q:textarea>
+			<q:textarea name="description" value="sysExpression.description" id="description" label="Description" rows="3" placeholder="Enter description"></q:textarea>
 		</div>
 	</div>
 </div>

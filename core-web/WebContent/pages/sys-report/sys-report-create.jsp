@@ -88,7 +88,8 @@ function uploadModal() {
 	cancelEnable="Y" 
 	cancelJsMethod="parent.closeTab('CORE_PROG001D0005A');"
 	programName="${programName}"
-	programId="${programId}" >		
+	programId="${programId}"
+	description="Create upload new report (Jasperreport) data.">		
 </q:toolBar>
 <jsp:include page="../common-f-head.jsp">
 	<jsp:param value="Y" name="commonUploadEnable"/>
@@ -110,7 +111,7 @@ function uploadModal() {
 	</div>
 	<div class="row">
 		<div class="col-xs-6 col-md-6 col-lg-6">
-			<q:textarea name="description" value="" id="description" label="Description" rows="3" placeholder="Enter descripnion"></q:textarea>
+			<q:textarea name="description" value="" id="description" label="Description" rows="3" placeholder="Enter description"></q:textarea>
 		</div>
 	</div>
 	<div class="row">

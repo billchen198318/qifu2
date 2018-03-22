@@ -104,7 +104,8 @@ function deleteRecord(oid) {
 	cancelEnable="Y" 
 	cancelJsMethod="parent.closeTab('CORE_PROG001D0006Q');"
 	programName="${programName}"
-	programId="${programId}" >		
+	programId="${programId}"
+	description="Management server container custom context initialization/destory service.">		
 </q:toolBar>
 <jsp:include page="../common-f-head.jsp"></jsp:include>
 

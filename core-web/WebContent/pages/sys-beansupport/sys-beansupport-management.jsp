@@ -111,7 +111,8 @@ function deleteRecord(oid) {
 	cancelEnable="Y" 
 	cancelJsMethod="parent.closeTab('CORE_PROG003D0003Q');"
 	programName="${programName}"
-	programId="${programId}" >		
+	programId="${programId}"
+	description="Management service bean support item.">		
 </q:toolBar>
 <jsp:include page="../common-f-head.jsp"></jsp:include>
 

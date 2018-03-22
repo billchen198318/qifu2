@@ -161,7 +161,8 @@ function deleteRecord(oid) {
 	cancelEnable="Y" 
 	cancelJsMethod="parent.closeTab('CORE_PROG003D0004Q');"
 	programName="${programName}"
-	programId="${programId}" >		
+	programId="${programId}"
+	description="Management BPM ( Activiti ) resource.">		
 </q:toolBar>
 <jsp:include page="../common-f-head.jsp">
 	<jsp:param value="Y" name="commonUploadEnable"/>

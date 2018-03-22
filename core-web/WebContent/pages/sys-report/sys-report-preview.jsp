@@ -55,9 +55,7 @@ function previewReport() {
 	saveEnabel="N" 
 	saveJsMethod="" 	
 	cancelEnable="Y" 
-	cancelJsMethod="parent.hideModal('CORE_PROG001D0005S02Q');"
-	programName="${programName}"
-	programId="${programId}" >		
+	cancelJsMethod="parent.hideModal('CORE_PROG001D0005S02Q');">		
 </q:toolBar>
 <jsp:include page="../common-f-head.jsp"></jsp:include>
 

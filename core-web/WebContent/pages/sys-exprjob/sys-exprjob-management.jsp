@@ -137,7 +137,8 @@ function deleteRecord(oid) {
 	cancelEnable="Y" 
 	cancelJsMethod="parent.closeTab('CORE_PROG003D0006Q');"
 	programName="${programName}"
-	programId="${programId}" >		
+	programId="${programId}"
+	description="Management expression task schedule.">		
 </q:toolBar>
 <jsp:include page="../common-f-head.jsp"></jsp:include>
 

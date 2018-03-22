@@ -71,7 +71,8 @@ function clearUpdate() {
 	cancelEnable="Y" 
 	cancelJsMethod="parent.closeTab('CORE_PROG001D0006E');"
 	programName="${programName}"
-	programId="${programId}" >		
+	programId="${programId}"
+	description="Modify server container custom context initialization/destory service.">		
 </q:toolBar>
 <jsp:include page="../common-f-head.jsp"></jsp:include>
 
@@ -99,7 +100,7 @@ function clearUpdate() {
 <div class="form-group" id="form-group4">
 	<div class="row">
 		<div class="col-xs-6 col-md-6 col-lg-6">
-			<q:textarea name="description" value="sysCtxBean.description" id="description" label="Description" rows="3" placeholder="Enter descripnion"></q:textarea>
+			<q:textarea name="description" value="sysCtxBean.description" id="description" label="Description" rows="3" placeholder="Enter description"></q:textarea>
 		</div>
 	</div>
 </div>

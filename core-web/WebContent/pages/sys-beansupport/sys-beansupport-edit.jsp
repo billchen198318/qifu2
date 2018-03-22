@@ -72,7 +72,8 @@ function clearUpdate() {
 	cancelEnable="Y" 
 	cancelJsMethod="parent.closeTab('CORE_PROG003D0003E');"
 	programName="${programName}"
-	programId="${programId}" >		
+	programId="${programId}"
+	description="Modify service bean support item.">		
 </q:toolBar>
 <jsp:include page="../common-f-head.jsp"></jsp:include>
 
@@ -101,7 +102,7 @@ function clearUpdate() {
 	</div>
 	<div class="row">	
 		<div class="col-xs-6 col-md-6 col-lg-6">
-			<q:textarea name="description" value="sysBeanHelp.description" id="description" label="Description" rows="3" placeholder="Enter descripnion"></q:textarea>
+			<q:textarea name="description" value="sysBeanHelp.description" id="description" label="Description" rows="3" placeholder="Enter description"></q:textarea>
 		</div>
 	</div>	
 </div>

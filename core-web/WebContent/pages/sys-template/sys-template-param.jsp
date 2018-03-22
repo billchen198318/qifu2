@@ -109,7 +109,7 @@ function deleteRecord(oid) {
 <q:toolBar 
 	id="CORE_PROG001D0004S01Q_toolbar" 
 	refreshEnable="Y"
-	refreshJsMethod="window.location=parent.getProgUrlForOid('CORE_PROG001D0004S01Q', '${role.oid}');" 
+	refreshJsMethod="window.location=parent.getProgUrlForOid('CORE_PROG001D0004S01Q', '${template.oid}');" 
 	createNewEnable="N"
 	createNewJsMethod=""
 	saveEnabel="Y" 
@@ -117,7 +117,8 @@ function deleteRecord(oid) {
 	cancelEnable="Y" 
 	cancelJsMethod="parent.closeTab('CORE_PROG001D0004S01Q');"
 	programName="${programName}"
-	programId="${programId}" >		
+	programId="${programId}"
+	description="Settings template parameter.">		
 </q:toolBar>
 <jsp:include page="../common-f-head.jsp"></jsp:include>
 
