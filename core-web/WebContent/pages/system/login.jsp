@@ -61,6 +61,26 @@ function submitLoginForm() {
 	$('#myPleaseWait').modal('show');	
 }
 
+function changeKaptcha() {
+	$("#kaptchaImg").attr('src', "./kaptcha.jpg?n=" + guid());
+}
+
+/* 
+ * http://stackoverflow.com/questions/105034/create-guid-uuid-in-javascript 
+ */
+function guid() {
+	
+	  function s4() {
+	    return Math.floor((1 + Math.random()) * 0x10000)
+	      .toString(16)
+	      .substring(1);
+	  }
+	  
+	  return s4() + s4() + '-' + s4() + '-' + s4() + '-' +
+	    s4() + '-' + s4() + s4() + s4();
+	  
+}
+
 </script>
 
 </head>
@@ -100,7 +120,7 @@ function submitLoginForm() {
 	   
 	    <c:if test="${ \"Y\" == loginCaptchaCodeEnable }">    
 	    <div class="form-group">
-	          <label for="captcha">Captcha code <img src="./kaptcha.jpg?n=<%=System.currentTimeMillis()%>"/></label>
+	          <label for="captcha">Captcha code <img src="./kaptcha.jpg?n=<%=System.currentTimeMillis()%>" id="kaptchaImg" onclick="changeKaptcha();"/></label>
 	          <input class="form-control" type="text" id="captcha" name="captcha">
 	    </div>       
 	    </c:if>
