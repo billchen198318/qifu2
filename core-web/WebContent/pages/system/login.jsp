@@ -109,18 +109,19 @@ function submitLoginForm() {
 	          <input class="form-control" type="password" id="password" name="password" maxlength="25">
 	    </div>   
 	   	
-	   	
 	   	<c:if test="${\"\" != pageMessage && null != pageMessage}">
-	   	<p class="bg-warning"><c:out value="${pageMessage}" ></c:out></p>
+		<div class="row"><p class="bg-warning"><c:out value="${pageMessage}" ></c:out></p></div>
 	   	</c:if>
-	   
-	    <button type="button" class="btn btn-lg btn-primary btn-block" name="btnSubmit" onclick="submitLoginForm()">Login</button>
-	   
-	   	<br/>
+	   	
+	   	<div class="form-group">
+	    	<button type="button" class="btn btn-lg btn-primary btn-block" name="btnSubmit" onclick="submitLoginForm()">Login</button>
+	   	</div>
+	   	
+	   	<div class="form-group"><p></p></div>
+	   	
+	    <div class="form-group"><img src="./images/logo3.png" width="32" height="32" border="0"/>&nbsp;&nbsp;&nbsp;<label>qifu2 0.2 version</label></div>
 	    
-	    <div class="row"><img src="./images/logo2.png" width="48" height="48" border="0"/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<label>qifu2 0.2 version</label></div>
 	    
-	
 	</form>
 	
 	</div>
