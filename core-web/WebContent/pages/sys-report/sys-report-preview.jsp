@@ -19,6 +19,10 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 
 <style type="text/css">
 
+/*-- 這個寬度不會有寬的scrollbar出現 --*/
+body {
+  width: 94%;
+}
 
 </style>
 
