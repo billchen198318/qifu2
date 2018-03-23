@@ -87,7 +87,12 @@ function submitLoginForm() {
 </section>
 <section class="login-content">
 	<div class="logo">
-		<h1>welcome qifu2</h1>
+		<table border="0">
+			<tr>
+				<td align="right"><img src="./images/logo2.png" width="48" height="48" border="0"/></td>
+				<td align="left">&nbsp;&nbsp;<h1>welcome qifu2</h1></td>
+			</tr>
+		</table>
 	</div>
 	<div class="login-box">
 
@@ -119,7 +124,7 @@ function submitLoginForm() {
 	   	
 	   	<div class="form-group"><p></p></div>
 	   	
-	    <div class="form-group"><img src="./images/logo3.png" width="32" height="32" border="0"/>&nbsp;&nbsp;&nbsp;<label>qifu2 0.2 version</label></div>
+	    <div class="form-group">&nbsp;&nbsp;&nbsp;<label>qifu2 0.2 version</label></div>
 	    
 	    
 	</form>
