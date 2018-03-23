@@ -62,9 +62,6 @@ function updateSuccess(data) {
 
 function updateSave() {
 	clearWarningMessageField(formGroups, msgFields);
-	$("#title").val( '' );
-	$('#message').froalaEditor('html.set', '');
-	$("#description").val( '' );
 }
 
 </script>
