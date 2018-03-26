@@ -18,7 +18,7 @@ https://github.com/billchen198318/qifu2/blob/master/doc/qifu2.sql
 MYSQL> create database qifu2;
 MYSQL> exit;
 
-# mysql -u root -p qifu2 < qifu.sql
+# mysql qifu2 -u root -p < qifu.sql
 
 ```
 
