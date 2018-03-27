@@ -19,7 +19,8 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 /* width for content */
 /* =================================== 2018-03-21 add =================================== */
 body {
-  width: 97%;
+  width: 94%; /* 97% */
+  margin:0 auto;
 }
 /* =================================== 2018-03-21 add =================================== */
 
