@@ -25,6 +25,14 @@ MYSQL> exit;
 
 ```
 
+### config datasource ( applicationContext-dataSource.properties )
+
+```
+dataSource.jdbcUrl=jdbc:mysql://localhost/qifu2?useUnicode=true&characterEncoding=UTF-8&zeroDateTimeBehavior=convertToNull
+dataSource.user=MYSQL-ACCOUNT
+dataSource.password=MYSQL-PASSWORD
+```
+
 <br>
 <br>
 
