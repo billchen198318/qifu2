@@ -292,7 +292,7 @@ public class SystemReportAction extends BaseController {
 		.testField("urlParam", param, "@org.apache.commons.lang3.StringUtils@isBlank(urlParam)", "URL parameter is blank!")
 		.testField("rptParam", param, "@org.apache.commons.lang3.StringUtils@isBlank(rptParam)", "Report variable is blank!")
 		.testField("urlParam", param, "!@org.qifu.util.SimpleUtils@checkBeTrueOf_azAZ09(urlParam)", "URL parameter only normal character!")
-		.testField("rptParam", param, "!@org.qifu.util.SimpleUtils@checkBeTrueOf_azAZ09(rptParam)", "Report variable only normal character!")
+		.testField("rptParam", param, "!@org.qifu.util.SimpleUtils@checkBeTrueOf_azAZ09( @org.apache.commons.lang3.StringUtils@defaultString(rptParam).replaceAll(\"_\", \"\") )", "Report variable only normal character!")
 		.throwMessage();
 	}	
 	

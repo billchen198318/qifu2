@@ -74,7 +74,7 @@ function previewReport() {
 	
 	
 		<table class="table">
-		<thead class="thead-inverse">
+		<thead class="thead-light">
 		<tr>
 			<th>URL / Report parameter</th>
 			<th>Variable value</th>

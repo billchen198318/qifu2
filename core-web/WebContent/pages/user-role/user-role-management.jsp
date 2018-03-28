@@ -49,7 +49,7 @@ function accountChange() {
 				
 				var str = '';
 				str += '<table class="table table-hover table-bordered">';
-				str += '<thead class="thead-inverse">';
+				str += '<thead class="thead-light">';
 				str += '<tr>';
 				str += '<th>&nbsp;&nbsp;#&nbsp;&nbsp;</th>';
 				str += '<th>Role</th>';

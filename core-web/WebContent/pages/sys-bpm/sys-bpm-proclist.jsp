@@ -76,7 +76,7 @@ function loadDiagram(type, objId) {
 
 	<table class="table">
 		<legend><b>Process definition</b></legend>
-		<thead class="thead-inverse">
+		<thead class="thead-light">
 		<tr>
 			<th><b>Key</b></th>
 			<th><b>Name</b></th>
@@ -104,7 +104,7 @@ function loadDiagram(type, objId) {
 	
 	<table class="table">
 		<legend><b>Process instance</b></legend>
-		<thead class="thead-inverse">
+		<thead class="thead-light">
 		<tr>
 			<th><b>Id</b></th>
 			<th><b>Process definition</b></th>
@@ -132,7 +132,7 @@ function loadDiagram(type, objId) {
 	
 	<table class="table">
 		<legend><b>Task</b></legend>
-		<thead class="thead-inverse">
+		<thead class="thead-light">
 		<tr>
 			<th><b>Id</b></th>
 			<th><b>Name</b></th>
