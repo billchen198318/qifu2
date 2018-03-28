@@ -24,6 +24,13 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
   <link rel="stylesheet" href="<%=basePath%>/bootstrap-vali/css/main.css">
   
   <body leftmargin="0" topmargin="0" >
+  <table width="100%" border="0" cellpadding="0" cellspacing="0">
+	
+    
+    <tr>
+      <td colspan="2" bgcolor="#FFFFFF" height="90%">
+      
+      <br/>  
 
 <center>
 <table width="100%" border="0" cellspacing="0" cellpadding="0">
@@ -47,6 +54,16 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 </table>
 
 </center>
+
+      <br/>
+            
+      </td>
+      
+    </tr>
+    
+	
+  </table>
+  
 </body>
 
 </html>

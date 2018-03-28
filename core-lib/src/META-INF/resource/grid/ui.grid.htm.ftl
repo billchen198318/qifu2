@@ -12,7 +12,7 @@
     <input type="hidden" name="pageSize" id="pageSize" value="1"/>
     	<span class="badge badge-secondary">Page</span>
     	<!-- pageOf.select -->
-		<input id="select" name="select" maxlength="6" type="text" value="1" style="width: 60px;" onChange="changeQueryGridPageOfSelect();"></input>	
+		<input id="select" name="select" maxlength="6" type="text" value="1" style="width: 60px; border: none; border:solid 1px #ccc; border-radius: 3px;" onChange="changeQueryGridPageOfSelect();"></input>	
 			
     	&nbsp;/&nbsp;<span id="sizeShow"/>
     </td>    
@@ -22,7 +22,7 @@
     <td width="200px" style="background: linear-gradient(to top, #f1eee5 , #fafafa);" align="center">
     	<span class="badge badge-secondary">Row</span>
     	<!-- pageOf.showRow -->
-    	<select name="showRow" id="showRow" style="width: 75px;"
+    	<select name="showRow" id="showRow" style="width: 75px; border: none; border:solid 1px #ccc; border-radius: 3px;"
     			onChange="changeQueryGridPageOfShowRow();" >
     			<option value="10">10</option>
     			<option value="20">20</option>
