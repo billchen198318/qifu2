@@ -31,7 +31,7 @@
 	</div>    
 	
         <ul class="app-breadcrumb breadcrumb">
-          <li class="breadcrumb-item">${programId}</li>
+          <li class="breadcrumb-item" title="${programName}"><font color="#6c757d">${programId}</font></li>
         </ul>
         		
 </div>        
