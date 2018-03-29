@@ -299,10 +299,28 @@ function commonOpenJasperReport(jreportId, paramData) {
 	for (var key in paramData) {
 		url += "&" + key + "=" + paramData[key];
 	}
-	window.open(url, "_blank", "resizable=yes, scrollbars=yes, titlebar=yes, width=970, height=700, top=10, left=10");
+	// 2018-03-29 rem
+	//window.open(url, "_blank", "resizable=yes, scrollbars=yes, titlebar=yes, width=970, height=700, top=10, left=10");
+	
+	// 2018-03-29 add
+	var win = window.open(url, '_blank');
+	if (win) {
+	    win.focus();
+	} else {
+	    alert('Please allow popups for this website');
+	}
 }
 
 function commonViewUploadFile(oid) {
 	var url = "./core.commonViewFile.do" + "?oid=" + oid;
-	window.open(url, "_blank", "resizable=yes, scrollbars=yes, titlebar=yes, width=970, height=700, top=10, left=10");	
+	// 2018-03-29 rem
+	//window.open(url, "_blank", "resizable=yes, scrollbars=yes, titlebar=yes, width=970, height=700, top=10, left=10");
+	
+	// 2018-03-29 add
+	var win = window.open(url, '_blank');
+	if (win) {
+	    win.focus();
+	} else {
+	    alert('Please allow popups for this website');
+	}	
 }
