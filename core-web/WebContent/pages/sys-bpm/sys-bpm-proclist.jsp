@@ -75,7 +75,7 @@ function loadDiagram(type, objId) {
 <jsp:include page="../common-f-head.jsp"></jsp:include>
 
 	<table class="table">
-		<legend><b>Process definition</b></legend>
+		<legend><h4><span class="badge badge-secondary">Process definition</span></h4></legend>
 		<thead class="thead-light">
 		<tr>
 			<th><b>Key</b></th>
@@ -103,7 +103,7 @@ function loadDiagram(type, objId) {
 	<br>
 	
 	<table class="table">
-		<legend><b>Process instance</b></legend>
+		<legend><h4><span class="badge badge-secondary">Process instance</span></h4></legend>
 		<thead class="thead-light">
 		<tr>
 			<th><b>Id</b></th>
@@ -131,7 +131,7 @@ function loadDiagram(type, objId) {
 	<br>
 	
 	<table class="table">
-		<legend><b>Task</b></legend>
+		<legend><h4><span class="badge badge-secondary">Task</span></h4></legend>
 		<thead class="thead-light">
 		<tr>
 			<th><b>Id</b></th>
