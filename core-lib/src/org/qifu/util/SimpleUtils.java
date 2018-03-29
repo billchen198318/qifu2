@@ -384,7 +384,12 @@ public class SimpleUtils {
 	
 	public static String getUUIDStr() {
 		//return UUID.randomUUID().toString();
-		return com.datastax.driver.core.utils.UUIDs.timeBased().toString();
+		
+		// 2018-03-29 rem
+		//return com.datastax.driver.core.utils.UUIDs.timeBased().toString();
+		
+		// 2018-03-29 change return getRandomUUIDStr() -> UUIDs.random
+		return getRandomUUIDStr();
 	}
 	
 	public static String getRandomUUIDStr() {
