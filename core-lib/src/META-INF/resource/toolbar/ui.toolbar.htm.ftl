@@ -1,5 +1,5 @@
 <br/>		
-<div class="app-title">
+<div class="app-title" style="background: linear-gradient(to top, #f8f9fa, #ffffff);">
 	<div>
 		<h1>${programName}</h1>
 <#if description?? && description != "">
