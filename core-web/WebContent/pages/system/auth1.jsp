@@ -16,8 +16,8 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 	<meta http-equiv="pragma" content="no-cache">
 	<meta http-equiv="cache-control" content="no-cache">
 	<meta http-equiv="expires" content="0">    
-	<meta http-equiv="keywords" content="bambooCORE">
-	<meta http-equiv="description" content="bambooCORE">
+	<meta http-equiv="keywords" content="qifu2">
+	<meta http-equiv="description" content="qifu2">
 
   </head>
   

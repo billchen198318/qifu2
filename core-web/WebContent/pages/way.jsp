@@ -21,8 +21,8 @@ String mainSysBasePath = ApplicationSiteUtils.getBasePath(Constants.getMainSyste
 	<meta http-equiv="pragma" content="no-cache">
 	<meta http-equiv="cache-control" content="no-cache">
 	<meta http-equiv="expires" content="0">    
-	<meta http-equiv="keywords" content="bambooCORE">
-	<meta http-equiv="description" content="bambooCORE">
+	<meta http-equiv="keywords" content="qifu2">
+	<meta http-equiv="description" content="qifu2">
 	
 <style type="text/css">
 
@@ -35,7 +35,7 @@ String mainSysBasePath = ApplicationSiteUtils.getBasePath(Constants.getMainSyste
 </head>
 
 <body>
-<a href="<%=mainSysBasePath%>/index.action">qifu</a>
+<a href="<%=mainSysBasePath%>/index.do">qifu2</a>
 <script type="text/javascript">
 window.location = "<%=mainSysBasePath%>/index.do";
 </script>
