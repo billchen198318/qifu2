@@ -4,7 +4,7 @@ var _before_select_page = 1;
 
 function ${clearFunction}() {
 	$("#rowCount").html( '0' );
-	$("#sizeShow").html( '1' );
+	$("#sizeShow").html( '/1' );
 	$("#pageSize").val( '1' );
 	$("#showRow").val( '10' );
 	$("#select").val( '1' );
@@ -148,7 +148,7 @@ function ${queryFunction}() {
 				
 				
 				$("#rowCount").html( data.pageOfCountSize );
-				$("#sizeShow").html( data.pageOfSize );
+				$("#sizeShow").html( '/'+data.pageOfSize );
 				$("#pageSize").val( data.pageOfSize );
 				$("#select").val( data.pageOfSelect );
 				_before_select_page = data.pageOfSelect;
