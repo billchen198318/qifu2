@@ -14,7 +14,7 @@
     	<!-- pageOf.select -->
 		<input id="select" name="select" maxlength="6" type="text" value="1" style="width: 60px; border: none; border:solid 1px #ccc; border-radius: 3px;" onChange="changeQueryGridPageOfSelect();"></input>	
 			
-    	&nbsp;/&nbsp;<span id="sizeShow"/>
+    	<span class="badge badge-secondary" id="sizeShow"/>
     </td>    
     <td width="20px" style="background: linear-gradient(to top, #f1eee5 , #fafafa);" align="left"><a href="javascript:changeQueryGridToNext();"><img src="./icons/stock_right.png" border="0" class="btn btn-light btn-sm" alt="N" title="Next"/></a></td>
     <td width="20px" style="background: linear-gradient(to top, #f1eee5 , #fafafa);" align="left"><a href="javascript:changeQueryGridToLast();"><img src="./icons/stock_last.png" border="0" class="btn btn-light btn-sm" alt="L" title="Last page"/></a></td>
