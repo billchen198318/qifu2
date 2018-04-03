@@ -72,7 +72,7 @@ body {
     <td bgcolor="#000000" style="border-top-right-radius: 5px;"><font color="#FFFFFF" size="5"><B>Redirect:</B></font></td>
   </tr>
   <tr>
-    <td width="48" bgcolor="#F4F4F4"><img src="./images/warning.png" width="48" height="48" border="0"/></td>
+    <td width="48" bgcolor="#F4F4F4"><img src="./images/loadingAnimation.gif" width="31" height="31" border="0"/></td>
     <td valign="top" bgcolor="#F4F4F4">
 	<font color="#000000" size="4">Please wait redirect <%=progName%>(<%=progId%>).</font>
 	<br>  
