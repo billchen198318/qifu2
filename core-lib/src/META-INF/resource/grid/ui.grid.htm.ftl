@@ -16,7 +16,7 @@
     	<span class="badge badge-secondary" style="font-size:12px;">
     		Page
     		<!-- pageOf.select -->
-			<input id="select" name="select" maxlength="6" type="text" value="1" style="width: 50px; border: none; border:solid 1px #ccc; border-radius: 3px; text-align: center;" onChange="changeQueryGridPageOfSelect();"></input>
+			<input id="select" name="select" maxlength="6" type="text" value="1" style="height: 20px; width: 50px; border: none; border:solid 1px #ccc; border-radius: 3px; text-align: center;" onChange="changeQueryGridPageOfSelect();"></input>
 			<span id="sizeShow" style="font-size:11px; font-weight: normal !important;"/>	
 		</span>	
     </td>    
@@ -27,7 +27,7 @@
     	<span class="badge badge-secondary" style="font-size:12px;">
     		Row
 	    	<!-- pageOf.showRow -->
-	    	<select name="showRow" id="showRow" style="width: 50px; border: none; border:solid 1px #ccc; border-radius: 3px;"
+	    	<select name="showRow" id="showRow" style="height: 20px; width: 50px; border: none; border:solid 1px #ccc; border-radius: 3px;"
 	    			onChange="changeQueryGridPageOfShowRow();" >
 	    			<option value="10">10</option>
 	    			<option value="20">20</option>
