@@ -69,10 +69,10 @@ body {
   <tr>
     <td width="10" rowspan="3" bgcolor="#01600A" style="border-top-left-radius: 5px; border-bottom-left-radius: 5px;">&nbsp;</td>
     <td width="48" bgcolor="#000000">&nbsp;</td>
-    <td bgcolor="#000000" style="border-top-right-radius: 5px;"><font color="#FFFFFF" size="5"><B>Redirect:</B></font></td>
+    <td bgcolor="#000000" style="border-top-right-radius: 5px;"><font color="#FFFFFF" size="5"><B>Refresh page:</B></font></td>
   </tr>
   <tr>
-    <td width="48" bgcolor="#F4F4F4"><img src="./images/loadingAnimation.gif" width="31" height="31" border="0"/></td>
+    <td width="48" bgcolor="#F4F4F4"><img src="./images/information.png" width="48" height="48" border="0"/></td>
     <td valign="top" bgcolor="#F4F4F4">
 	<font color="#000000" size="4">Please wait redirect <%=progName%>(<%=progId%>).</font>
 	<br>  

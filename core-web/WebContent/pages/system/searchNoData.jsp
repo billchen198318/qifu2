@@ -47,7 +47,7 @@ body {
     <td bgcolor="#000000" style="border-top-right-radius: 5px;"><font color="#FFFFFF" size="5"><B>No data:</B></font></td>
   </tr>
   <tr>
-    <td width="48" bgcolor="#F4F4F4"><img src="./images/warning.png" width="48" height="48" border="0"/></td>
+    <td width="48" bgcolor="#F4F4F4"><img src="./images/information.png" width="48" height="48" border="0"/></td>
     <td valign="top" bgcolor="#F4F4F4">
 	<font color="#000000" size="4">Data may have been deleted, <BR/>please close the page.</font>
 	<br>  
