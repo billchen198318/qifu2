@@ -128,7 +128,7 @@ public class LoginHandlerInterceptor implements HandlerInterceptor {
 					//request.setAttribute("progId", progId);
 					logger.warn("do page call refresTab event = " + progId);					
 					//return "refreshDojoContentPane"; // 重新調用 url , 讓 shiroFilter 重導
-					response.sendRedirect("./pages/system/refresPage.jsp?progId=" + progId + "&n=" + SimpleUtils.getUUIDStr());
+					response.sendRedirect("./pages/system/refreshPage.jsp?progId=" + progId + "&n=" + SimpleUtils.getUUIDStr());
 					return false;
 				} else {
 					String url = SimpleUtils.getHttpRequestUrl( request );

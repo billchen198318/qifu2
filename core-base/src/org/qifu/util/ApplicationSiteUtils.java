@@ -63,6 +63,21 @@ public class ApplicationSiteUtils {
 	}
 	
 	@SuppressWarnings("unchecked")
+	public static TbSys getSys(String sysId) {
+		ISysService<SysVO, TbSys, String> sysService = (ISysService<SysVO, TbSys, String>)AppContext.getBean("core.service.SysService");
+		TbSys sys = new TbSys();
+		sys.setSysId(sysId);
+		try {
+			sys = sysService.findByEntityUK(sys);
+		} catch (ServiceException e) {
+			e.printStackTrace();
+		} catch (Exception e) {
+			e.printStackTrace();
+		}		
+		return sys;
+	}	
+	
+	@SuppressWarnings("unchecked")
 	public static String getHost(String sysId) {
 		String host = "";
 		ISysService<SysVO, TbSys, String> sysService = 
