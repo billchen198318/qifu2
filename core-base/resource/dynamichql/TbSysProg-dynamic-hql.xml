@@ -16,7 +16,7 @@
 		and sp.progId = :progId
 		</#if>
 			
-		ORDER BY sp.progId,sp.name ASC
+		ORDER BY ${orderBy} ${sortType}
 	]]>
 	</query>
 	

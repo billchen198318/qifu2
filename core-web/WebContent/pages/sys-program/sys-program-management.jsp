@@ -35,8 +35,8 @@ function getQueryGridFormatter(value) {
 function getQueryGridHeader() {
 	return [
 		{ name: "#", 	field: "oid", 	formatter: getQueryGridFormatter },
-		{ name: "Id", 	field: "progId"					},
-		{ name: "Name", field: "name"					},
+		{ name: "Id&nbsp;<img class='btn btn-light btn-sm' src='./images/chevron-arrow-up.png' onclick='queryAsc(\"id\");'/>&nbsp;<img class='btn btn-light btn-sm' src='./images/chevron-arrow-down.png' onclick='queryDesc(\"id\");'/>", 	field: "progId"					},
+		{ name: "Name&nbsp;<img class='btn btn-light btn-sm' src='./images/chevron-arrow-up.png' onclick='queryAsc(\"name\");'/>&nbsp;<img class='btn btn-light btn-sm' src='./images/chevron-arrow-down.png' onclick='queryDesc(\"name\");'/>", field: "name"					},
 		{ name: "Type", field: "itemType"				},
 		{ name: "System", field: "progSystem"	},
 		{ name: "Url", field: "url"					},
@@ -47,6 +47,8 @@ function getQueryGridHeader() {
 function queryClear() {
 	$("#id").val('');
 	$("#name").val('');
+	$('#sortType').val('ASC');
+	$('#orderBy').val('sp.progId,sp.name');
 	
 	clearQueryGridTable();
 	
@@ -84,6 +86,28 @@ function deleteRecord(oid) {
 	);	
 }
 
+
+function queryAsc(type) {
+	$('#sortType').val('ASC');
+	if ('id' == type) {
+		$('#orderBy').val('sp.progId');
+	}
+	if ('name' == type) {
+		$('#orderBy').val('sp.name');
+	}	
+	queryGrid();
+}
+function queryDesc(type) {
+	$('#sortType').val('DESC');
+	if ('id' == type) {
+		$('#orderBy').val('sp.progId');
+	}
+	if ('name' == type) {
+		$('#orderBy').val('sp.name');
+	}	
+	queryGrid();
+}
+
 </script>
 
 </head>
@@ -105,7 +129,10 @@ function deleteRecord(oid) {
 	description="Management program item.">		
 </q:toolBar>
 <jsp:include page="../common-f-head.jsp"></jsp:include>
-
+      
+<input type="hidden" id="sortType" name="sortType" value="ASC">
+<input type="hidden" id="orderBy" name="orderBy" value="sp.progId,sp.name">
+      
       <div class="row">
         <div class="col-xs-6 col-md-6 col-lg-6">
         	<q:textbox name="id" value="" id="id" label="Id" placeholder="Enter Id" maxlength="50"></q:textbox>
@@ -114,7 +141,7 @@ function deleteRecord(oid) {
         	<q:textbox name="name" value="" id="name" label="Name" placeholder="Enter name" maxlength="100"></q:textbox>
        </div>
       </div>
-      
+
 <br>
       
 <button type="button" class="btn btn-primary" id="btnQuery" onclick="queryGrid();">Query</button>
@@ -129,7 +156,9 @@ function deleteRecord(oid) {
 		'parameter[progId]'	: $('#id').val(),
 		'parameter[name]'	: $('#name').val(),
 		'select'			: getQueryGridSelect(),
-		'showRow'			: getQueryGridShowRow()	
+		'showRow'			: getQueryGridShowRow(),
+		'sortType'			: $('#sortType').val(),
+		'orderBy'			: $('#orderBy').val()
 	}
 	"
 	xhrUrl="./core.sysProgramQueryGridJson.do" 

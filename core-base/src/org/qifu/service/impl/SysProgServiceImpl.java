@@ -124,7 +124,7 @@ public class SysProgServiceImpl extends BaseService<SysProgVO, TbSysProg, String
 		int limit=Integer.parseInt(pageOf.getShowRow());
 		int offset=(Integer.parseInt(pageOf.getSelect())-1)*limit;		
 		QueryResult<List<SysProgVO>> result=this.sysProgDAO.findPageQueryResultByQueryName(
-				"findSysProgPageGrid", params, offset, limit);
+				"findSysProgPageGrid", pageOf.setQueryOrderSortParameter(params), offset, limit);
 		pageOf.setCountSize(String.valueOf(result.getRowCount()));
 		pageOf.toCalculateSize();
 		return result;
