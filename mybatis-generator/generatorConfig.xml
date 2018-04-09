@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE generatorConfiguration PUBLIC "-//mybatis.org//DTD MyBatis Generator Configuration 1.0//EN" "http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd">
+<generatorConfiguration>
+  <context id="context1">
+    <jdbcConnection connectionURL="jdbc:mysql://localhost/qifu2" driverClass="com.mysql.jdbc.Driver" password="password" userId="root" />
+    <javaModelGenerator targetPackage="org.qifu.mapper" targetProject="mybatis-generator" />
+    <sqlMapGenerator targetPackage="org.qifu.mapper" targetProject="mybatis-generator" />
+    <javaClientGenerator targetPackage="org.qifu.mapper" targetProject="mybatis-generator" type="XMLMAPPER" />
+    <table schema="qifu2" tableName="tb_sys_prog">
+    </table>
+  </context>
+</generatorConfiguration>
