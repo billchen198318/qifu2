@@ -79,7 +79,7 @@ body {
 <%
 if (!StringUtils.isBlank(progUrl)) {
 %>	
-	<a href="<%=progUrl%>">Click redirect <%=progName%>(<%=progId%>)</a>
+	<a href="<%=progUrl%>">Click direct redirect</a>
 <%
 }
 %>	
