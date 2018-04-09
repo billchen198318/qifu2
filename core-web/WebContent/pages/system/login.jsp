@@ -120,7 +120,7 @@ function guid() {
 	   
 	    <c:if test="${ \"Y\" == loginCaptchaCodeEnable }">    
 	    <div class="form-group">
-	          <label for="captcha">Captcha code <img src="./kaptcha.jpg?n=<%=System.currentTimeMillis()%>" id="kaptchaImg" onclick="changeKaptcha();" style="cursor: pointer; border-radius: 5%;"/></label>
+	          <label for="captcha">Captcha code <img src="./kaptcha.jpg?n=<%=System.currentTimeMillis()%>" id="kaptchaImg" onclick="changeKaptcha();" class="img-thumbnail" style="cursor: pointer;"/></label>
 	          <input class="form-control" type="text" id="captcha" name="captcha">
 	    </div>       
 	    </c:if>
