@@ -135,7 +135,9 @@ ${modalHtmlData}
 <!-- ##################### Modal for Program ##################### -->
 
     <!-- Navbar-->
-    <header class="app-header">&nbsp;&nbsp;&nbsp;<img alt="祈-qífú" src="./images/logo2.png" border="0" onclick="window.location='<%=basePath%>/index.do';"></img>&nbsp;&nbsp;&nbsp;
+    <header class="app-header">
+    	
+	  <a class="app-header__logo" href="#" onclick="window.location='<%=basePath%>/index.do';"><img alt="祈-qífú" src="./images/logo2.png" border="0"></img>&nbsp;&nbsp;qífú</a>
       <a class="app-sidebar__toggle" href="#" data-toggle="sidebar" aria-label="Hide Sidebar"></a>
       
 	  <!-- User Menu-->
