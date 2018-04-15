@@ -147,6 +147,56 @@ function ${queryFunction}() {
 				str += '</table>';
 				
 				
+				/* ================================ dataTables paginate ================================ */
+				var paginatePrevious = data.pageOfSelect - 1;
+				var paginateNext = data.pageOfSelect + 1;
+				if (paginatePrevious < 1) {
+					paginatePrevious = 1;
+				}
+				if (paginateNext > data.pageOfSize) {
+					paginateNext = data.pageOfSize;
+				}
+				
+				str += '<div class="dataTables_paginate paging_simple_numbers" id="${id}_paginate">';
+				str += '<ul class="pagination">';
+				str += '<li class="paginate_button page-item previous" id="${id}_paginatePrevious"><a href="#" aria-controls="sampleTable" tabindex="0" class="page-link" onclick="changeDataTablePaginate(' + paginatePrevious + ');">Previous</a></li>';
+				
+				var midMaxShow = 5;
+				var pStart = data.pageOfSelect - midMaxShow;
+				var pEnd = data.pageOfSelect + midMaxShow;
+				if (pStart < 1) {
+					pStart = 1;
+				}
+				if (pEnd > data.pageOfSize) {
+					pEnd = data.pageOfSize;
+				}
+				
+				if ( pStart > 1 ) {
+					str += '<li class="paginate_button page-item " id="${id}_paginate_1"><a href="#" tabindex="0" class="page-link" onclick="changeDataTablePaginate(1);">1</a></li>';
+					if (pStart > 2) {
+						str += '<li class="paginate_button page-item disabled" id="${id}_paginate_1_sp"><a href="#" class="page-link">&#183;&#183;</a></li>';
+					}
+				} 
+				for ( var p = pStart; p <= pEnd ; p++) {
+					var activeStr = ' ';
+					if (p == data.pageOfSelect) {
+						activeStr = ' active ';
+					}
+					str += '<li class="paginate_button page-item ' + activeStr + '" id="${id}_paginate_' + p + '"><a href="#" tabindex="0" class="page-link" onclick="changeDataTablePaginate(' + p + ');">' + p + '</a></li>';
+				}
+				if ( pEnd < data.pageOfSize ) {
+					if ((pEnd + 1) < data.pageOfSize) {
+						str += '<li class="paginate_button page-item disabled" id="${id}_paginate_' + data.pageOfSize + '_sp"><a href="#" class="page-link">&#183;&#183;</a></li>';
+					}
+					str += '<li class="paginate_button page-item " id="${id}_paginate_' + data.pageOfSize + '"><a href="#" tabindex="0" class="page-link" onclick="changeDataTablePaginate(' + data.pageOfSize + ');">' + data.pageOfSize + '</a></li>';
+				} 				
+				
+				str += '<li class="paginate_button page-item next" id="${id}_paginateNext"><a href="#" tabindex="0" class="page-link" onclick="changeDataTablePaginate(' + paginateNext + ');">Next</a></li>';
+				str += '</ul>';
+				str += '</div>';
+				/* ================================ dataTables paginate ================================ */
+				
+				
 				$("#rowCount").html( data.pageOfCountSize );
 				$("#sizeShow").html( '/'+data.pageOfSize );
 				$("#pageSize").val( data.pageOfSize );
@@ -163,5 +213,11 @@ function ${queryFunction}() {
 			'${selfPleaseWaitShow}'
 	);
 }    	
+
+function changeDataTablePaginate(pageNum) {
+	$("#select").val( ''+pageNum );
+	//${queryFunction}();
+	changeQueryGridPageOfSelect();
+}
 
 </script>
