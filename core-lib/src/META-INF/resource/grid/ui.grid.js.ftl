@@ -159,9 +159,9 @@ function ${queryFunction}() {
 				
 				str += '<div class="dataTables_paginate paging_simple_numbers" id="${id}_paginate">';
 				str += '<ul class="pagination">';
-				str += '<li class="paginate_button page-item previous" id="${id}_paginatePrevious"><a href="#" aria-controls="sampleTable" tabindex="0" class="page-link" onclick="changeDataTablePaginate(' + paginatePrevious + ');">Previous</a></li>';
+				str += '<li class="paginate_button page-item previous" id="${id}_paginatePrevious"><a href="#" aria-controls="sampleTable" tabindex="0" class="page-link" onclick="changeDataTablePaginate(' + paginatePrevious + ');">&laquo;</a></li>';
 				
-				var midMaxShow = 5;
+				var midMaxShow = 3;
 				var pStart = data.pageOfSelect - midMaxShow;
 				var pEnd = data.pageOfSelect + midMaxShow;
 				if (pStart < 1) {
@@ -191,7 +191,7 @@ function ${queryFunction}() {
 					str += '<li class="paginate_button page-item " id="${id}_paginate_' + data.pageOfSize + '"><a href="#" tabindex="0" class="page-link" onclick="changeDataTablePaginate(' + data.pageOfSize + ');">' + data.pageOfSize + '</a></li>';
 				} 				
 				
-				str += '<li class="paginate_button page-item next" id="${id}_paginateNext"><a href="#" tabindex="0" class="page-link" onclick="changeDataTablePaginate(' + paginateNext + ');">Next</a></li>';
+				str += '<li class="paginate_button page-item next" id="${id}_paginateNext"><a href="#" tabindex="0" class="page-link" onclick="changeDataTablePaginate(' + paginateNext + ');">&raquo;</a></li>';
 				str += '</ul>';
 				str += '</div>';
 				/* ================================ dataTables paginate ================================ */
