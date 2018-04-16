@@ -4,7 +4,7 @@
   	<td width="100px" style="background: linear-gradient(to top, #f1eee5 , #fafafa);" align="center" >
   		<span class="badge badge-secondary" style="font-size:12px;">
   			Total
-  			<span id="rowCount" class="badge badge-info" style="font-size:11px; font-weight: normal !important;"/>
+  			<span id="rowCount" class="badge badge-info" style="font-size:11px; font-weight: normal !important;"></span>
   		</span>	
   	</td>
   	<td width="10px" style="background: linear-gradient(to top, #f1eee5 , #fafafa);" align="center">&nbsp;</td>        
@@ -17,7 +17,7 @@
     		Page
     		<!-- pageOf.select -->
 			<input id="select" name="select" maxlength="6" type="text" value="1" style="height: 20px; width: 50px; border: none; border:solid 1px #ccc; border-radius: 3px; text-align: center;" onChange="changeQueryGridPageOfSelect();"></input>
-			<span id="sizeShow" style="font-size:11px; font-weight: normal !important;"/>	
+			<span id="sizeShow" style="font-size:11px; font-weight: normal !important;"></span>	
 		</span>	
     </td>    
     <td width="20px" style="background: linear-gradient(to top, #f1eee5 , #fafafa);" align="left"><a href="javascript:changeQueryGridToNext();"><img src="./icons/stock_right.png" border="0" class="btn btn-light btn-sm" alt="N" title="Next"/></a></td>
