@@ -174,7 +174,7 @@ function ${queryFunction}() {
 				if ( pStart > 1 ) {
 					str += '<li class="paginate_button page-item " id="${id}_paginate_1"><a href="#" tabindex="0" class="page-link" onclick="changeDataTablePaginate(1);">1</a></li>';
 					if (pStart > 2) {
-						str += '<li class="paginate_button page-item disabled" id="${id}_paginate_1_sp"><a href="#" class="page-link">&#183;&#183;</a></li>';
+						str += '<li class="paginate_button page-item disabled" id="${id}_paginate_left_disabled"><a href="#" class="page-link">&#183;&#183;</a></li>';
 					}
 				} 
 				for ( var p = pStart; p <= pEnd ; p++) {
@@ -186,7 +186,7 @@ function ${queryFunction}() {
 				}
 				if ( pEnd < data.pageOfSize ) {
 					if ((pEnd + 1) < data.pageOfSize) {
-						str += '<li class="paginate_button page-item disabled" id="${id}_paginate_' + data.pageOfSize + '_sp"><a href="#" class="page-link">&#183;&#183;</a></li>';
+						str += '<li class="paginate_button page-item disabled" id="${id}_paginate_right_disabled"><a href="#" class="page-link">&#183;&#183;</a></li>';
 					}
 					str += '<li class="paginate_button page-item " id="${id}_paginate_' + data.pageOfSize + '"><a href="#" tabindex="0" class="page-link" onclick="changeDataTablePaginate(' + data.pageOfSize + ');">' + data.pageOfSize + '</a></li>';
 				} 				
