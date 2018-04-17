@@ -56,7 +56,7 @@ passowrd: admin99 <br>
 <br>
 <br>
 
-### Showcase page: 
+### Screenshot: 
 
 <img alt="demo1" src="https://raw.githubusercontent.com/billchen198318/qifu2/master/doc/pic/qifu2-001.png">
 <img alt="demo2" src="https://raw.githubusercontent.com/billchen198318/qifu2/master/doc/pic/qifu2-002.png">
