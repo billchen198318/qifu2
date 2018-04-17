@@ -142,7 +142,7 @@ hamcrest-core-1.3.jar
 HikariCP
 https://github.com/brettwooldridge/HikariCP
 ===============================================
-HikariCP-2.7.8.jar
+HikariCP-3.1.0.jar
 
 
 Groovy
