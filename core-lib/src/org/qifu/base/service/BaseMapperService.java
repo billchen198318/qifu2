@@ -36,10 +36,9 @@ import org.qifu.base.SysMessageUtil;
 import org.qifu.base.SysMsgConstants;
 import org.qifu.base.dao.IBaseMapperDAO;
 import org.qifu.base.exception.ServiceException;
-import org.qifu.base.model.BaseEntity;
-import org.qifu.base.model.BaseEntityUtil;
 import org.qifu.base.model.BaseMapper;
 import org.qifu.base.model.DefaultResult;
+import org.qifu.base.model.EntityOrMapperAnnotationParameterUtil;
 import org.qifu.base.model.ServiceMethodAuthority;
 import org.qifu.base.model.ServiceMethodType;
 import org.qifu.base.model.SystemMessage;
@@ -242,7 +241,7 @@ public abstract class BaseMapperService<T extends java.io.Serializable> implemen
 	}
 	
 	public int countByUK(T mapperObj) throws ServiceException, Exception {
-		Map<String, Object> ukMap=BaseEntityUtil.getUKParameter((BaseEntity<?>)mapperObj);
+		Map<String, Object> ukMap=EntityOrMapperAnnotationParameterUtil.getUKParameter((BaseMapper<?>)mapperObj);
 		return this.getBaseDataAccessObject().countByUK(ukMap);
 	}
 	

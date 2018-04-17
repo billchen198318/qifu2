@@ -21,6 +21,17 @@
  */
 package org.qifu.base.model;
 
-public abstract class BaseMapper<T> extends BaseEntity<T> {
-		
+import java.util.Date;
+
+public abstract class BaseMapper<T> implements OID<T> {
+	public abstract T getOid();
+	public abstract void setOid(T oid);
+	public abstract String getCuserid();
+	public abstract void setCuserid(String cuserid);
+	public abstract Date getCdate();
+	public abstract void setCdate(Date cdate);
+	public abstract String getUuserid();
+	public abstract void setUuserid(String uuserid);
+	public abstract Date getUdate();
+	public abstract void setUdate(Date udate);				
 }

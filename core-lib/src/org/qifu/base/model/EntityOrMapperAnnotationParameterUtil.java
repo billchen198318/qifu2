@@ -28,10 +28,9 @@ import java.lang.reflect.Method;
 import java.util.HashMap;
 import java.util.Map;
 
-public class BaseEntityUtil {
+public class EntityOrMapperAnnotationParameterUtil {
 	
-	@SuppressWarnings("rawtypes")
-	public static Object getPKOneValue(BaseEntity entity) {  
+	public static <T> Object getPKOneValue(T entity) {  
 		Method[] methods=entity.getClass().getMethods(); 
 		if (methods==null) {
 			return null;
@@ -61,8 +60,7 @@ public class BaseEntityUtil {
 		return value;
 	}
 	
-	@SuppressWarnings("rawtypes")
-	public static String getPKOneName(BaseEntity entity) {
+	public static <T> String getPKOneName(T entity) {
 		Method[] methods=entity.getClass().getMethods();
 		Field[] fields=entity.getClass().getDeclaredFields();
 		if (methods==null || fields==null) {
@@ -88,8 +86,7 @@ public class BaseEntityUtil {
 		return name;
 	}
 	
-	@SuppressWarnings("rawtypes")
-	public static Map<String, Object> getPKParameter(BaseEntity entity) {
+	public static <T> Map<String, Object> getPKParameter(T entity) {
 		Method[] methods=entity.getClass().getMethods();		
 		if (methods==null) {
 			return null;
@@ -111,8 +108,7 @@ public class BaseEntityUtil {
 		return pkMap;
 	}
 	
-	@SuppressWarnings("rawtypes")
-	public static Map<String, Object> getUKParameter(BaseEntity entity) {
+	public static <T> Map<String, Object> getUKParameter(T entity) {
 		Method[] methods=entity.getClass().getMethods();
 		if (methods==null) {
 			return null;
@@ -134,9 +130,8 @@ public class BaseEntityUtil {
 		return ukMap;
 	}
 	
-	@SuppressWarnings("rawtypes")
-	private static void setParameter(
-			BaseEntity entity, Method method, String entityAnnotationParameterName, 
+	private static <T> void setParameter(
+			T entity, Method method, String entityAnnotationParameterName, 
 			Map<String, Object> dataMap) {
 		
 		if (method.getName().indexOf("get")==0) {

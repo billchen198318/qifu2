@@ -40,10 +40,10 @@ import org.qifu.base.SysMsgConstants;
 import org.qifu.base.dao.IBaseDAO;
 import org.qifu.base.exception.ServiceException;
 import org.qifu.base.model.BaseEntity;
-import org.qifu.base.model.BaseEntityUtil;
 import org.qifu.base.model.CustomeOperational;
 import org.qifu.base.model.DefaultResult;
 import org.qifu.base.model.DynamicHqlQueryParamHandler;
+import org.qifu.base.model.EntityOrMapperAnnotationParameterUtil;
 import org.qifu.base.model.SearchValue;
 import org.qifu.base.model.ServiceMethodAuthority;
 import org.qifu.base.model.ServiceMethodType;
@@ -473,7 +473,7 @@ public abstract class SimpleService<E extends java.io.Serializable, PK extends j
 		if (entityObject==null || !(entityObject instanceof BaseEntity) ) {
 			throw new ServiceException(SysMessageUtil.get(SysMsgConstants.OBJ_NULL));
 		}
-		Map<String, Object> pkMap=BaseEntityUtil.getPKParameter((BaseEntity)entityObject);
+		Map<String, Object> pkMap=EntityOrMapperAnnotationParameterUtil.getPKParameter((BaseEntity)entityObject);
 		if (pkMap==null || pkMap.size()<1) {
 			throw new ServiceException(SysMessageUtil.get(SysMsgConstants.PARAMS_INCORRECT));
 		}
@@ -487,7 +487,7 @@ public abstract class SimpleService<E extends java.io.Serializable, PK extends j
 		if (entityObject==null || !(entityObject instanceof BaseEntity) ) {
 			throw new ServiceException(SysMessageUtil.get(SysMsgConstants.OBJ_NULL));
 		}
-		Map<String, Object> pkMap=BaseEntityUtil.getPKParameter((BaseEntity)entityObject);
+		Map<String, Object> pkMap=EntityOrMapperAnnotationParameterUtil.getPKParameter((BaseEntity)entityObject);
 		if (pkMap==null || pkMap.size()<1) {
 			throw new ServiceException(SysMessageUtil.get(SysMsgConstants.PARAMS_INCORRECT));
 		}		
@@ -501,7 +501,7 @@ public abstract class SimpleService<E extends java.io.Serializable, PK extends j
 		if (entityObject==null || !(entityObject instanceof BaseEntity) ) {
 			throw new ServiceException(SysMessageUtil.get(SysMsgConstants.OBJ_NULL));
 		}
-		Map<String, Object> pkMap=BaseEntityUtil.getPKParameter((BaseEntity)entityObject);
+		Map<String, Object> pkMap=EntityOrMapperAnnotationParameterUtil.getPKParameter((BaseEntity)entityObject);
 		if (pkMap==null || pkMap.size()<1) {
 			throw new ServiceException(SysMessageUtil.get(SysMsgConstants.PARAMS_INCORRECT));
 		}				
@@ -703,7 +703,7 @@ public abstract class SimpleService<E extends java.io.Serializable, PK extends j
 		if (entityObject==null || !(entityObject instanceof BaseEntity) ) {
 			throw new ServiceException(SysMessageUtil.get(SysMsgConstants.OBJ_NULL));
 		}
-		Map<String, Object> ukMap=BaseEntityUtil.getUKParameter((BaseEntity<?>)entityObject);
+		Map<String, Object> ukMap=EntityOrMapperAnnotationParameterUtil.getUKParameter((BaseEntity<?>)entityObject);
 		if (ukMap==null || ukMap.size()<1) {
 			throw new ServiceException(SysMessageUtil.get(SysMsgConstants.PARAMS_INCORRECT));
 		}		
@@ -716,7 +716,7 @@ public abstract class SimpleService<E extends java.io.Serializable, PK extends j
 		if (entityObject==null || !(entityObject instanceof BaseEntity) ) {
 			throw new ServiceException(SysMessageUtil.get(SysMsgConstants.OBJ_NULL));
 		}
-		Map<String, Object> ukMap=BaseEntityUtil.getUKParameter((BaseEntity<?>)entityObject);
+		Map<String, Object> ukMap=EntityOrMapperAnnotationParameterUtil.getUKParameter((BaseEntity<?>)entityObject);
 		if (ukMap==null || ukMap.size()<1) {
 			throw new ServiceException(SysMessageUtil.get(SysMsgConstants.PARAMS_INCORRECT));
 		}		

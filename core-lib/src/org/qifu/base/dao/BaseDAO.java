@@ -38,8 +38,8 @@ import org.qifu.base.Constants;
 import org.qifu.base.SysMessageUtil;
 import org.qifu.base.SysMsgConstants;
 import org.qifu.base.model.BaseEntity;
-import org.qifu.base.model.BaseEntityUtil;
 import org.qifu.base.model.CustomeOperational;
+import org.qifu.base.model.EntityOrMapperAnnotationParameterUtil;
 import org.qifu.base.model.QueryResult;
 import org.qifu.base.model.SystemMessage;
 import org.qifu.base.model.dynamichql.DynamicHql;
@@ -407,13 +407,13 @@ public abstract class BaseDAO<T extends java.io.Serializable, PK extends java.io
 	@SuppressWarnings("unchecked")
 	@Override
 	public T findByOid(T entityObj) throws Exception {
-		return this.findByPK((PK)BaseEntityUtil.getPKOneValue((BaseEntity<PK>)entityObj));
+		return this.findByPK((PK)EntityOrMapperAnnotationParameterUtil.getPKOneValue((BaseEntity<PK>)entityObj));
 	}
 	
 	@SuppressWarnings("unchecked")
 	@Override
 	public int countByOid(T entityObj) throws Exception {
-		return this.countByPK((PK)BaseEntityUtil.getPKOneValue((BaseEntity<PK>)entityObj));
+		return this.countByPK((PK)EntityOrMapperAnnotationParameterUtil.getPKOneValue((BaseEntity<PK>)entityObj));
 	}
 	
 	/**
@@ -476,7 +476,7 @@ public abstract class BaseDAO<T extends java.io.Serializable, PK extends java.io
 		return DataAccessUtils.intResult(
 				this.getCurrentSession().createQuery(
 						" select count(*) from "+this.getPersisentName() + 
-						" where " + BaseEntityUtil.getPKOneName((BaseEntity<PK>)entityClass.newInstance()) + "=?0 ")
+						" where " + EntityOrMapperAnnotationParameterUtil.getPKOneName((BaseEntity<PK>)entityClass.newInstance()) + "=?0 ")
 						.setString("0", (String)pk).list());		
 	}
 	
@@ -638,12 +638,12 @@ public abstract class BaseDAO<T extends java.io.Serializable, PK extends java.io
 	
 	@SuppressWarnings("unchecked")
 	public T findByUK(T entityObject) throws Exception {
-		return this.findByEntityUK(BaseEntityUtil.getUKParameter((BaseEntity<PK>)entityObject));
+		return this.findByEntityUK(EntityOrMapperAnnotationParameterUtil.getUKParameter((BaseEntity<PK>)entityObject));
 	}
 	
 	@SuppressWarnings("unchecked")
 	public int countByUK(T entityObject) throws Exception {
-		return this.countByEntityUK(BaseEntityUtil.getUKParameter((BaseEntity<PK>)entityObject));
+		return this.countByEntityUK(EntityOrMapperAnnotationParameterUtil.getUKParameter((BaseEntity<PK>)entityObject));
 	}
 	
 	@SuppressWarnings("unchecked")
