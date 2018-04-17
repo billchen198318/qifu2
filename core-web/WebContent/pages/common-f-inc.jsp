@@ -13,6 +13,9 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 <script src="<%=basePath%>/configJs.do?ver=${jsVerBuild}" crossorigin="anonymous"></script>
 <script src="<%=basePath%>/js/f.js?ver=${jsVerBuild}" crossorigin="anonymous"></script>
 
+<!-- The javascript plugin to display page loading on top-->
+<script src="<%=basePath%>/js/plugins/pace.min.js?ver=${jsVerBuild}"></script>
+
 <style>
 
 /* =================================== 2018-03-21 add =================================== */

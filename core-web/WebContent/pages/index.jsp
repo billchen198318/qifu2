@@ -26,7 +26,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 <script src="./bootstrap-vali/js/bootstrap.js?ver=${jsVerBuild}" crossorigin="anonymous"></script>
 
 <!-- The javascript plugin to display page loading on top-->
-<script src="./js/plugins/pace.min.js"></script>
+<script src="./js/plugins/pace.min.js?ver=${jsVerBuild}"></script>
 
 <script src="./bootbox/bootbox.js?ver=${jsVerBuild}" crossorigin="anonymous"></script>
 
