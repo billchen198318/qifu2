@@ -11,7 +11,7 @@
 String path = request.getContextPath();
 String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.getServerPort()+path+"/";
 
-String progId = request.getParameter("progId");
+String progId = request.getParameter( Constants.QIFU_PAGE_PROG_PARAM );
 String progUrl = "";
 String sysId = "";
 String progName = "";

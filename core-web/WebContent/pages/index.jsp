@@ -1,4 +1,5 @@
 <%@page import="org.qifu.util.SystemSettingConfigureUtils"%>
+<%@page import="org.qifu.base.Constants"%>
 <%@ page language="java" import="java.util.*" pageEncoding="UTF-8"%>
 <%@ taglib prefix="spring" uri="http://www.springframework.org/tags"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
@@ -45,7 +46,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 
 <script type="text/javascript">
 
-var _m_PAGE_CHANGE_URL_PARAM = 'isQifuPageChange';
+var _m_PAGE_CHANGE_URL_PARAM = '<%=Constants.QIFU_PAGE_IN_TAB_IFRAME%>';
 
 // =====================================================================
 ${menuJavascriptData}

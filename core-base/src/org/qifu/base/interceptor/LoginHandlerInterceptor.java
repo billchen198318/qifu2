@@ -128,7 +128,7 @@ public class LoginHandlerInterceptor implements HandlerInterceptor {
 					//request.setAttribute("progId", progId);
 					logger.warn("do page call refresTab event = " + progId);					
 					//return "refreshDojoContentPane"; // 重新調用 url , 讓 shiroFilter 重導
-					response.sendRedirect("./pages/system/refreshPage.jsp?progId=" + progId + "&n=" + SimpleUtils.getUUIDStr());
+					response.sendRedirect("./pages/system/refreshPage.jsp?" + Constants.QIFU_PAGE_PROG_PARAM + "=" + progId + "&n=" + SimpleUtils.getUUIDStr());
 					return false;
 				} else {
 					String url = SimpleUtils.getHttpRequestUrl( request );
@@ -155,7 +155,7 @@ public class LoginHandlerInterceptor implements HandlerInterceptor {
 			}
 		}
 		if ( StringUtils.isBlank(progId) ) { // 沒有ControllerMethodAuthority , 就找 url 的 prog_id 參數 , 主要是 COMMON FORM 會用到
-			progId = StringUtils.defaultString( request.getParameter("progId") );			
+			progId = StringUtils.defaultString( request.getParameter(Constants.QIFU_PAGE_PROG_PARAM) );			
 		}
 		return progId;		
 	}	
