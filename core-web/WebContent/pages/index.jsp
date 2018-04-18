@@ -17,25 +17,25 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
-<link rel="stylesheet" href="./tether/tether.min.css?ver=${jsVerBuild}" crossorigin="anonymous">
+<link rel="stylesheet" href="./tether/tether.min.css?ver=${jsVerBuild}" >
 <script type="text/javascript" src="./tether/tether.min.js?ver=${jsVerBuild}"></script>
 <script type="text/javascript" src="./popper-js/umd/popper.min.js?ver=${jsVerBuild}"></script>
 <script type="text/javascript" src="./jquery/jquery-3.2.1.min.js?ver=${jsVerBuild}"></script>
-<link rel="stylesheet" href="./bootstrap-vali/css/main.css?ver=${jsVerBuild}" crossorigin="anonymous">
+<link rel="stylesheet" href="./bootstrap-vali/css/main.css?ver=${jsVerBuild}" >
 <link href="./font-awesome/css/font-awesome.min.css?ver=${jsVerBuild}" rel="stylesheet" type="text/css" />
-<script src="./bootstrap-vali/js/bootstrap.js?ver=${jsVerBuild}" crossorigin="anonymous"></script>
+<script src="./bootstrap-vali/js/bootstrap.js?ver=${jsVerBuild}" ></script>
 
 <!-- The javascript plugin to display page loading on top-->
 <script src="./js/plugins/pace.min.js?ver=${jsVerBuild}"></script>
 
-<script src="./bootbox/bootbox.js?ver=${jsVerBuild}" crossorigin="anonymous"></script>
+<script src="./bootbox/bootbox.js?ver=${jsVerBuild}" ></script>
 
-<link rel="stylesheet" href="./toastr/toastr.min.css?ver=${jsVerBuild}" crossorigin="anonymous">
-<script src="./toastr/toastr.min.js?ver=${jsVerBuild}" crossorigin="anonymous"></script>
+<link rel="stylesheet" href="./toastr/toastr.min.css?ver=${jsVerBuild}" >
+<script src="./toastr/toastr.min.js?ver=${jsVerBuild}" ></script>
 
-<link rel="stylesheet" href="./css/m.css?ver=${jsVerBuild}" crossorigin="anonymous">
-<script src="./configJs.do?ver=${jsVerBuild}" crossorigin="anonymous"></script>
-<script src="./js/m.js?ver=${jsVerBuild}" crossorigin="anonymous"></script>
+<link rel="stylesheet" href="./css/m.css?ver=${jsVerBuild}" >
+<script src="./configJs.do?ver=${jsVerBuild}" ></script>
+<script src="./js/m.js?ver=${jsVerBuild}" ></script>
 
 <style type="text/css">
 
@@ -49,7 +49,7 @@ var _m_PAGE_CHANGE_URL_PARAM = 'isQifuPageChange';
 
 // =====================================================================
 ${menuJavascriptData}
-//=====================================================================
+// =====================================================================
 
 ${iconJavascriptData}
 
