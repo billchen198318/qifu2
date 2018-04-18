@@ -13,7 +13,7 @@ https://github.com/billchen198318/qifu2/blob/master/doc/qifu2.sql
 <br>
 <br>
 
-### create database
+### Create database
 
 ```
 MYSQL> create database qifu2;
@@ -23,7 +23,7 @@ MYSQL> exit;
 
 ```
 
-### config datasource ( applicationContext-dataSource.properties )
+### Config datasource ( applicationContext-dataSource.properties )
 
 ```
 dataSource.jdbcUrl=jdbc:mysql://localhost/qifu2?useUnicode=true&characterEncoding=UTF-8&zeroDateTimeBehavior=convertToNull
@@ -46,7 +46,7 @@ http://127.0.0.1:8080/core-web/index.do
 <br>
 <br>
 
-### admin account: 
+### Administrator account: 
 account: admin <br>
 passowrd: admin99 <br>
 
