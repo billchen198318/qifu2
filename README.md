@@ -9,8 +9,6 @@ https://github.com/billchen198318/qifu2/blob/master/doc/qifu2-table-doc.odt
 Database source script:
 https://github.com/billchen198318/qifu2/blob/master/doc/qifu2.sql
 
-Next step will move project to:
-https://github.com/billchen198318/bamboobsc8
 
 <br>
 <br>
