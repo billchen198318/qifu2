@@ -1,7 +1,7 @@
 # qifu2
 bambooBSC-8 core system.
 
-bambooBSC-8 core system. Backend Admin WEB base on JAVA & Spring / Spring MVC & hibernate - MyBatis & Bootstrap v4(vali-admin) & Jasperreport, WebService apahe cxf, Activiti BPM, MQ 
+Backend Admin WEB base on JAVA & Spring / Spring MVC & hibernate - MyBatis & Bootstrap v4 (vali-admin) & Jasperreport, WebService apahe cxf, apache camel, Activiti BPM, MQ , old version to https://github.com/billchen198318/bamboobsc ，qifu2 is bambooBSC-8 core-system
 
 Database table doc:
 https://github.com/billchen198318/qifu2/blob/master/doc/qifu2-table-doc.odt
