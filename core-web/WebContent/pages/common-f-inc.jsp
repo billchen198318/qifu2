@@ -106,4 +106,46 @@ body {
   background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='%23d9534f' viewBox='-2 -2 7 7'%3E%3Cpath stroke='%23d9534f' d='M0 0l3 3m0-3L0 3'/%3E%3Ccircle r='.5'/%3E%3Ccircle cx='3' r='.5'/%3E%3Ccircle cy='3' r='.5'/%3E%3Ccircle cx='3' cy='3' r='.5'/%3E%3C/svg%3E");
 }
 /* =================================== 2018-01-24 add =================================== */
+
+
+/* =================================== 2018-04-19 add =================================== */
+/* need with toolbar top, p style="margin-bottom: 20px" */
+/* =================================== 2018-04-19 add =================================== */
+.app-title {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  background-color: #FFF;
+  margin: -30px -30px 30px;
+  padding: 10px 30px; /* 2018-04-19, 20px 30px change to 10px 30px , default please view /bootstrap-vali/css/main.css */
+  -webkit-box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+          box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+@media (max-width: 480px) {
+  .app-title {
+    margin: -15px -15px 15px;
+    padding: 10px; /* 2018-04-19, 20px change to 10px , default please view /bootstrap-vali/css/main.css */
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: start;
+        -ms-flex-align: start;
+            align-items: flex-start;
+  }
+}
+/* =================================== 2018-04-19 add =================================== */
+
+
 </style>

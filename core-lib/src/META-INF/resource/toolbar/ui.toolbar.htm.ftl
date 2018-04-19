@@ -1,4 +1,4 @@
-<p style="margin-bottom: 8px"></p>		
+<p style="margin-bottom: 20px"></p><!-- need with .app-title padding 10px -->
 <div class="app-title" style="background: linear-gradient(to top, #f8f9fa, #ffffff);">
 	<div>
 		<h1>${programName}</h1>
