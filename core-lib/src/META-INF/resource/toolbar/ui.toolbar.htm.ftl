@@ -1,4 +1,4 @@
-<br/>		
+<p style="margin-bottom: 8px"></p>		
 <div class="app-title" style="background: linear-gradient(to top, #f8f9fa, #ffffff);">
 	<div>
 		<h1>${programName}</h1>
