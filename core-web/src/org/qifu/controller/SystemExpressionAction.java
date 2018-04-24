@@ -44,6 +44,7 @@ import org.qifu.service.logic.ISystemExpressionLogicService;
 import org.qifu.vo.SysExpressionVO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Required;
+import org.springframework.http.MediaType;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
@@ -112,7 +113,7 @@ public class SystemExpressionAction extends BaseController {
 	}		
 	
 	@ControllerMethodAuthority(check = true, programId = "CORE_PROG003D0002Q")
-	@RequestMapping(value = "/core.sysExpressionQueryGridJson.do", produces = "application/json")	
+	@RequestMapping(value = "/core.sysExpressionQueryGridJson.do", produces = MediaType.APPLICATION_JSON_VALUE)	
 	public @ResponseBody QueryControllerJsonResultObj< List<SysExpressionVO> > queryGrid(SearchValue searchValue, PageOf pageOf) {
 		QueryControllerJsonResultObj< List<SysExpressionVO> > result = this.getQueryJsonResult("CORE_PROG003D0002Q");
 		if (!this.isAuthorizeAndLoginFromControllerJsonResult(result)) {
@@ -211,7 +212,7 @@ public class SystemExpressionAction extends BaseController {
 	}	
 	
 	@ControllerMethodAuthority(check = true, programId = "CORE_PROG003D0002A")
-	@RequestMapping(value = "/core.sysExpressionSaveJson.do", produces = "application/json")		
+	@RequestMapping(value = "/core.sysExpressionSaveJson.do", produces = MediaType.APPLICATION_JSON_VALUE)		
 	public @ResponseBody DefaultControllerJsonResultObj<SysExpressionVO> doSave(SysExpressionVO sysExpression) {
 		DefaultControllerJsonResultObj<SysExpressionVO> result = this.getDefaultJsonResult("CORE_PROG003D0002A");
 		if (!this.isAuthorizeAndLoginFromControllerJsonResult(result)) {
@@ -228,7 +229,7 @@ public class SystemExpressionAction extends BaseController {
 	}	
 	
 	@ControllerMethodAuthority(check = true, programId = "CORE_PROG003D0002E")
-	@RequestMapping(value = "/core.sysExpressionUpdateJson.do", produces = "application/json")		
+	@RequestMapping(value = "/core.sysExpressionUpdateJson.do", produces = MediaType.APPLICATION_JSON_VALUE)		
 	public @ResponseBody DefaultControllerJsonResultObj<SysExpressionVO> doUpdate(SysExpressionVO sysExpression) {
 		DefaultControllerJsonResultObj<SysExpressionVO> result = this.getDefaultJsonResult("CORE_PROG003D0002E");
 		if (!this.isAuthorizeAndLoginFromControllerJsonResult(result)) {
@@ -245,7 +246,7 @@ public class SystemExpressionAction extends BaseController {
 	}	
 	
 	@ControllerMethodAuthority(check = true, programId = "CORE_PROG003D0002D")
-	@RequestMapping(value = "/core.sysExpressionDeleteJson.do", produces = "application/json")		
+	@RequestMapping(value = "/core.sysExpressionDeleteJson.do", produces = MediaType.APPLICATION_JSON_VALUE)		
 	public @ResponseBody DefaultControllerJsonResultObj<Boolean> doDelete(SysExpressionVO sysExpression) {
 		DefaultControllerJsonResultObj<Boolean> result = this.getDefaultJsonResult("CORE_PROG003D0002D");
 		if (!this.isAuthorizeAndLoginFromControllerJsonResult(result)) {

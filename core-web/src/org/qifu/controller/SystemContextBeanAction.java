@@ -47,6 +47,7 @@ import org.qifu.vo.SysCtxBeanVO;
 import org.qifu.vo.SysVO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Required;
+import org.springframework.http.MediaType;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -140,7 +141,7 @@ public class SystemContextBeanAction extends BaseController {
 	}	
 	
 	@ControllerMethodAuthority(check = true, programId = "CORE_PROG001D0006Q")
-	@RequestMapping(value = "/core.sysCtxbeanQueryGridJson.do", produces = "application/json")	
+	@RequestMapping(value = "/core.sysCtxbeanQueryGridJson.do", produces = MediaType.APPLICATION_JSON_VALUE)	
 	public @ResponseBody QueryControllerJsonResultObj< List<SysCtxBeanVO> > queryGrid(SearchValue searchValue, PageOf pageOf) {
 		QueryControllerJsonResultObj< List<SysCtxBeanVO> > result = this.getQueryJsonResult("CORE_PROG001D0006Q");
 		if (!this.isAuthorizeAndLoginFromControllerJsonResult(result)) {
@@ -235,7 +236,7 @@ public class SystemContextBeanAction extends BaseController {
 	}
 	
 	@ControllerMethodAuthority(check = true, programId = "CORE_PROG001D0006A")
-	@RequestMapping(value = "/core.sysCtxbeanSaveJson.do", produces = "application/json")		
+	@RequestMapping(value = "/core.sysCtxbeanSaveJson.do", produces = MediaType.APPLICATION_JSON_VALUE)		
 	public @ResponseBody DefaultControllerJsonResultObj<SysCtxBeanVO> doSave(SysCtxBeanVO sysCtxbean, @RequestParam("systemOid") String systemOid) {
 		DefaultControllerJsonResultObj<SysCtxBeanVO> result = this.getDefaultJsonResult("CORE_PROG001D0006A");
 		if (!this.isAuthorizeAndLoginFromControllerJsonResult(result)) {
@@ -252,7 +253,7 @@ public class SystemContextBeanAction extends BaseController {
 	}
 	
 	@ControllerMethodAuthority(check = true, programId = "CORE_PROG001D0006E")
-	@RequestMapping(value = "/core.sysCtxbeanUpdateJson.do", produces = "application/json")		
+	@RequestMapping(value = "/core.sysCtxbeanUpdateJson.do", produces = MediaType.APPLICATION_JSON_VALUE)		
 	public @ResponseBody DefaultControllerJsonResultObj<SysCtxBeanVO> doUpdate(SysCtxBeanVO sysCtxbean, @RequestParam("systemOid") String systemOid) {
 		DefaultControllerJsonResultObj<SysCtxBeanVO> result = this.getDefaultJsonResult("CORE_PROG001D0006E");
 		if (!this.isAuthorizeAndLoginFromControllerJsonResult(result)) {
@@ -269,7 +270,7 @@ public class SystemContextBeanAction extends BaseController {
 	}
 	
 	@ControllerMethodAuthority(check = true, programId = "CORE_PROG001D0006D")
-	@RequestMapping(value = "/core.sysCtxbeanDeleteJson.do", produces = "application/json")		
+	@RequestMapping(value = "/core.sysCtxbeanDeleteJson.do", produces = MediaType.APPLICATION_JSON_VALUE)		
 	public @ResponseBody DefaultControllerJsonResultObj<Boolean> doDelete(SysCtxBeanVO sysCtxbean) {
 		DefaultControllerJsonResultObj<Boolean> result = this.getDefaultJsonResult("CORE_PROG001D0006D");
 		if (!this.isAuthorizeAndLoginFromControllerJsonResult(result)) {

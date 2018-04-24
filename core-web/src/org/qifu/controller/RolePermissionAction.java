@@ -48,6 +48,7 @@ import org.qifu.vo.RolePermissionVO;
 import org.qifu.vo.RoleVO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Required;
+import org.springframework.http.MediaType;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -138,7 +139,7 @@ public class RolePermissionAction extends BaseController {
 	}
 	
 	@ControllerMethodAuthority(check = true, programId = "CORE_PROG002D0001S01Q")
-	@RequestMapping(value = "/core.rolePermissionQueryGridJson.do", produces = "application/json")	
+	@RequestMapping(value = "/core.rolePermissionQueryGridJson.do", produces = MediaType.APPLICATION_JSON_VALUE)	
 	public @ResponseBody QueryControllerJsonResultObj<List<RolePermissionVO>> queryGrid(SearchValue searchValue, PageOf pageOf) {
 		QueryControllerJsonResultObj<List<RolePermissionVO>> result = this.getQueryJsonResult("CORE_PROG002D0001S01Q");
 		if (!this.isAuthorizeAndLoginFromControllerJsonResult(result)) {
@@ -182,7 +183,7 @@ public class RolePermissionAction extends BaseController {
 	}
 	
 	@ControllerMethodAuthority(check = true, programId = "CORE_PROG002D0001S01A")
-	@RequestMapping(value = "/core.rolePermissionSaveJson.do", produces = "application/json")		
+	@RequestMapping(value = "/core.rolePermissionSaveJson.do", produces = MediaType.APPLICATION_JSON_VALUE)		
 	public @ResponseBody DefaultControllerJsonResultObj<RolePermissionVO> doSave(RolePermissionVO rolePermission, @RequestParam(name="roleOid") String roleOid) {
 		DefaultControllerJsonResultObj<RolePermissionVO> result = this.getDefaultJsonResult("CORE_PROG002D0001S01A");
 		if (!this.isAuthorizeAndLoginFromControllerJsonResult(result)) {
@@ -199,7 +200,7 @@ public class RolePermissionAction extends BaseController {
 	}
 	
 	@ControllerMethodAuthority(check = true, programId = "CORE_PROG002D0001S01D")
-	@RequestMapping(value = "/core.rolePermissionDeleteJson.do", produces = "application/json")		
+	@RequestMapping(value = "/core.rolePermissionDeleteJson.do", produces = MediaType.APPLICATION_JSON_VALUE)		
 	public @ResponseBody DefaultControllerJsonResultObj<Boolean> doDelete(RolePermissionVO rolePermission) {
 		DefaultControllerJsonResultObj<Boolean> result = this.getDefaultJsonResult("CORE_PROG002D0001S01D");
 		if (!this.isAuthorizeAndLoginFromControllerJsonResult(result)) {

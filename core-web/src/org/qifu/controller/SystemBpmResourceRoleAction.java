@@ -50,6 +50,7 @@ import org.qifu.vo.SysBpmnResourceRoleVO;
 import org.qifu.vo.SysBpmnResourceVO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Required;
+import org.springframework.http.MediaType;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -127,7 +128,7 @@ public class SystemBpmResourceRoleAction extends BaseController {
 	}	
 	
 	@ControllerMethodAuthority(check = true, programId = "CORE_PROG003D0005Q")
-	@RequestMapping(value = "/core.sysBpmResourceRoleQueryGridJson.do", produces = "application/json")	
+	@RequestMapping(value = "/core.sysBpmResourceRoleQueryGridJson.do", produces = MediaType.APPLICATION_JSON_VALUE)	
 	public @ResponseBody QueryControllerJsonResultObj< List<SysBpmnResourceRoleVO> > queryGrid(SearchValue searchValue, PageOf pageOf) {
 		QueryControllerJsonResultObj< List<SysBpmnResourceRoleVO> > result = this.getQueryJsonResult("CORE_PROG003D0005Q");
 		if (!this.isAuthorizeAndLoginFromControllerJsonResult(result)) {
@@ -201,7 +202,7 @@ public class SystemBpmResourceRoleAction extends BaseController {
 	}
 	
 	@ControllerMethodAuthority(check = true, programId = "CORE_PROG003D0005A")
-	@RequestMapping(value = "/core.sysBpmResourceRoleSaveJson.do", produces = "application/json")		
+	@RequestMapping(value = "/core.sysBpmResourceRoleSaveJson.do", produces = MediaType.APPLICATION_JSON_VALUE)		
 	public @ResponseBody DefaultControllerJsonResultObj<SysBpmnResourceRoleVO> doSave(SysBpmnResourceRoleVO sysBpmnResourceRole, @RequestParam("resourceOid") String resourceOid, @RequestParam("roleOid") String roleOid) {
 		DefaultControllerJsonResultObj<SysBpmnResourceRoleVO> result = this.getDefaultJsonResult("CORE_PROG003D0005A");
 		if (!this.isAuthorizeAndLoginFromControllerJsonResult(result)) {
@@ -218,7 +219,7 @@ public class SystemBpmResourceRoleAction extends BaseController {
 	}
 	
 	@ControllerMethodAuthority(check = true, programId = "CORE_PROG003D0005D")
-	@RequestMapping(value = "/core.sysBpmResourceRoleDeleteJson.do", produces = "application/json")		
+	@RequestMapping(value = "/core.sysBpmResourceRoleDeleteJson.do", produces = MediaType.APPLICATION_JSON_VALUE)		
 	public @ResponseBody DefaultControllerJsonResultObj<Boolean> doDelete(SysBpmnResourceRoleVO sysBpmnResourceRole) {
 		DefaultControllerJsonResultObj<Boolean> result = this.getDefaultJsonResult("CORE_PROG003D0005D");
 		if (!this.isAuthorizeAndLoginFromControllerJsonResult(result)) {

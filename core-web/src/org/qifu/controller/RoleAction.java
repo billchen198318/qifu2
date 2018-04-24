@@ -45,6 +45,7 @@ import org.qifu.util.SimpleUtils;
 import org.qifu.vo.RoleVO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Required;
+import org.springframework.http.MediaType;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -161,7 +162,7 @@ public class RoleAction extends BaseController {
 	}	
 	
 	@ControllerMethodAuthority(check = true, programId = "CORE_PROG002D0001Q")
-	@RequestMapping(value = "/core.roleQueryGridJson.do", produces = "application/json")	
+	@RequestMapping(value = "/core.roleQueryGridJson.do", produces = MediaType.APPLICATION_JSON_VALUE)	
 	public @ResponseBody QueryControllerJsonResultObj<List<RoleVO>> queryGrid(SearchValue searchValue, PageOf pageOf) {
 		QueryControllerJsonResultObj<List<RoleVO>> result = this.getQueryJsonResult("CORE_PROG002D0001Q");
 		if (!this.isAuthorizeAndLoginFromControllerJsonResult(result)) {
@@ -247,7 +248,7 @@ public class RoleAction extends BaseController {
 	}	
 	
 	@ControllerMethodAuthority(check = true, programId = "CORE_PROG002D0001A")
-	@RequestMapping(value = "/core.roleSaveJson.do", produces = "application/json")		
+	@RequestMapping(value = "/core.roleSaveJson.do", produces = MediaType.APPLICATION_JSON_VALUE)		
 	public @ResponseBody DefaultControllerJsonResultObj<RoleVO> doSave(RoleVO role) {
 		DefaultControllerJsonResultObj<RoleVO> result = this.getDefaultJsonResult("CORE_PROG002D0001A");
 		if (!this.isAuthorizeAndLoginFromControllerJsonResult(result)) {
@@ -264,7 +265,7 @@ public class RoleAction extends BaseController {
 	}	
 	
 	@ControllerMethodAuthority(check = true, programId = "CORE_PROG002D0001E")
-	@RequestMapping(value = "/core.roleUpdateJson.do", produces = "application/json")		
+	@RequestMapping(value = "/core.roleUpdateJson.do", produces = MediaType.APPLICATION_JSON_VALUE)		
 	public @ResponseBody DefaultControllerJsonResultObj<RoleVO> doUpdate(RoleVO role) {
 		DefaultControllerJsonResultObj<RoleVO> result = this.getDefaultJsonResult("CORE_PROG002D0001E");
 		if (!this.isAuthorizeAndLoginFromControllerJsonResult(result)) {
@@ -281,7 +282,7 @@ public class RoleAction extends BaseController {
 	}	
 	
 	@ControllerMethodAuthority(check = true, programId = "CORE_PROG002D0001D")
-	@RequestMapping(value = "/core.roleDeleteJson.do", produces = "application/json")		
+	@RequestMapping(value = "/core.roleDeleteJson.do", produces = MediaType.APPLICATION_JSON_VALUE)		
 	public @ResponseBody DefaultControllerJsonResultObj<Boolean> doDelete(RoleVO role) {
 		DefaultControllerJsonResultObj<Boolean> result = this.getDefaultJsonResult("CORE_PROG002D0001D");
 		if (!this.isAuthorizeAndLoginFromControllerJsonResult(result)) {
@@ -298,7 +299,7 @@ public class RoleAction extends BaseController {
 	}
 	
 	@ControllerMethodAuthority(check = true, programId = "CORE_PROG002D0001S02A")
-	@RequestMapping(value = "/core.roleCopySaveJson.do", produces = "application/json")		
+	@RequestMapping(value = "/core.roleCopySaveJson.do", produces = MediaType.APPLICATION_JSON_VALUE)		
 	public @ResponseBody DefaultControllerJsonResultObj<RoleVO> doSaveCopyAsNew(@RequestParam(name="fromRoleOid") String fromRoleOid, RoleVO role) {
 		DefaultControllerJsonResultObj<RoleVO> result = this.getDefaultJsonResult("CORE_PROG002D0001S02A");
 		if (!this.isAuthorizeAndLoginFromControllerJsonResult(result)) {

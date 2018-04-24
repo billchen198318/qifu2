@@ -33,6 +33,7 @@ import org.qifu.base.exception.ServiceException;
 import org.qifu.base.model.ControllerMethodAuthority;
 import org.qifu.base.model.DefaultControllerJsonResultObj;
 import org.qifu.util.SystemSettingConfigureUtils;
+import org.springframework.http.MediaType;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
@@ -84,7 +85,7 @@ public class SystemSettingAction extends BaseController {
 	}
 	
 	@ControllerMethodAuthority(check = true, programId = "CORE_PROG001D0007E")
-	@RequestMapping(value = "/core.sysSettingUpdateJson.do", produces = "application/json")		
+	@RequestMapping(value = "/core.sysSettingUpdateJson.do", produces = MediaType.APPLICATION_JSON_VALUE)		
 	public @ResponseBody DefaultControllerJsonResultObj<Boolean> doUpdate(HttpServletRequest request) {
 		DefaultControllerJsonResultObj<Boolean> result = this.getDefaultJsonResult("CORE_PROG001D0007E");
 		if (!this.isAuthorizeAndLoginFromControllerJsonResult(result)) {

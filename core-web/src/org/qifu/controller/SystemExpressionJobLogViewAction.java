@@ -44,6 +44,7 @@ import org.qifu.service.ISysExprJobLogService;
 import org.qifu.vo.SysExprJobLogVO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Required;
+import org.springframework.http.MediaType;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
@@ -91,7 +92,7 @@ public class SystemExpressionJobLogViewAction extends BaseController {
 	}	
 	
 	@ControllerMethodAuthority(check = true, programId = "CORE_PROG004D0003Q")
-	@RequestMapping(value = "/core.sysExpressionJobLogQueryGridJson.do", produces = "application/json")	
+	@RequestMapping(value = "/core.sysExpressionJobLogQueryGridJson.do", produces = MediaType.APPLICATION_JSON_VALUE)	
 	public @ResponseBody QueryControllerJsonResultObj< List<TbSysExprJobLog> > queryGrid(SearchValue searchValue, PageOf pageOf) {
 		QueryControllerJsonResultObj< List<TbSysExprJobLog> > result = this.getQueryJsonResult("CORE_PROG004D0003Q");
 		if (!this.isAuthorizeAndLoginFromControllerJsonResult(result)) {
@@ -125,7 +126,7 @@ public class SystemExpressionJobLogViewAction extends BaseController {
 	}	
 	
 	@ControllerMethodAuthority(check = true, programId = "CORE_PROG004D0003D")
-	@RequestMapping(value = "/core.sysExpressionJobLogDeleteJson.do", produces = "application/json")		
+	@RequestMapping(value = "/core.sysExpressionJobLogDeleteJson.do", produces = MediaType.APPLICATION_JSON_VALUE)		
 	public @ResponseBody DefaultControllerJsonResultObj<Boolean> doDelete(TbSysExprJobLog sysExprJobLog) {
 		DefaultControllerJsonResultObj<Boolean> result = this.getDefaultJsonResult("CORE_PROG004D0003D");
 		if (!this.isAuthorizeAndLoginFromControllerJsonResult(result)) {
@@ -142,7 +143,7 @@ public class SystemExpressionJobLogViewAction extends BaseController {
 	}	
 	
 	@ControllerMethodAuthority(check = true, programId = "CORE_PROG004D0003D")
-	@RequestMapping(value = "/core.sysExpressionJobLogDeleteAllJson.do", produces = "application/json")		
+	@RequestMapping(value = "/core.sysExpressionJobLogDeleteAllJson.do", produces = MediaType.APPLICATION_JSON_VALUE)		
 	public @ResponseBody DefaultControllerJsonResultObj<Boolean> doDeleteAll() {
 		DefaultControllerJsonResultObj<Boolean> result = this.getDefaultJsonResult("CORE_PROG004D0003D");
 		if (!this.isAuthorizeAndLoginFromControllerJsonResult(result)) {

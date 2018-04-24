@@ -43,6 +43,7 @@ import org.qifu.po.TbSysLoginLog;
 import org.qifu.service.ISysLoginLogService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Required;
+import org.springframework.http.MediaType;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
@@ -90,7 +91,7 @@ public class SystemLoginLogViewAction extends BaseController {
 	}	
 	
 	@ControllerMethodAuthority(check = true, programId = "CORE_PROG004D0002Q")
-	@RequestMapping(value = "/core.sysLoginLogQueryGridJson.do", produces = "application/json")	
+	@RequestMapping(value = "/core.sysLoginLogQueryGridJson.do", produces = MediaType.APPLICATION_JSON_VALUE)	
 	public @ResponseBody QueryControllerJsonResultObj< List<TbSysLoginLog> > queryGrid(SearchValue searchValue, PageOf pageOf) {
 		QueryControllerJsonResultObj< List<TbSysLoginLog> > result = this.getQueryJsonResult("CORE_PROG004D0002Q");
 		if (!this.isAuthorizeAndLoginFromControllerJsonResult(result)) {
@@ -124,7 +125,7 @@ public class SystemLoginLogViewAction extends BaseController {
 	}	
 	
 	@ControllerMethodAuthority(check = true, programId = "CORE_PROG004D0002D")
-	@RequestMapping(value = "/core.sysLoginLogDeleteJson.do", produces = "application/json")		
+	@RequestMapping(value = "/core.sysLoginLogDeleteJson.do", produces = MediaType.APPLICATION_JSON_VALUE)		
 	public @ResponseBody DefaultControllerJsonResultObj<Boolean> doDelete(TbSysLoginLog sysLoginLog) {
 		DefaultControllerJsonResultObj<Boolean> result = this.getDefaultJsonResult("CORE_PROG004D0002D");
 		if (!this.isAuthorizeAndLoginFromControllerJsonResult(result)) {
@@ -141,7 +142,7 @@ public class SystemLoginLogViewAction extends BaseController {
 	}	
 	
 	@ControllerMethodAuthority(check = true, programId = "CORE_PROG004D0002D")
-	@RequestMapping(value = "/core.sysLoginLogDeleteAllJson.do", produces = "application/json")		
+	@RequestMapping(value = "/core.sysLoginLogDeleteAllJson.do", produces = MediaType.APPLICATION_JSON_VALUE)		
 	public @ResponseBody DefaultControllerJsonResultObj<Boolean> doDeleteAll() {
 		DefaultControllerJsonResultObj<Boolean> result = this.getDefaultJsonResult("CORE_PROG004D0002D");
 		if (!this.isAuthorizeAndLoginFromControllerJsonResult(result)) {

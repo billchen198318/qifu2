@@ -43,6 +43,7 @@ import org.qifu.po.TbSysEventLog;
 import org.qifu.service.ISysEventLogService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Required;
+import org.springframework.http.MediaType;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
@@ -90,7 +91,7 @@ public class SystemEventLogViewAction extends BaseController {
 	}	
 	
 	@ControllerMethodAuthority(check = true, programId = "CORE_PROG004D0001Q")
-	@RequestMapping(value = "/core.sysEventLogQueryGridJson.do", produces = "application/json")	
+	@RequestMapping(value = "/core.sysEventLogQueryGridJson.do", produces = MediaType.APPLICATION_JSON_VALUE)	
 	public @ResponseBody QueryControllerJsonResultObj< List<TbSysEventLog> > queryGrid(SearchValue searchValue, PageOf pageOf) {
 		QueryControllerJsonResultObj< List<TbSysEventLog> > result = this.getQueryJsonResult("CORE_PROG004D0001Q");
 		if (!this.isAuthorizeAndLoginFromControllerJsonResult(result)) {
@@ -124,7 +125,7 @@ public class SystemEventLogViewAction extends BaseController {
 	}
 	
 	@ControllerMethodAuthority(check = true, programId = "CORE_PROG004D0001D")
-	@RequestMapping(value = "/core.sysEventLogDeleteJson.do", produces = "application/json")		
+	@RequestMapping(value = "/core.sysEventLogDeleteJson.do", produces = MediaType.APPLICATION_JSON_VALUE)		
 	public @ResponseBody DefaultControllerJsonResultObj<Boolean> doDelete(TbSysEventLog sysEventLog) {
 		DefaultControllerJsonResultObj<Boolean> result = this.getDefaultJsonResult("CORE_PROG004D0001D");
 		if (!this.isAuthorizeAndLoginFromControllerJsonResult(result)) {
@@ -141,7 +142,7 @@ public class SystemEventLogViewAction extends BaseController {
 	}	
 	
 	@ControllerMethodAuthority(check = true, programId = "CORE_PROG004D0001D")
-	@RequestMapping(value = "/core.sysEventLogDeleteAllJson.do", produces = "application/json")		
+	@RequestMapping(value = "/core.sysEventLogDeleteAllJson.do", produces = MediaType.APPLICATION_JSON_VALUE)		
 	public @ResponseBody DefaultControllerJsonResultObj<Boolean> doDeleteAll() {
 		DefaultControllerJsonResultObj<Boolean> result = this.getDefaultJsonResult("CORE_PROG004D0001D");
 		if (!this.isAuthorizeAndLoginFromControllerJsonResult(result)) {

@@ -50,6 +50,7 @@ import org.qifu.vo.SysVO;
 import org.qifu.vo.SysWsConfigVO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Required;
+import org.springframework.http.MediaType;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -141,7 +142,7 @@ public class SystemWebServiceAction extends BaseController {
 	}		
 	
 	@ControllerMethodAuthority(check = true, programId = "CORE_PROG003D0001Q")
-	@RequestMapping(value = "/core.sysWebServiceQueryGridJson.do", produces = "application/json")	
+	@RequestMapping(value = "/core.sysWebServiceQueryGridJson.do", produces = MediaType.APPLICATION_JSON_VALUE)	
 	public @ResponseBody QueryControllerJsonResultObj< List<SysWsConfigVO> > queryGrid(SearchValue searchValue, PageOf pageOf) {
 		QueryControllerJsonResultObj< List<SysWsConfigVO> > result = this.getQueryJsonResult("CORE_PROG003D0001Q");
 		if (!this.isAuthorizeAndLoginFromControllerJsonResult(result)) {
@@ -239,7 +240,7 @@ public class SystemWebServiceAction extends BaseController {
 	}
 	
 	@ControllerMethodAuthority(check = true, programId = "CORE_PROG003D0001A")
-	@RequestMapping(value = "/core.sysWebServiceSaveJson.do", produces = "application/json")		
+	@RequestMapping(value = "/core.sysWebServiceSaveJson.do", produces = MediaType.APPLICATION_JSON_VALUE)		
 	public @ResponseBody DefaultControllerJsonResultObj<SysWsConfigVO> doSave(SysWsConfigVO sysWsConfig, @RequestParam("systemOid") String systemOid) {
 		DefaultControllerJsonResultObj<SysWsConfigVO> result = this.getDefaultJsonResult("CORE_PROG003D0001A");
 		if (!this.isAuthorizeAndLoginFromControllerJsonResult(result)) {
@@ -256,7 +257,7 @@ public class SystemWebServiceAction extends BaseController {
 	}
 	
 	@ControllerMethodAuthority(check = true, programId = "CORE_PROG003D0001E")
-	@RequestMapping(value = "/core.sysWebServiceUpdateJson.do", produces = "application/json")		
+	@RequestMapping(value = "/core.sysWebServiceUpdateJson.do", produces = MediaType.APPLICATION_JSON_VALUE)		
 	public @ResponseBody DefaultControllerJsonResultObj<SysWsConfigVO> doUpdate(SysWsConfigVO sysWsConfig, @RequestParam("systemOid") String systemOid) {
 		DefaultControllerJsonResultObj<SysWsConfigVO> result = this.getDefaultJsonResult("CORE_PROG003D0001E");
 		if (!this.isAuthorizeAndLoginFromControllerJsonResult(result)) {
@@ -273,7 +274,7 @@ public class SystemWebServiceAction extends BaseController {
 	}
 	
 	@ControllerMethodAuthority(check = true, programId = "CORE_PROG003D0001D")
-	@RequestMapping(value = "/core.sysWebServiceDeleteJson.do", produces = "application/json")		
+	@RequestMapping(value = "/core.sysWebServiceDeleteJson.do", produces = MediaType.APPLICATION_JSON_VALUE)		
 	public @ResponseBody DefaultControllerJsonResultObj<Boolean> doDelete(SysWsConfigVO sysWsConfig) {
 		DefaultControllerJsonResultObj<Boolean> result = this.getDefaultJsonResult("CORE_PROG003D0001D");
 		if (!this.isAuthorizeAndLoginFromControllerJsonResult(result)) {
@@ -290,7 +291,7 @@ public class SystemWebServiceAction extends BaseController {
 	}		
 	
 	@ControllerMethodAuthority(check = true, programId = "CORE_PROG003D0001D")
-	@RequestMapping(value = "/core.sysWebServiceStopOrReloadJson.do", produces = "application/json")		
+	@RequestMapping(value = "/core.sysWebServiceStopOrReloadJson.do", produces = MediaType.APPLICATION_JSON_VALUE)		
 	public @ResponseBody DefaultControllerJsonResultObj<String> doStopOrReload(HttpServletRequest request, @RequestParam("type") String type) {
 		DefaultControllerJsonResultObj<String> result = this.getDefaultJsonResult("CORE_PROG003D0001D");
 		if (!this.isAuthorizeAndLoginFromControllerJsonResult(result)) {

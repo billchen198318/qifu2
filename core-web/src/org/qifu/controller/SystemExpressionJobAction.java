@@ -59,6 +59,7 @@ import org.qifu.vo.SysExpressionVO;
 import org.qifu.vo.SysVO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Required;
+import org.springframework.http.MediaType;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -196,7 +197,7 @@ public class SystemExpressionJobAction extends BaseController {
 	}	
 	
 	@ControllerMethodAuthority(check = true, programId = "CORE_PROG003D0006Q")
-	@RequestMapping(value = "/core.sysExpressionJobQueryGridJson.do", produces = "application/json")	
+	@RequestMapping(value = "/core.sysExpressionJobQueryGridJson.do", produces = MediaType.APPLICATION_JSON_VALUE)	
 	public @ResponseBody QueryControllerJsonResultObj< List<SysExprJobVO> > queryGrid(SearchValue searchValue, PageOf pageOf) {
 		QueryControllerJsonResultObj< List<SysExprJobVO> > result = this.getQueryJsonResult("CORE_PROG003D0006Q");
 		if (!this.isAuthorizeAndLoginFromControllerJsonResult(result)) {
@@ -319,7 +320,7 @@ public class SystemExpressionJobAction extends BaseController {
 	}
 	
 	@ControllerMethodAuthority(check = true, programId = "CORE_PROG003D0006A")
-	@RequestMapping(value = "/core.sysExpressionJobSaveJson.do", produces = "application/json")		
+	@RequestMapping(value = "/core.sysExpressionJobSaveJson.do", produces = MediaType.APPLICATION_JSON_VALUE)		
 	public @ResponseBody DefaultControllerJsonResultObj<SysExprJobVO> doSave(SysExprJobVO sysExprJob, @RequestParam("systemOid") String systemOid, @RequestParam("expressionOid") String expressionOid) {
 		DefaultControllerJsonResultObj<SysExprJobVO> result = this.getDefaultJsonResult("CORE_PROG003D0006A");
 		if (!this.isAuthorizeAndLoginFromControllerJsonResult(result)) {
@@ -336,7 +337,7 @@ public class SystemExpressionJobAction extends BaseController {
 	}	
 	
 	@ControllerMethodAuthority(check = true, programId = "CORE_PROG003D0006E")
-	@RequestMapping(value = "/core.sysExpressionJobUpdateJson.do", produces = "application/json")		
+	@RequestMapping(value = "/core.sysExpressionJobUpdateJson.do", produces = MediaType.APPLICATION_JSON_VALUE)		
 	public @ResponseBody DefaultControllerJsonResultObj<SysExprJobVO> doUpdate(SysExprJobVO sysExprJob, @RequestParam("systemOid") String systemOid, @RequestParam("expressionOid") String expressionOid) {
 		DefaultControllerJsonResultObj<SysExprJobVO> result = this.getDefaultJsonResult("CORE_PROG003D0006E");
 		if (!this.isAuthorizeAndLoginFromControllerJsonResult(result)) {
@@ -353,7 +354,7 @@ public class SystemExpressionJobAction extends BaseController {
 	}	
 	
 	@ControllerMethodAuthority(check = true, programId = "CORE_PROG003D0006D")
-	@RequestMapping(value = "/core.sysExpressionJobDeleteJson.do", produces = "application/json")		
+	@RequestMapping(value = "/core.sysExpressionJobDeleteJson.do", produces = MediaType.APPLICATION_JSON_VALUE)		
 	public @ResponseBody DefaultControllerJsonResultObj<Boolean> doDelete(SysExprJobVO sysExprJob) {
 		DefaultControllerJsonResultObj<Boolean> result = this.getDefaultJsonResult("CORE_PROG003D0006D");
 		if (!this.isAuthorizeAndLoginFromControllerJsonResult(result)) {
@@ -370,7 +371,7 @@ public class SystemExpressionJobAction extends BaseController {
 	}	
 	
 	@ControllerMethodAuthority(check = true, programId = "CORE_PROG003D0006D")
-	@RequestMapping(value = "/core.sysExpressionJobManualExecuteJson.do", produces = "application/json")		
+	@RequestMapping(value = "/core.sysExpressionJobManualExecuteJson.do", produces = MediaType.APPLICATION_JSON_VALUE)		
 	public @ResponseBody DefaultControllerJsonResultObj<SysExprJobVO> doManualExecute(HttpServletRequest request, SysExprJobVO sysExprJob) {
 		DefaultControllerJsonResultObj<SysExprJobVO> result = this.getDefaultJsonResult("CORE_PROG003D0006D");
 		if (!this.isAuthorizeAndLoginFromControllerJsonResult(result)) {

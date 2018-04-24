@@ -41,6 +41,7 @@ import org.qifu.vo.AccountVO;
 import org.qifu.vo.RoleVO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Required;
+import org.springframework.http.MediaType;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -101,7 +102,7 @@ public class UserRoleAction extends BaseController {
 	}	
 	
 	@ControllerMethodAuthority(check = true, programId = "CORE_PROG002D0002Q")
-	@RequestMapping(value = "/core.userRoleListByAccountOidJson.do", produces = "application/json")		
+	@RequestMapping(value = "/core.userRoleListByAccountOidJson.do", produces = MediaType.APPLICATION_JSON_VALUE)		
 	public @ResponseBody DefaultControllerJsonResultObj< Map<String, List<RoleVO>> > queryRoleListByAccountOid(HttpServletRequest request, @RequestParam(name="accountOid") String accountOid) {
 		DefaultControllerJsonResultObj< Map<String, List<RoleVO>> > result = this.getDefaultJsonResult("CORE_PROG002D0002Q");
 		if (!this.isAuthorizeAndLoginFromControllerJsonResult(result)) {
@@ -120,7 +121,7 @@ public class UserRoleAction extends BaseController {
 	}	
 	
 	@ControllerMethodAuthority(check = true, programId = "CORE_PROG002D0002Q")
-	@RequestMapping(value = "/core.userRoleUpdateJson.do", produces = "application/json")		
+	@RequestMapping(value = "/core.userRoleUpdateJson.do", produces = MediaType.APPLICATION_JSON_VALUE)		
 	public @ResponseBody DefaultControllerJsonResultObj<Boolean> updateMenu(HttpServletRequest request, @RequestParam(name="accountOid") String accountOid, @RequestParam(name="appendOid") String appendOid) {
 		DefaultControllerJsonResultObj<Boolean> result = this.getDefaultJsonResult("CORE_PROG002D0002Q");
 		if (!this.isAuthorizeAndLoginFromControllerJsonResult(result)) {

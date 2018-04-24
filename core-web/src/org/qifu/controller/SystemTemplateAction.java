@@ -47,6 +47,7 @@ import org.qifu.vo.SysTemplateParamVO;
 import org.qifu.vo.SysTemplateVO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Required;
+import org.springframework.http.MediaType;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -129,7 +130,7 @@ public class SystemTemplateAction extends BaseController {
 	}
 	
 	@ControllerMethodAuthority(check = true, programId = "CORE_PROG001D0004Q")
-	@RequestMapping(value = "/core.templateQueryGridJson.do", produces = "application/json")	
+	@RequestMapping(value = "/core.templateQueryGridJson.do", produces = MediaType.APPLICATION_JSON_VALUE)	
 	public @ResponseBody QueryControllerJsonResultObj< List<SysTemplateVO>>  queryGrid(SearchValue searchValue, PageOf pageOf) {
 		QueryControllerJsonResultObj< List<SysTemplateVO> > result = this.getQueryJsonResult("CORE_PROG001D0004Q");
 		if (!this.isAuthorizeAndLoginFromControllerJsonResult(result)) {
@@ -210,7 +211,7 @@ public class SystemTemplateAction extends BaseController {
 	}			
 	
 	@ControllerMethodAuthority(check = true, programId = "CORE_PROG001D0004S01Q")
-	@RequestMapping(value = "/core.templateParamQueryGridJson.do", produces = "application/json")	
+	@RequestMapping(value = "/core.templateParamQueryGridJson.do", produces = MediaType.APPLICATION_JSON_VALUE)	
 	public @ResponseBody QueryControllerJsonResultObj< List<SysTemplateParamVO>>  paramQueryGrid(SearchValue searchValue, PageOf pageOf) {
 		QueryControllerJsonResultObj< List<SysTemplateParamVO> > result = this.getQueryJsonResult("CORE_PROG001D0004S01Q");
 		if (!this.isAuthorizeAndLoginFromControllerJsonResult(result)) {
@@ -295,7 +296,7 @@ public class SystemTemplateAction extends BaseController {
 	}	
 	
 	@ControllerMethodAuthority(check = true, programId = "CORE_PROG001D0004A")
-	@RequestMapping(value = "/core.templateSaveJson.do", produces = "application/json")		
+	@RequestMapping(value = "/core.templateSaveJson.do", produces = MediaType.APPLICATION_JSON_VALUE)		
 	public @ResponseBody DefaultControllerJsonResultObj<SysTemplateVO> doSave(SysTemplateVO template) {
 		DefaultControllerJsonResultObj<SysTemplateVO> result = this.getDefaultJsonResult("CORE_PROG001D0004A");
 		if (!this.isAuthorizeAndLoginFromControllerJsonResult(result)) {
@@ -312,7 +313,7 @@ public class SystemTemplateAction extends BaseController {
 	}	
 	
 	@ControllerMethodAuthority(check = true, programId = "CORE_PROG001D0004E")
-	@RequestMapping(value = "/core.templateUpdateJson.do", produces = "application/json")		
+	@RequestMapping(value = "/core.templateUpdateJson.do", produces = MediaType.APPLICATION_JSON_VALUE)		
 	public @ResponseBody DefaultControllerJsonResultObj<SysTemplateVO> doUpdate(SysTemplateVO template) {
 		DefaultControllerJsonResultObj<SysTemplateVO> result = this.getDefaultJsonResult("CORE_PROG001D0004E");
 		if (!this.isAuthorizeAndLoginFromControllerJsonResult(result)) {
@@ -329,7 +330,7 @@ public class SystemTemplateAction extends BaseController {
 	}	
 	
 	@ControllerMethodAuthority(check = true, programId = "CORE_PROG001D0004D")
-	@RequestMapping(value = "/core.templateDeleteJson.do", produces = "application/json")		
+	@RequestMapping(value = "/core.templateDeleteJson.do", produces = MediaType.APPLICATION_JSON_VALUE)		
 	public @ResponseBody DefaultControllerJsonResultObj<Boolean> doDelete(SysTemplateVO template) {
 		DefaultControllerJsonResultObj<Boolean> result = this.getDefaultJsonResult("CORE_PROG001D0004D");
 		if (!this.isAuthorizeAndLoginFromControllerJsonResult(result)) {
@@ -346,7 +347,7 @@ public class SystemTemplateAction extends BaseController {
 	}
 	
 	@ControllerMethodAuthority(check = true, programId = "CORE_PROG001D0004S01A")
-	@RequestMapping(value = "/core.templateParamSaveJson.do", produces = "application/json")		
+	@RequestMapping(value = "/core.templateParamSaveJson.do", produces = MediaType.APPLICATION_JSON_VALUE)		
 	public @ResponseBody DefaultControllerJsonResultObj<SysTemplateParamVO> doParamSave(@RequestParam("templateOid") String templateOid, SysTemplateParamVO templateParam) {
 		DefaultControllerJsonResultObj<SysTemplateParamVO> result = this.getDefaultJsonResult("CORE_PROG001D0004S01A");
 		if (!this.isAuthorizeAndLoginFromControllerJsonResult(result)) {
@@ -363,7 +364,7 @@ public class SystemTemplateAction extends BaseController {
 	}	
 	
 	@ControllerMethodAuthority(check = true, programId = "CORE_PROG001D0004S01D")
-	@RequestMapping(value = "/core.templateParamDeleteJson.do", produces = "application/json")		
+	@RequestMapping(value = "/core.templateParamDeleteJson.do", produces = MediaType.APPLICATION_JSON_VALUE)		
 	public @ResponseBody DefaultControllerJsonResultObj<Boolean> doDeleteParam(SysTemplateParamVO templateParam) {
 		DefaultControllerJsonResultObj<Boolean> result = this.getDefaultJsonResult("CORE_PROG001D0004S01D");
 		if (!this.isAuthorizeAndLoginFromControllerJsonResult(result)) {

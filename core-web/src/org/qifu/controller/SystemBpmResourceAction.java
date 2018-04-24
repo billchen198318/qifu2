@@ -52,6 +52,7 @@ import org.qifu.util.UploadSupportUtils;
 import org.qifu.vo.SysBpmnResourceVO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Required;
+import org.springframework.http.MediaType;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -120,7 +121,7 @@ public class SystemBpmResourceAction extends BaseController {
 	}		
 	
 	@ControllerMethodAuthority(check = true, programId = "CORE_PROG003D0004Q")
-	@RequestMapping(value = "/core.sysBpmResourceQueryGridJson.do", produces = "application/json")	
+	@RequestMapping(value = "/core.sysBpmResourceQueryGridJson.do", produces = MediaType.APPLICATION_JSON_VALUE)	
 	public @ResponseBody QueryControllerJsonResultObj< List<SysBpmnResourceVO> > queryGrid(SearchValue searchValue, PageOf pageOf) {
 		QueryControllerJsonResultObj< List<SysBpmnResourceVO> > result = this.getQueryJsonResult("CORE_PROG003D0004Q");
 		if (!this.isAuthorizeAndLoginFromControllerJsonResult(result)) {
@@ -359,7 +360,7 @@ public class SystemBpmResourceAction extends BaseController {
 	}
 	
 	@ControllerMethodAuthority(check = true, programId = "CORE_PROG003D0004A")
-	@RequestMapping(value = "/core.sysBpmResourceSaveJson.do", produces = "application/json")		
+	@RequestMapping(value = "/core.sysBpmResourceSaveJson.do", produces = MediaType.APPLICATION_JSON_VALUE)		
 	public @ResponseBody DefaultControllerJsonResultObj<SysBpmnResourceVO> doSave(SysBpmnResourceVO sysBpmnResource, @RequestParam("uploadOid") String uploadOid) {
 		DefaultControllerJsonResultObj<SysBpmnResourceVO> result = this.getDefaultJsonResult("CORE_PROG003D0004A");
 		if (!this.isAuthorizeAndLoginFromControllerJsonResult(result)) {
@@ -376,7 +377,7 @@ public class SystemBpmResourceAction extends BaseController {
 	}		
 	
 	@ControllerMethodAuthority(check = true, programId = "CORE_PROG003D0004E")
-	@RequestMapping(value = "/core.sysBpmResourceUpdateJson.do", produces = "application/json")		
+	@RequestMapping(value = "/core.sysBpmResourceUpdateJson.do", produces = MediaType.APPLICATION_JSON_VALUE)		
 	public @ResponseBody DefaultControllerJsonResultObj<SysBpmnResourceVO> doUpdate(SysBpmnResourceVO sysBpmnResource, @RequestParam("uploadOid") String uploadOid) {
 		DefaultControllerJsonResultObj<SysBpmnResourceVO> result = this.getDefaultJsonResult("CORE_PROG003D0004E");
 		if (!this.isAuthorizeAndLoginFromControllerJsonResult(result)) {
@@ -393,7 +394,7 @@ public class SystemBpmResourceAction extends BaseController {
 	}		
 	
 	@ControllerMethodAuthority(check = true, programId = "CORE_PROG003D0004D")
-	@RequestMapping(value = "/core.sysBpmResourceDeleteJson.do", produces = "application/json")		
+	@RequestMapping(value = "/core.sysBpmResourceDeleteJson.do", produces = MediaType.APPLICATION_JSON_VALUE)		
 	public @ResponseBody DefaultControllerJsonResultObj<Boolean> doDelete(SysBpmnResourceVO sysBpmnResource) {
 		DefaultControllerJsonResultObj<Boolean> result = this.getDefaultJsonResult("CORE_PROG003D0004D");
 		if (!this.isAuthorizeAndLoginFromControllerJsonResult(result)) {
@@ -410,7 +411,7 @@ public class SystemBpmResourceAction extends BaseController {
 	}	
 	
 	@ControllerMethodAuthority(check = true, programId = "CORE_PROG003D0004E")
-	@RequestMapping(value = "/core.sysBpmResourceDeploymentJson.do", produces = "application/json")		
+	@RequestMapping(value = "/core.sysBpmResourceDeploymentJson.do", produces = MediaType.APPLICATION_JSON_VALUE)		
 	public @ResponseBody DefaultControllerJsonResultObj<SysBpmnResourceVO> doDeployment(SysBpmnResourceVO sysBpmnResource) {
 		DefaultControllerJsonResultObj<SysBpmnResourceVO> result = this.getDefaultJsonResult("CORE_PROG003D0004E");
 		if (!this.isAuthorizeAndLoginFromControllerJsonResult(result)) {
@@ -430,7 +431,7 @@ public class SystemBpmResourceAction extends BaseController {
 	}	
 	
 	@ControllerMethodAuthority(check = true, programId = "CORE_PROG003D0004S01Q")
-	@RequestMapping(value = "/core.sysBpmResourceExportDiagramJson.do", produces = "application/json")		
+	@RequestMapping(value = "/core.sysBpmResourceExportDiagramJson.do", produces = MediaType.APPLICATION_JSON_VALUE)		
 	public @ResponseBody DefaultControllerJsonResultObj<String> doExportDiagram(@RequestParam("type") String type, @RequestParam("objectId") String objectId, @RequestParam("resourceId") String resourceId) {
 		DefaultControllerJsonResultObj<String> result = this.getDefaultJsonResult("CORE_PROG003D0004E");
 		if (!this.isAuthorizeAndLoginFromControllerJsonResult(result)) {
@@ -447,7 +448,7 @@ public class SystemBpmResourceAction extends BaseController {
 	}	
 	
 	@ControllerMethodAuthority(check = true, programId = "CORE_PROG003D0004Q")
-	@RequestMapping(value = "/core.sysBpmResourceDownloadJson.do", produces = "application/json")		
+	@RequestMapping(value = "/core.sysBpmResourceDownloadJson.do", produces = MediaType.APPLICATION_JSON_VALUE)		
 	public @ResponseBody DefaultControllerJsonResultObj<String> doDownload(SysBpmnResourceVO sysBpmnResource) {
 		DefaultControllerJsonResultObj<String> result = this.getDefaultJsonResult("CORE_PROG003D0004E");
 		if (!this.isAuthorizeAndLoginFromControllerJsonResult(result)) {

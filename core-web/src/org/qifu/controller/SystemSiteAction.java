@@ -48,6 +48,7 @@ import org.qifu.vo.SysIconVO;
 import org.qifu.vo.SysVO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Required;
+import org.springframework.http.MediaType;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -116,7 +117,7 @@ public class SystemSiteAction extends BaseController {
 	}
 	
 	@ControllerMethodAuthority(check = true, programId = "CORE_PROG001D0001Q")
-	@RequestMapping(value = "/core.sysSiteQueryGridJson.do", produces = "application/json")	
+	@RequestMapping(value = "/core.sysSiteQueryGridJson.do", produces = MediaType.APPLICATION_JSON_VALUE)	
 	public @ResponseBody QueryControllerJsonResultObj<List<SysVO>> queryGrid(SearchValue searchValue, PageOf pageOf) {
 		QueryControllerJsonResultObj<List<SysVO>> result = this.getQueryJsonResult("CORE_PROG001D0001Q");
 		if (!this.isAuthorizeAndLoginFromControllerJsonResult(result)) {
@@ -236,7 +237,7 @@ public class SystemSiteAction extends BaseController {
 	}
 	
 	@ControllerMethodAuthority(check = true, programId = "CORE_PROG001D0001A")
-	@RequestMapping(value = "/core.sysSiteSaveJson.do", produces = "application/json")		
+	@RequestMapping(value = "/core.sysSiteSaveJson.do", produces = MediaType.APPLICATION_JSON_VALUE)		
 	public @ResponseBody DefaultControllerJsonResultObj<SysVO> doSave(SysVO sys) {
 		DefaultControllerJsonResultObj<SysVO> result = this.getDefaultJsonResult("CORE_PROG001D0001A");
 		if (!this.isAuthorizeAndLoginFromControllerJsonResult(result)) {
@@ -253,7 +254,7 @@ public class SystemSiteAction extends BaseController {
 	}
 	
 	@ControllerMethodAuthority(check = true, programId = "CORE_PROG001D0001E")
-	@RequestMapping(value = "/core.sysSiteUpdateJson.do", produces = "application/json")		
+	@RequestMapping(value = "/core.sysSiteUpdateJson.do", produces = MediaType.APPLICATION_JSON_VALUE)		
 	public @ResponseBody DefaultControllerJsonResultObj<SysVO> doUpdate(SysVO sys) {
 		DefaultControllerJsonResultObj<SysVO> result = this.getDefaultJsonResult("CORE_PROG001D0001E");
 		if (!this.isAuthorizeAndLoginFromControllerJsonResult(result)) {
@@ -270,7 +271,7 @@ public class SystemSiteAction extends BaseController {
 	}	
 	
 	@ControllerMethodAuthority(check = true, programId = "CORE_PROG001D0001D")
-	@RequestMapping(value = "/core.sysSiteDeleteJson.do", produces = "application/json")			
+	@RequestMapping(value = "/core.sysSiteDeleteJson.do", produces = MediaType.APPLICATION_JSON_VALUE)			
 	public @ResponseBody DefaultControllerJsonResultObj<Boolean> doDelete(SysVO sys) {
 		DefaultControllerJsonResultObj<Boolean> result = this.getDefaultJsonResult("CORE_PROG001D0001D");
 		if (!this.isAuthorizeAndLoginFromControllerJsonResult(result)) {

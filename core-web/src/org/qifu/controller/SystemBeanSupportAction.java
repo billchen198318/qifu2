@@ -57,6 +57,7 @@ import org.qifu.vo.SysExpressionVO;
 import org.qifu.vo.SysVO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Required;
+import org.springframework.http.MediaType;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -198,7 +199,7 @@ public class SystemBeanSupportAction extends BaseController {
 	}	
 	
 	@ControllerMethodAuthority(check = true, programId = "CORE_PROG003D0003Q")
-	@RequestMapping(value = "/core.sysBeanSupportQueryGridJson.do", produces = "application/json")	
+	@RequestMapping(value = "/core.sysBeanSupportQueryGridJson.do", produces = MediaType.APPLICATION_JSON_VALUE)	
 	public @ResponseBody QueryControllerJsonResultObj< List<SysBeanHelpVO> > queryGrid(SearchValue searchValue, PageOf pageOf) {
 		QueryControllerJsonResultObj< List<SysBeanHelpVO> > result = this.getQueryJsonResult("CORE_PROG003D0003Q");
 		if (!this.isAuthorizeAndLoginFromControllerJsonResult(result)) {
@@ -275,7 +276,7 @@ public class SystemBeanSupportAction extends BaseController {
 	}	
 	
 	@ControllerMethodAuthority(check = true, programId = "CORE_PROG003D0003S01Q")
-	@RequestMapping(value = "/core.sysBeanSupportExpressionQueryGridJson.do", produces = "application/json")	
+	@RequestMapping(value = "/core.sysBeanSupportExpressionQueryGridJson.do", produces = MediaType.APPLICATION_JSON_VALUE)	
 	public @ResponseBody QueryControllerJsonResultObj< List<SysBeanHelpExprVO> > queryExpressionGrid(SearchValue searchValue, PageOf pageOf) {
 		QueryControllerJsonResultObj< List<SysBeanHelpExprVO> > result = this.getQueryJsonResult("CORE_PROG003D0003S01Q");
 		if (!this.isAuthorizeAndLoginFromControllerJsonResult(result)) {
@@ -313,7 +314,7 @@ public class SystemBeanSupportAction extends BaseController {
 	}	
 	
 	@ControllerMethodAuthority(check = true, programId = "CORE_PROG003D0003S02Q")
-	@RequestMapping(value = "/core.sysBeanSupportExpressionParamQueryGridJson.do", produces = "application/json")	
+	@RequestMapping(value = "/core.sysBeanSupportExpressionParamQueryGridJson.do", produces = MediaType.APPLICATION_JSON_VALUE)	
 	public @ResponseBody QueryControllerJsonResultObj< List<SysBeanHelpExprMapVO> > queryExpressionParamGrid(SearchValue searchValue, PageOf pageOf) {
 		QueryControllerJsonResultObj< List<SysBeanHelpExprMapVO> > result = this.getQueryJsonResult("CORE_PROG003D0003S01Q");
 		if (!this.isAuthorizeAndLoginFromControllerJsonResult(result)) {
@@ -430,7 +431,7 @@ public class SystemBeanSupportAction extends BaseController {
 	}	
 	
 	@ControllerMethodAuthority(check = true, programId = "CORE_PROG003D0003A")
-	@RequestMapping(value = "/core.sysBeanSupportSaveJson.do", produces = "application/json")		
+	@RequestMapping(value = "/core.sysBeanSupportSaveJson.do", produces = MediaType.APPLICATION_JSON_VALUE)		
 	public @ResponseBody DefaultControllerJsonResultObj<SysBeanHelpVO> doSave(SysBeanHelpVO sysBeanHelp, @RequestParam("systemOid") String systemOid) {
 		DefaultControllerJsonResultObj<SysBeanHelpVO> result = this.getDefaultJsonResult("CORE_PROG003D0003A");
 		if (!this.isAuthorizeAndLoginFromControllerJsonResult(result)) {
@@ -447,7 +448,7 @@ public class SystemBeanSupportAction extends BaseController {
 	}	
 	
 	@ControllerMethodAuthority(check = true, programId = "CORE_PROG003D0003E")
-	@RequestMapping(value = "/core.sysBeanSupportUpdateJson.do", produces = "application/json")		
+	@RequestMapping(value = "/core.sysBeanSupportUpdateJson.do", produces = MediaType.APPLICATION_JSON_VALUE)		
 	public @ResponseBody DefaultControllerJsonResultObj<SysBeanHelpVO> doUpdate(SysBeanHelpVO sysBeanHelp, @RequestParam("systemOid") String systemOid) {
 		DefaultControllerJsonResultObj<SysBeanHelpVO> result = this.getDefaultJsonResult("CORE_PROG003D0003E");
 		if (!this.isAuthorizeAndLoginFromControllerJsonResult(result)) {
@@ -464,7 +465,7 @@ public class SystemBeanSupportAction extends BaseController {
 	}
 	
 	@ControllerMethodAuthority(check = true, programId = "CORE_PROG003D0003D")
-	@RequestMapping(value = "/core.sysBeanSupportDeleteJson.do", produces = "application/json")		
+	@RequestMapping(value = "/core.sysBeanSupportDeleteJson.do", produces = MediaType.APPLICATION_JSON_VALUE)		
 	public @ResponseBody DefaultControllerJsonResultObj<Boolean> doDelete(SysBeanHelpVO sysBeanHelp) {
 		DefaultControllerJsonResultObj<Boolean> result = this.getDefaultJsonResult("CORE_PROG003D0003D");
 		if (!this.isAuthorizeAndLoginFromControllerJsonResult(result)) {
@@ -481,7 +482,7 @@ public class SystemBeanSupportAction extends BaseController {
 	}	
 	
 	@ControllerMethodAuthority(check = true, programId = "CORE_PROG003D0003S01A")
-	@RequestMapping(value = "/core.sysBeanSupportExpressionSaveJson.do", produces = "application/json")		
+	@RequestMapping(value = "/core.sysBeanSupportExpressionSaveJson.do", produces = MediaType.APPLICATION_JSON_VALUE)		
 	public @ResponseBody DefaultControllerJsonResultObj<SysBeanHelpExprVO> doSaveExpression(SysBeanHelpExprVO sysBeanHelpExpr, @RequestParam("sysBeanHelpOid") String sysBeanHelpOid, @RequestParam("expressionOid") String expressionOid) {
 		DefaultControllerJsonResultObj<SysBeanHelpExprVO> result = this.getDefaultJsonResult("CORE_PROG003D0003S01A");
 		if (!this.isAuthorizeAndLoginFromControllerJsonResult(result)) {
@@ -498,7 +499,7 @@ public class SystemBeanSupportAction extends BaseController {
 	}
 	
 	@ControllerMethodAuthority(check = true, programId = "CORE_PROG003D0003S01D")
-	@RequestMapping(value = "/core.sysBeanSupportExpressionDeleteJson.do", produces = "application/json")		
+	@RequestMapping(value = "/core.sysBeanSupportExpressionDeleteJson.do", produces = MediaType.APPLICATION_JSON_VALUE)		
 	public @ResponseBody DefaultControllerJsonResultObj<Boolean> doDeleteExpression(SysBeanHelpExprVO sysBeanHelpExpr) {
 		DefaultControllerJsonResultObj<Boolean> result = this.getDefaultJsonResult("CORE_PROG003D0003S01D");
 		if (!this.isAuthorizeAndLoginFromControllerJsonResult(result)) {
@@ -515,7 +516,7 @@ public class SystemBeanSupportAction extends BaseController {
 	}		
 	
 	@ControllerMethodAuthority(check = true, programId = "CORE_PROG003D0003S02A")
-	@RequestMapping(value = "/core.sysBeanSupportExpressionParamSaveJson.do", produces = "application/json")		
+	@RequestMapping(value = "/core.sysBeanSupportExpressionParamSaveJson.do", produces = MediaType.APPLICATION_JSON_VALUE)		
 	public @ResponseBody DefaultControllerJsonResultObj<SysBeanHelpExprMapVO> doSaveExpressionMap(SysBeanHelpExprMapVO sysBeanHelpExprMap, @RequestParam("sysBeanHelpExprOid") String sysBeanHelpExprOid) {
 		DefaultControllerJsonResultObj<SysBeanHelpExprMapVO> result = this.getDefaultJsonResult("CORE_PROG003D0003S02A");
 		if (!this.isAuthorizeAndLoginFromControllerJsonResult(result)) {
@@ -532,7 +533,7 @@ public class SystemBeanSupportAction extends BaseController {
 	}
 	
 	@ControllerMethodAuthority(check = true, programId = "CORE_PROG003D0003S02D")
-	@RequestMapping(value = "/core.sysBeanSupportExpressionParamDeleteJson.do", produces = "application/json")		
+	@RequestMapping(value = "/core.sysBeanSupportExpressionParamDeleteJson.do", produces = MediaType.APPLICATION_JSON_VALUE)		
 	public @ResponseBody DefaultControllerJsonResultObj<Boolean> doDeleteExpressionMap(SysBeanHelpExprMapVO sysBeanHelpExprMap) {
 		DefaultControllerJsonResultObj<Boolean> result = this.getDefaultJsonResult("CORE_PROG003D0003S02D");
 		if (!this.isAuthorizeAndLoginFromControllerJsonResult(result)) {

@@ -47,6 +47,7 @@ import org.qifu.util.UploadSupportUtils;
 import org.qifu.vo.SysUploadVO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Required;
+import org.springframework.http.MediaType;
 import org.springframework.stereotype.Controller;
 import org.springframework.util.FileCopyUtils;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -128,7 +129,7 @@ public class CommonUploadDownloadAction extends BaseController {
             outputStream.close();
             return;				
 		}
-		response.setContentType( "application/octet-stream" );
+		response.setContentType( MediaType.APPLICATION_OCTET_STREAM_VALUE );
 		response.setHeader("Content-Disposition", String.format("inline; filename=\"" + fileName + "\""));
 		response.setContentLength( content.length );
 		FileCopyUtils.copy(content, response.getOutputStream());
@@ -166,7 +167,7 @@ public class CommonUploadDownloadAction extends BaseController {
             return;				
 		}
 		if (StringUtils.isBlank(mimeType)) {
-			mimeType = "application/octet-stream";
+			mimeType = MediaType.APPLICATION_OCTET_STREAM_VALUE;
 		}
 		response.setContentType( mimeType );
 		response.setHeader("Content-Disposition", String.format("inline; filename=\"" + fileName + "\""));

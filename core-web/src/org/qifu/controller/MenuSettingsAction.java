@@ -41,6 +41,7 @@ import org.qifu.vo.SysProgVO;
 import org.qifu.vo.SysVO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Required;
+import org.springframework.http.MediaType;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -102,7 +103,7 @@ public class MenuSettingsAction extends BaseController {
 	}
 	
 	@ControllerMethodAuthority(check = true, programId = "CORE_PROG001D0003Q")
-	@RequestMapping(value = "/core.menuSettingsQueryProgramListByFolderOidJson.do", produces = "application/json")		
+	@RequestMapping(value = "/core.menuSettingsQueryProgramListByFolderOidJson.do", produces = MediaType.APPLICATION_JSON_VALUE)		
 	public @ResponseBody DefaultControllerJsonResultObj< Map<String, List<SysProgVO>> > queryProgramListByFolderOid(HttpServletRequest request, @RequestParam(name="oid") String oid) {
 		DefaultControllerJsonResultObj< Map<String, List<SysProgVO>> > result = this.getDefaultJsonResult("CORE_PROG001D0003Q");
 		if (!this.isAuthorizeAndLoginFromControllerJsonResult(result)) {
@@ -121,7 +122,7 @@ public class MenuSettingsAction extends BaseController {
 	}
 	
 	@ControllerMethodAuthority(check = true, programId = "CORE_PROG001D0003Q")
-	@RequestMapping(value = "/core.menuSettingsUpdateJson.do", produces = "application/json")		
+	@RequestMapping(value = "/core.menuSettingsUpdateJson.do", produces = MediaType.APPLICATION_JSON_VALUE)		
 	public @ResponseBody DefaultControllerJsonResultObj<Boolean> updateMenu(HttpServletRequest request, @RequestParam(name="folderProgramOid") String folderProgramOid, @RequestParam(name="appendOid") String appendOid) {
 		DefaultControllerJsonResultObj<Boolean> result = this.getDefaultJsonResult("CORE_PROG001D0003Q");
 		if (!this.isAuthorizeAndLoginFromControllerJsonResult(result)) {

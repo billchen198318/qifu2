@@ -60,6 +60,7 @@ import org.qifu.vo.SysJreportVO;
 import org.qifu.vo.SysUploadVO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Required;
+import org.springframework.http.MediaType;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -153,7 +154,7 @@ public class SystemReportAction extends BaseController {
 	}
 	
 	@ControllerMethodAuthority(check = true, programId = "CORE_PROG001D0005Q")
-	@RequestMapping(value = "/core.sysReportQueryGridJson.do", produces = "application/json")	
+	@RequestMapping(value = "/core.sysReportQueryGridJson.do", produces = MediaType.APPLICATION_JSON_VALUE)	
 	public @ResponseBody QueryControllerJsonResultObj< List<SysJreportVO>>  queryGrid(SearchValue searchValue, PageOf pageOf) {
 		QueryControllerJsonResultObj< List<SysJreportVO> > result = this.getQueryJsonResult("CORE_PROG001D0005Q");
 		if (!this.isAuthorizeAndLoginFromControllerJsonResult(result)) {
@@ -232,7 +233,7 @@ public class SystemReportAction extends BaseController {
 	}		
 	
 	@ControllerMethodAuthority(check = true, programId = "CORE_PROG001D0005S01Q")
-	@RequestMapping(value = "/core.sysJreportParamQueryGridJson.do", produces = "application/json")	
+	@RequestMapping(value = "/core.sysJreportParamQueryGridJson.do", produces = MediaType.APPLICATION_JSON_VALUE)	
 	public @ResponseBody QueryControllerJsonResultObj< List<SysJreportParamVO>>  paramQueryGrid(SearchValue searchValue, PageOf pageOf) {
 		QueryControllerJsonResultObj< List<SysJreportParamVO> > result = this.getQueryJsonResult("CORE_PROG001D0005S01Q");
 		if (!this.isAuthorizeAndLoginFromControllerJsonResult(result)) {
@@ -370,7 +371,7 @@ public class SystemReportAction extends BaseController {
 	}
 	
 	@ControllerMethodAuthority(check = true, programId = "CORE_PROG001D0005A")
-	@RequestMapping(value = "/core.sysReportSaveJson.do", produces = "application/json")		
+	@RequestMapping(value = "/core.sysReportSaveJson.do", produces = MediaType.APPLICATION_JSON_VALUE)		
 	public @ResponseBody DefaultControllerJsonResultObj<SysJreportVO> doSave(SysJreportVO sysJreport, @RequestParam("uploadOid") String uploadOid) {
 		DefaultControllerJsonResultObj<SysJreportVO> result = this.getDefaultJsonResult("CORE_PROG001D0005A");
 		if (!this.isAuthorizeAndLoginFromControllerJsonResult(result)) {
@@ -387,7 +388,7 @@ public class SystemReportAction extends BaseController {
 	}
 	
 	@ControllerMethodAuthority(check = true, programId = "CORE_PROG001D0005E")
-	@RequestMapping(value = "/core.sysReportUpdateJson.do", produces = "application/json")
+	@RequestMapping(value = "/core.sysReportUpdateJson.do", produces = MediaType.APPLICATION_JSON_VALUE)
 	public @ResponseBody DefaultControllerJsonResultObj<SysJreportVO> doUpdate(SysJreportVO sysJreport, @RequestParam("uploadOid") String uploadOid) {
 		DefaultControllerJsonResultObj<SysJreportVO> result = this.getDefaultJsonResult("CORE_PROG001D0005E");
 		if (!this.isAuthorizeAndLoginFromControllerJsonResult(result)) {
@@ -404,7 +405,7 @@ public class SystemReportAction extends BaseController {
 	}	
 	
 	@ControllerMethodAuthority(check = true, programId = "CORE_PROG001D0005D")
-	@RequestMapping(value = "/core.sysReportDeleteJson.do", produces = "application/json")		
+	@RequestMapping(value = "/core.sysReportDeleteJson.do", produces = MediaType.APPLICATION_JSON_VALUE)		
 	public @ResponseBody DefaultControllerJsonResultObj<Boolean> doDelete(SysJreportVO sysJreport) {
 		DefaultControllerJsonResultObj<Boolean> result = this.getDefaultJsonResult("CORE_PROG001D0005D");
 		if (!this.isAuthorizeAndLoginFromControllerJsonResult(result)) {
@@ -421,7 +422,7 @@ public class SystemReportAction extends BaseController {
 	}	
 	
 	@ControllerMethodAuthority(check = true, programId = "CORE_PROG001D0005Q")
-	@RequestMapping(value = "/core.sysReportDownloadContentJson.do", produces = "application/json")		
+	@RequestMapping(value = "/core.sysReportDownloadContentJson.do", produces = MediaType.APPLICATION_JSON_VALUE)		
 	public @ResponseBody DefaultControllerJsonResultObj<String> doDownloadContent(SysJreportVO sysJreport) {
 		DefaultControllerJsonResultObj<String> result = this.getDefaultJsonResult("CORE_PROG001D0005Q");
 		if (!this.isAuthorizeAndLoginFromControllerJsonResult(result)) {
@@ -445,7 +446,7 @@ public class SystemReportAction extends BaseController {
 	}	
 	
 	@ControllerMethodAuthority(check = true, programId = "CORE_PROG001D0005S01A")
-	@RequestMapping(value = "/core.sysJreportParamSaveJson.do", produces = "application/json")		
+	@RequestMapping(value = "/core.sysJreportParamSaveJson.do", produces = MediaType.APPLICATION_JSON_VALUE)		
 	public @ResponseBody DefaultControllerJsonResultObj<SysJreportParamVO> doParamSave(SysJreportParamVO sysJreportParam, @RequestParam("reportOid") String reportOid) {
 		DefaultControllerJsonResultObj<SysJreportParamVO> result = this.getDefaultJsonResult("CORE_PROG001D0005S01A");
 		if (!this.isAuthorizeAndLoginFromControllerJsonResult(result)) {
@@ -462,7 +463,7 @@ public class SystemReportAction extends BaseController {
 	}	
 	
 	@ControllerMethodAuthority(check = true, programId = "CORE_PROG001D0005S01D")
-	@RequestMapping(value = "/core.sysJreportParamDeleteJson.do", produces = "application/json")		
+	@RequestMapping(value = "/core.sysJreportParamDeleteJson.do", produces = MediaType.APPLICATION_JSON_VALUE)		
 	public @ResponseBody DefaultControllerJsonResultObj<Boolean> doParamDelete(SysJreportParamVO sysJreportParam) {
 		DefaultControllerJsonResultObj<Boolean> result = this.getDefaultJsonResult("CORE_PROG001D0005S01D");
 		if (!this.isAuthorizeAndLoginFromControllerJsonResult(result)) {
