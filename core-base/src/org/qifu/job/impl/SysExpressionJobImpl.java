@@ -25,6 +25,7 @@ import org.apache.log4j.Logger;
 import org.qifu.base.exception.ServiceException;
 import org.qifu.job.BaseJob;
 import org.qifu.util.SystemExpressionJobUtils;
+import org.quartz.DisallowConcurrentExecution;
 import org.quartz.Job;
 import org.quartz.JobExecutionContext;
 import org.quartz.JobExecutionException;
@@ -34,6 +35,7 @@ import org.springframework.web.context.ContextLoader;
  * 注意: 這個Job 在 Quartz 中的設定, 要每分鐘都需執行處理
  *
  */
+@DisallowConcurrentExecution
 public class SysExpressionJobImpl extends BaseJob implements Job {
 	protected static Logger log = Logger.getLogger(SysExpressionJobImpl.class);
 	

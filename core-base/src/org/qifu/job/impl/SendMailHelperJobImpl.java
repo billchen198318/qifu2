@@ -36,12 +36,14 @@ import org.qifu.service.ISysMailHelperService;
 import org.qifu.util.MailClientUtils;
 import org.qifu.util.SimpleUtils;
 import org.qifu.vo.SysMailHelperVO;
+import org.quartz.DisallowConcurrentExecution;
 import org.quartz.Job;
 import org.quartz.JobExecutionContext;
 import org.quartz.JobExecutionException;
 import org.springframework.mail.MailException;
 import org.springframework.web.context.ContextLoader;
 
+@DisallowConcurrentExecution
 public class SendMailHelperJobImpl extends BaseJob implements Job {
 	protected static Logger log = Logger.getLogger(SendMailHelperJobImpl.class);
 	
