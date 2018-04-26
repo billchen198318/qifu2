@@ -28,6 +28,9 @@ import java.util.List;
 
 import org.apache.commons.io.FileUtils;
 import org.apache.commons.lang3.StringUtils;
+import org.qifu.base.Constants;
+import org.qifu.base.exception.ServiceException;
+import org.qifu.model.UploadTypes;
 
 import com.lowagie.text.Document;
 import com.lowagie.text.DocumentException;
@@ -103,6 +106,15 @@ public class PdfCopyPageBuilder {
 		return this;
 	}
 	
+	public String toUpload() throws ServiceException, Exception {
+		return this.toUpload(Constants.getSystem(), UploadTypes.IS_TEMP);
+	}
+	
+	public String toUpload(String system, String uploadType) throws ServiceException, Exception {
+		byte newPdfByte[] = this.getContent();
+		return UploadSupportUtils.create(system, uploadType, false, newPdfByte, SimpleUtils.getUUIDStr()+".pdf");
+	}	
+	
 	public byte[] getContent() throws Exception {
 		if (!this.modeByFindFound && this.findWords.size() > 1) {
 			throw new Exception("modeByFindFound set to false, cannot add many find word.");
@@ -125,7 +137,7 @@ public class PdfCopyPageBuilder {
 		PdfTextExtractor pdfTextExtractor = new PdfTextExtractor(pdfReader);
 		boolean isCutPdf =false;
 		boolean needPut = false;
-        for (int i=1; i<=pdfReader.getNumberOfPages() && pdfCopy!=null; i++) {
+		for (int i=1; i<=pdfReader.getNumberOfPages() && pdfCopy!=null; i++) {
         	needPut = false;
         	String text = pdfTextExtractor.getTextFromPage(i);
         	if (!this.forcePutAllPage) {
@@ -145,19 +157,19 @@ public class PdfCopyPageBuilder {
         	} else {
         		needPut = true;
         	}
-        	if (needPut){
+        	if (needPut) {
         		try {
         			PdfImportedPage page = pdfCopy.getImportedPage(pdfReader, i);
         			pdfCopy.newPage();
         			pdfCopy.addPage(page); 
         			isCutPdf = true;
-        		} catch (Exception e){
+        		} catch (Exception e) {
         			e.printStackTrace();
         		}        		
         	}
         }		
         
-        if (!isCutPdf){ // 沒劫到後, 產生空白的doc
+        if (!isCutPdf) { // 沒劫到後, 產生空白的doc
         	document = null;
         	document = new Document();
         	
@@ -190,7 +202,7 @@ public class PdfCopyPageBuilder {
         	if (document != null) {
         		document.close();
         	}            	
-        } catch (Exception e){
+        } catch (Exception e) {
         	e.printStackTrace();
         }
         /*
