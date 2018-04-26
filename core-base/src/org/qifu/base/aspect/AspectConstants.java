@@ -32,18 +32,18 @@ public class AspectConstants {
 	/**
 	 * 注意 base.dao.*.* 不是 base.dao..*.*
 	 */
-	public static final String DATA_ACCESS_OBJECT_PACKAGE = " execution(* org.qifu.base.dao.*.*(..) ) || execution(* org.qifu.dao..*.*(..) ) || execution(* org.qifu.common.dao..*.*(..) ) || execution(* org.qifu.mes.dao..*.*(..) ) ";
+	public static final String DATA_ACCESS_OBJECT_PACKAGE = " execution(* org.qifu.base.dao.*.*(..) ) || execution(* org.qifu.dao..*.*(..) ) || execution(* org.qifu.common.dao..*.*(..) ) || execution(* org.qifu.bsc.dao..*.*(..) ) ";
 	
 	/**
 	 * 注意 service.*.*   不是 service..*.* , 如果兩個點..*.* 就會包含 service.logic.
 	 * 注意 base.service.*.* 不是 base.service..*.*
 	 */
-	public static final String BASE_SERVICE_PACKAGE = " execution(* org.qifu.base.service.*.*(..) ) || execution(* org.qifu.service.*.*(..) ) || execution(* org.qifu.common.service.*.*(..) ) || execution(* org.qifu.mes.service.*.*(..) ) ";
+	public static final String BASE_SERVICE_PACKAGE = " execution(* org.qifu.base.service.*.*(..) ) || execution(* org.qifu.service.*.*(..) ) || execution(* org.qifu.common.service.*.*(..) ) || execution(* org.qifu.bsc.service.*.*(..) ) ";
 	
 	/**
 	 * 注意 base.service.logic.*.* 不是 base.service.logic..*.*
 	 */
-	public static final String LOGIC_SERVICE_PACKAGE = " execution(* org.qifu.base.service.logic.*.*(..) ) || execution(* org.qifu.service.logic..*.*(..) ) || execution(* org.qifu.common.service.logic..*.*(..) ) || execution(* org.qifu.mes.service.logic..*.*(..) ) ";
+	public static final String LOGIC_SERVICE_PACKAGE = " execution(* org.qifu.base.service.logic.*.*(..) ) || execution(* org.qifu.service.logic..*.*(..) ) || execution(* org.qifu.common.service.logic..*.*(..) ) || execution(* org.qifu.bsc.service.logic..*.*(..) ) ";
 	
 	public static boolean isLogicService(String serviceId) {
 		if (StringUtils.defaultString(serviceId).indexOf(".service.logic.") > -1) {
