@@ -62,6 +62,7 @@ public class LoginAction extends BaseController {
 		} finally {
 			this.fillErrorMessage(request, response);
 		}
+		request.setAttribute("jsVerBuild", this.getJsVerBuild());
 		return PAGE_SYS_LOGIN;
 	}
 	
@@ -69,6 +70,7 @@ public class LoginAction extends BaseController {
 	public String logout(HttpServletRequest request, HttpSession session) {
 		request.setAttribute("loginCaptchaCodeEnable", this.getLoginCaptchaCodeEnable());
 		SecurityUtils.getSubject().logout();
+		request.setAttribute("jsVerBuild", this.getJsVerBuild());
 		return PAGE_SYS_LOGIN;
 	}
 	
