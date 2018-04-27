@@ -44,7 +44,7 @@ body {
   <tr>
     <td width="10" rowspan="3" bgcolor="#AE0606" style="border-top-left-radius: 5px; border-bottom-left-radius: 5px;">&nbsp;</td>
     <td width="48" bgcolor="#000000">&nbsp;</td>
-    <td bgcolor="#000000" style="border-top-right-radius: 5px;"><font color="#FFFFFF" size="5"><B>Please log in again:</B></font></td>
+    <td bgcolor="#000000" style="border-top-right-radius: 5px;"><font color="#FFFFFF" size="5"><strong>Please log in again:</strong></font></td>
   </tr>
   <tr>
     <td width="48" bgcolor="#E9D8D8"><img src="./images/warning.png" width="48" height="48" border="0"/></td>

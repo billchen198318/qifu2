@@ -134,7 +134,7 @@ function deleteRecord(oid) {
 	<div class="row">
 		<div class="col-xs-6 col-md-6 col-lg-6">
 			System&nbsp;:&nbsp;${sysBeanHelp.system}
-			<br>
+			<p style="margin-bottom: 10px"></p>
 			Bean Id&nbsp;:&nbsp;${sysBeanHelp.beanId}&nbsp;&nbsp;/&nbsp;&nbsp;Method&nbsp;:&nbsp;${sysBeanHelp.method}
 		</div>
 	</div>			
@@ -156,7 +156,7 @@ function deleteRecord(oid) {
 	
 </div>
 
-<br>
+<p style="margin-bottom: 10px"></p>
 
 <div class="row">
 	<div class="col-xs-6 col-md-6 col-lg-6">
@@ -180,8 +180,8 @@ function deleteRecord(oid) {
 	</div>
 </div>
 
-<br>
-<br>
+<p style="margin-bottom: 10px"></p>
+<p style="margin-bottom: 10px"></p>
 
 <q:grid gridFieldStructure="getQueryGridHeader()" 
 	xhrParameter="

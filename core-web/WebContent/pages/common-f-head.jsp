@@ -89,7 +89,7 @@ if (YesNo.YES.equals(commonUploadEnable)) {
 		<div class="container-fluid">
 			<div class="row" style="width:370px; height:90px;"  >
 				<form method="post" action="core.commonUploadFileAction.action" name="commonUploadForm-${programId}" id="commonUploadForm-${programId}" enctype="multipart/form-data" >				
-					<label id="upload-label" for="upload"><img border="0" alt="help-icon" src="./icons/help-about.png"/>&nbsp;<font size='2'><b>Drag file to color Box.</b>&nbsp;(max size ${maxUploadSizeMb}mb)</font></label>
+					<label id="upload-label" for="upload"><img border="0" alt="help-icon" src="./icons/help-about.png"/>&nbsp;<font size='2'><strong>Drag file to color Box.</strong>&nbsp;(max size ${maxUploadSizeMb}mb)</font></label>
 					<input type="file" style="width: 360px; height: 65px;  border: 2px dotted #FFAD1C;  background: #FFEFD0; border-radius: 4px;" name="commonUploadFile" id="commonUploadFile" draggable="true" title="Drag file there." onchange="commonUploadDataEvent();"/>		
 					<input type="hidden" id="commonUploadFileType" name="commonUploadFileType" value="tmp" />
 					<input type="hidden" id="commonUploadFileIsFileMode" name="commonUploadFileIsFileMode" value="N" />

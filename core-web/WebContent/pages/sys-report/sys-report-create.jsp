@@ -121,7 +121,7 @@ function uploadModal() {
 	</div>
 </div>
 
-<br>
+<p style="margin-bottom: 10px"></p>
 
 <div class="row">
 	<div class="col-xs-6 col-md-6 col-lg-6">

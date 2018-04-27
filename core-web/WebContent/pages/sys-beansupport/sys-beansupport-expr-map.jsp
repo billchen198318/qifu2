@@ -131,7 +131,7 @@ function deleteRecord(oid) {
 	<div class="row">
 		<div class="col-xs-6 col-md-6 col-lg-6">
 			Expresion Id&nbsp;/&nbsp;SEQ&nbsp;/&nbsp;Type
-			<br>
+			<p style="margin-bottom: 10px"></p>
 			${sysBeanHelpExpr.exprId}&nbsp;/&nbsp;${sysBeanHelpExpr.exprSeq}&nbsp;/&nbsp;${sysBeanHelpExpr.runType}
 		</div>
 	</div>			
@@ -159,7 +159,7 @@ function deleteRecord(oid) {
 	</div>		
 </div>
 
-<br>
+<p style="margin-bottom: 10px"></p>
 
 <div class="row">
 	<div class="col-xs-6 col-md-6 col-lg-6">
@@ -184,8 +184,8 @@ function deleteRecord(oid) {
 	</div>
 </div>
 
-<br>
-<br>
+<p style="margin-bottom: 10px"></p>
+<p style="margin-bottom: 10px"></p>
 
 <q:grid gridFieldStructure="getQueryGridHeader()" 
 	xhrParameter="

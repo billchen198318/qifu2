@@ -118,13 +118,13 @@ function deleteRecord(oid) {
         </div>
       </div>
       
-<br>
+<p style="margin-bottom: 10px"></p>
       
 <button type="button" class="btn btn-primary" id="btnQuery" onclick="queryGrid();">Query</button>
 <button type="button" class="btn btn-primary" id="btnClear" onclick="queryClear();">Clear</button>
 
-<br>
-<br>
+<p style="margin-bottom: 10px"></p>
+<p style="margin-bottom: 10px"></p>
 
 <q:grid gridFieldStructure="getQueryGridHeader()" 
 	xhrParameter="

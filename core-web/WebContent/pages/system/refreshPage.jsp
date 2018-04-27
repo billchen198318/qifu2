@@ -69,7 +69,7 @@ body {
   <tr>
     <td width="10" rowspan="3" bgcolor="#01600A" style="border-top-left-radius: 5px; border-bottom-left-radius: 5px;">&nbsp;</td>
     <td width="48" bgcolor="#000000">&nbsp;</td>
-    <td bgcolor="#000000" style="border-top-right-radius: 5px;"><font color="#FFFFFF" size="5"><B>Refresh page:</B></font></td>
+    <td bgcolor="#000000" style="border-top-right-radius: 5px;"><font color="#FFFFFF" size="5"><strong>Refresh page:</strong></font></td>
   </tr>
   <tr>
     <td width="48" bgcolor="#F4F4F4"><img src="./images/information.png" width="48" height="48" border="0"/></td>

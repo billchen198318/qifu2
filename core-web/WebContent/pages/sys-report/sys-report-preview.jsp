@@ -70,7 +70,7 @@ function previewReport() {
 		</div>
 	</div>
 	
-	<br>
+	<p style="margin-bottom: 10px"></p>
 	
 	
 		<table class="table">

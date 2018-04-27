@@ -78,9 +78,9 @@ function loadDiagram(type, objId) {
 		<legend><h4><span class="badge badge-secondary">Process definition</span></h4></legend>
 		<thead class="thead-light">
 		<tr>
-			<th><b>Key</b></th>
-			<th><b>Name</b></th>
-			<th><b>#</b></th>
+			<th><strong>Key</strong></th>
+			<th><strong>Name</strong></th>
+			<th><strong>#</strong></th>
 		</tr>
 		</thead>
 		<tbody>
@@ -100,15 +100,15 @@ function loadDiagram(type, objId) {
 		</tbody>
 	</table>
 	
-	<br>
+	<p style="margin-bottom: 10px"></p>
 	
 	<table class="table">
 		<legend><h4><span class="badge badge-secondary">Process instance</span></h4></legend>
 		<thead class="thead-light">
 		<tr>
-			<th><b>Id</b></th>
-			<th><b>Process definition</b></th>
-			<th><b>#</b></th>
+			<th><strong>Id</strong></th>
+			<th><strong>Process definition</strong></th>
+			<th><strong>#</strong></th>
 		</tr>
 		</thead>
 		<tbody>
@@ -128,16 +128,16 @@ function loadDiagram(type, objId) {
 		</tbody>
 	</table>	
 	
-	<br>
+	<p style="margin-bottom: 10px"></p>
 	
 	<table class="table">
 		<legend><h4><span class="badge badge-secondary">Task</span></h4></legend>
 		<thead class="thead-light">
 		<tr>
-			<th><b>Id</b></th>
-			<th><b>Name</b></th>
-			<th><b>Assignee</b></th>			
-			<th><b>#</b></th>
+			<th><strong>Id</strong></th>
+			<th><strong>Name</strong></th>
+			<th><strong>Assignee</strong></th>			
+			<th><strong>#</strong></th>
 		</tr>
 		</thead>
 		<tbody>
