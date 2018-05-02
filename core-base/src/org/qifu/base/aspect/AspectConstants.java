@@ -38,7 +38,7 @@ public class AspectConstants {
 	 * 注意 service.*.*   不是 service..*.* , 如果兩個點..*.* 就會包含 service.logic.
 	 * 注意 base.service.*.* 不是 base.service..*.*
 	 */
-	public static final String BASE_SERVICE_PACKAGE = " @annotation(org.qifu.base.aspect.EnableAspectForBaseServiceMethod) || execution(* org.qifu.base.service.*.*(..) ) || execution(* org.qifu.service.*.*(..) ) || execution(* org.qifu.common.service.*.*(..) ) || execution(* org.qifu.bsc.service.*.*(..) ) ";
+	public static final String BASE_SERVICE_PACKAGE = " @annotation(org.qifu.base.aspect.EnableAspectForSimpleOrBaseServiceMethod) || execution(* org.qifu.base.service.*.*(..) ) || execution(* org.qifu.service.*.*(..) ) || execution(* org.qifu.common.service.*.*(..) ) || execution(* org.qifu.bsc.service.*.*(..) ) ";
 	
 	/**
 	 * 注意 base.service.logic.*.* 不是 base.service.logic..*.*
