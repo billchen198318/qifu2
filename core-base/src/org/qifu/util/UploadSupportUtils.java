@@ -37,6 +37,7 @@ import javax.xml.bind.Unmarshaller;
 
 import org.apache.commons.io.FileUtils;
 import org.apache.commons.io.IOUtils;
+import org.apache.commons.lang.math.NumberUtils;
 import org.apache.commons.lang3.ArrayUtils;
 import org.apache.commons.lang3.StringUtils;
 import org.apache.log4j.Logger;
@@ -61,7 +62,8 @@ import org.qifu.vo.SysUploadVO;
 public class UploadSupportUtils {
 	protected static Logger logger=Logger.getLogger(UploadSupportUtils.class);
 	public static final String HELP_EXPRESSION_VARIABLE = "datas";
-	public static final long UPLOAD_MAX_SIZE = 8388608; // 8MB
+	private static final long DEFAULT_UPLOAD_MAX_SIZE = 8388608; // default max 8MB 
+	private static long UPLOAD_MAX_SIZE = DEFAULT_UPLOAD_MAX_SIZE;
 	private static Properties props = new Properties();
 	private static String VIEW_MODE_FILE_EXTENSION[] = null;	
 	private static ISysUploadService<SysUploadVO, TbSysUpload, String> sysUploadService;
@@ -75,11 +77,22 @@ public class UploadSupportUtils {
 		sysUploadTranSegmService = (ISysUploadTranSegmService<SysUploadTranSegmVO, TbSysUploadTranSegm, String>)
 				AppContext.getBean("core.service.SysUploadTranSegmService");
 		try {
-			props.load(UploadSupportUtils.class.getClassLoader().getResource("META-INF/view-mode-files.properties").openStream());
+			props.load(UploadSupportUtils.class.getClassLoader().getResource("META-INF/upload-support-utils.properties").openStream());
 			VIEW_MODE_FILE_EXTENSION = SimpleUtils.getStr(props.getProperty("FILE_EXTENSION")).trim().split(",");
+			UPLOAD_MAX_SIZE = NumberUtils.toLong(props.getProperty("UPLOAD_MAX_SIZE"), 0);
+			if (UPLOAD_MAX_SIZE < 1048576) { // 1MB binary byte = 1048576
+				UPLOAD_MAX_SIZE = 1048576;
+			}
+			if (UPLOAD_MAX_SIZE > DEFAULT_UPLOAD_MAX_SIZE) {
+				UPLOAD_MAX_SIZE = DEFAULT_UPLOAD_MAX_SIZE;
+			}
 		} catch (IOException e) {
 			e.printStackTrace();
 		}		
+	}
+	
+	public static long getUploadMaxSize() {
+		return UPLOAD_MAX_SIZE;
 	}
 	
 	public static String getViewMode(String fileShowName) throws Exception {

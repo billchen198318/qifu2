@@ -167,11 +167,11 @@ public abstract class BaseController {
 	}
 	
 	public String getMaxUploadSize() {
-		return String.valueOf( UploadSupportUtils.UPLOAD_MAX_SIZE );
+		return String.valueOf( UploadSupportUtils.getUploadMaxSize() );
 	}
 	
 	public String getMaxUploadSizeMb() {
-		return String.valueOf( UploadSupportUtils.UPLOAD_MAX_SIZE / 1048576 );
+		return String.valueOf( UploadSupportUtils.getUploadMaxSize() / 1048576 );
 	}	
 	
 	public boolean isSuperRole() {

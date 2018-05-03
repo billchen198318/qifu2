@@ -60,7 +60,7 @@ import org.springframework.web.servlet.config.annotation.EnableWebMvc;
 @EnableWebMvc
 @Controller
 public class CommonUploadDownloadAction extends BaseController {
-	private static final long UPLOAD_MAX_SIZE = UploadSupportUtils.UPLOAD_MAX_SIZE;
+	private static final long UPLOAD_MAX_SIZE = UploadSupportUtils.getUploadMaxSize();
 	private ISysUploadService<SysUploadVO, TbSysUpload, String> sysUploadService;
 	
 	public ISysUploadService<SysUploadVO, TbSysUpload, String> getSysUploadService() {
