@@ -23,19 +23,20 @@ package org.qifu.sys;
 
 import org.apache.shiro.SecurityUtils;
 import org.apache.shiro.authc.UsernamePasswordToken;
-import org.apache.shiro.config.IniSecurityManagerFactory;
 import org.apache.shiro.subject.Subject;
-import org.apache.shiro.util.Factory;
+import org.apache.shiro.web.env.IniWebEnvironment;
 import org.qifu.base.Constants;
 
 public class BackgroundProgramUserUtils {
-	private static Factory<org.apache.shiro.mgt.SecurityManager> factory;
+	private static IniWebEnvironment environment;
 	private static org.apache.shiro.mgt.SecurityManager securityManager;	
 	private static ThreadLocal<Subject> subjectThreadLocal = new ThreadLocal<Subject>();
 	
 	static {
-		factory = new IniSecurityManagerFactory("classpath:shiro.ini");
-		securityManager = factory.getInstance();		
+		environment = new IniWebEnvironment();
+		environment.setConfigLocations("classpath:shiro.ini");
+		environment.init();
+		securityManager = environment.getSecurityManager();
 	}
 	
 	public static boolean isLogin() {
@@ -50,12 +51,14 @@ public class BackgroundProgramUserUtils {
 	}
 	
 	public static void logout() throws Exception {
-		getSubject().logout();
+		if (getSubject() != null) {
+			getSubject().logout();
+		}
 		subjectThreadLocal.remove();
 	}
 	
 	public static void login() throws Exception {
-		if (factory==null || securityManager==null) {
+		if (securityManager==null) {
 			throw new Exception("Security manager is null!");
 		}
 		SecurityUtils.setSecurityManager(securityManager);		
