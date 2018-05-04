@@ -59,7 +59,7 @@ public class SendMailHelperJobImpl extends BaseJob implements Job {
 		}		
 		//log.info("begin....");		
 		try {
-			this.loginForBackgroundProgram();
+			this.login();
 			//log.info("Background Program userId: " + this.getAccountId());
 			
 			@SuppressWarnings("unchecked")
@@ -82,7 +82,7 @@ public class SendMailHelperJobImpl extends BaseJob implements Job {
 			e.printStackTrace();
 		} finally {
 			try {
-				this.logoutForBackgroundProgram();
+				this.logout();
 			} catch (Exception e) {
 				e.printStackTrace();
 			}

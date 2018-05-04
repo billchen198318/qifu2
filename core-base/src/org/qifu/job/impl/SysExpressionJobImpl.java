@@ -46,7 +46,7 @@ public class SysExpressionJobImpl extends BaseJob implements Job {
 			return;
 		}
 		try {
-			this.loginForBackgroundProgram();
+			this.login();
 			SystemExpressionJobUtils.executeJobs();
 		} catch (ServiceException e) {
 			e.printStackTrace();
@@ -54,7 +54,7 @@ public class SysExpressionJobImpl extends BaseJob implements Job {
 			e.printStackTrace();
 		} finally {
 			try {
-				this.logoutForBackgroundProgram();
+				this.logout();
 			} catch (Exception e) {
 				e.printStackTrace();
 			}			

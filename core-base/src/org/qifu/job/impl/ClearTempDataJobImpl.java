@@ -58,7 +58,7 @@ public class ClearTempDataJobImpl extends BaseJob implements Job {
 			 * document reference:
 			 * com.netsteadfast.greenstep.support.CleanTempUploadForContextInitAndDestroy.java
 			 */
-			this.loginForBackgroundProgram();
+			this.login();
 			List<SysVO> systems = ApplicationSiteUtils.getSystems();
 			if (systems==null || systems.size()<1) {
 				return;
@@ -84,7 +84,7 @@ public class ClearTempDataJobImpl extends BaseJob implements Job {
 			e.printStackTrace();
 		} finally {
 			try {
-				this.logoutForBackgroundProgram();
+				this.logout();
 			} catch (Exception e) {
 				e.printStackTrace();
 			}

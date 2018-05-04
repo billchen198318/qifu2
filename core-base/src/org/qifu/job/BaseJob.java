@@ -36,11 +36,11 @@ public abstract class BaseJob extends QuartzJobBean {
 		return SimpleUtils.getUUIDStr();
 	}
 	
-	public void loginForBackgroundProgram() throws Exception {		
+	public void login() throws Exception {		
 		BackgroundProgramUserUtils.login();
 	}
 	
-	public void logoutForBackgroundProgram() throws Exception {
+	public void logout() throws Exception {
 		BackgroundProgramUserUtils.logout();
 	}
 	
