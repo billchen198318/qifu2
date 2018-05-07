@@ -23,7 +23,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 <script type="text/javascript" src="./popper-js/umd/popper.min.js?ver=${jsVerBuild}"></script>
 <script type="text/javascript" src="./jquery/jquery-3.2.1.min.js?ver=${jsVerBuild}"></script>
 <link rel="stylesheet" href="./bootstrap-vali/css/main.css?ver=${jsVerBuild}" >
-<link href="./font-awesome/css/font-awesome.min.css?ver=${jsVerBuild}" rel="stylesheet" type="text/css" />
+<link href="./font-awesome/css/fontawesome-all.min.css?ver=${jsVerBuild}" rel="stylesheet" type="text/css" />
 <script src="./bootstrap-vali/js/bootstrap.js?ver=${jsVerBuild}" ></script>
 
 <!-- The javascript plugin to display page loading on top-->
