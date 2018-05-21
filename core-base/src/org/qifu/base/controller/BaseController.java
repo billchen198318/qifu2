@@ -35,6 +35,7 @@ import org.apache.shiro.SecurityUtils;
 import org.apache.shiro.subject.Subject;
 import org.qifu.base.Constants;
 import org.qifu.base.exception.BaseSysException;
+import org.qifu.base.exception.ControllerException;
 import org.qifu.base.model.CheckControllerFieldHandler;
 import org.qifu.base.model.DefaultControllerJsonResultObj;
 import org.qifu.base.model.PageOf;
@@ -62,7 +63,7 @@ public abstract class BaseController {
 	
 	protected static final String YES = YesNo.YES;
 	protected static final String NO = YesNo.NO;
-	protected static final String EXCEPTION = "E";
+	protected static final String EXCEPTION = ControllerException.PAGE_EXCEPTION_CODE;
 	
 	public String getPageRedirect(String url) {
 		return "redirect:/" + url;

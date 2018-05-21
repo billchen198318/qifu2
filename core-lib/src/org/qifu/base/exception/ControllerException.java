@@ -27,6 +27,8 @@ public class ControllerException extends BaseSysException {
 	private static final long serialVersionUID = -6104837343341335444L;
 	protected Logger logger=Logger.getLogger(ControllerException.class);
 	
+	public static final String PAGE_EXCEPTION_CODE = "E";
+	
 	public ControllerException(String message) {
 		super(message);
 	}
