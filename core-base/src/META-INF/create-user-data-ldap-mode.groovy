@@ -27,6 +27,9 @@ try {
 						
 			@Override
 			public Object doInTransaction(TransactionStatus status) {
+			
+				// current no table tb_employee
+				/*
 				int maxSize = 10;
 				String maxEmpId = jdbcTemplate.queryForObject("select max(EMP_ID) from bb_employee", new HashMap<String, Object>(), String.class);
 				String empId = "";
@@ -47,6 +50,7 @@ try {
 				if (StringUtils.isBlank(empId)) {
 					empId = SimpleUtils.createRandomString(maxSize);
 				}
+				*/
 				
 				Map<String, Object> accParamMap = new HashMap<String, Object>();
 				accParamMap.put("oid", SimpleUtils.getUUIDStr());
@@ -59,13 +63,15 @@ try {
 				
 				Map<String, Object> uroleParamMap = new HashMap<String, Object>();
 				uroleParamMap.put("oid", SimpleUtils.getUUIDStr());
-				uroleParamMap.put("role", "BSC_STANDARD");
+				uroleParamMap.put("role", "COMMON01");
 				uroleParamMap.put("account", account);
 				uroleParamMap.put("description", account + " 's role, create by LDAP login!");
 				uroleParamMap.put("cuserid", "admin");
 				uroleParamMap.put("cdate", new Date());
 				jdbcTemplate.update("insert into tb_user_role(OID, ROLE, ACCOUNT, DESCRIPTION, CUSERID, CDATE) values(:oid, :role, :account, :description, :cuserid, :cdate)", uroleParamMap);
 				
+				// current no table tb_employee
+				/*
 				Map<String, Object> empParamMap = new HashMap<String, Object>();
 				empParamMap.put("oid", SimpleUtils.getUUIDStr());
 				empParamMap.put("account", account);
@@ -75,6 +81,8 @@ try {
 				empParamMap.put("cuserid", "admin");
 				empParamMap.put("cdate", new Date());
 				jdbcTemplate.update("insert into bb_employee(OID, ACCOUNT, EMP_ID, FULL_NAME, JOB_TITLE, CUSERID, CDATE) values(:oid, :account, :empId, :fullName, :jobTitle, :cuserid, :cdate)", empParamMap);
+				*/
+				
 				
 				return null;
 			}
