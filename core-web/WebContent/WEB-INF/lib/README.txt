@@ -414,18 +414,18 @@ juel-impl-2.2.7.jar ( require start Activiti with spring )
 
 Apache Camel
 ===============================================
-camel-core-2.21.0.jar
-camel-cxf-2.21.0.jar
-camel-cxf-transport-2.21.0.jar
-camel-ftp-2.21.0.jar
-camel-groovy-2.21.0.jar
-camel-http-2.21.0.jar
-camel-http-common-2.21.0.jar
-camel-jms-2.21.0.jar
-camel-servlet-2.21.0.jar
-camel-spring-2.21.0.jar
-camel-ssh-2.21.0.jar
-camel-stream-2.21.0.jar
+camel-core-2.23.0.jar
+camel-cxf-2.23.0.jar
+camel-cxf-transport-2.23.0.jar
+camel-ftp-2.23.0.jar
+camel-groovy-2.23.0.jar
+camel-http-2.23.0.jar
+camel-http-common-2.23.0.jar
+camel-jms-2.23.0.jar
+camel-servlet-2.23.0.jar
+camel-spring-2.23.0.jar
+camel-ssh-2.23.0.jar
+camel-stream-2.23.0.jar
 
 
 cassandra driver core
