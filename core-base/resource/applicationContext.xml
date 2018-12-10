@@ -22,6 +22,26 @@
         </property>
     </bean>
      
+     <!-- Encryption config for dataSource.user, dataSource.password -->
+     <!--  
+     <bean id="propertyConfigurer" class="org.qifu.base.config.RevisePropertyPlaceholderConfigurer">    	    	
+    	<property name="locations">
+    		<list>
+            	<value>classpath:applicationContext/conf/applicationContext-dataSource-enc.properties</value>  
+            	<value>classpath:applicationContext/conf/applicationContext-hbm.properties</value>    
+            	<value>classpath:applicationContext/conf/applicationContext-appSettings.properties</value>
+            	<value>classpath:applicationContext/conf/applicationContext-mail.properties</value>        	
+            </list>            
+        </property>
+     	<property name="encryptPropertyNames">
+    		<list>
+    			<value>dataSource.user</value>
+    			<value>dataSource.password</value>
+    		</list>
+    	</property>	       
+    </bean>    
+     -->
+     
     <!--
     <import resource="classpath*:applicationContext/applicationContext*.xml"/>
     -->
