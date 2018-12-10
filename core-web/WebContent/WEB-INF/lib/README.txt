@@ -50,13 +50,12 @@ json-lib-2.4-jdk15.jar
 
 MySQL
 ===============================================
-mysql-connector-java-5.1.46-bin.jar
+mysql-connector-java-5.1.47.jar
 
 
-http://code.google.com/p/beanshell2/
-http://www.beanshell.org/
+https://github.com/beanshell/beanshell
 ===============================================
-bsh-2.1.8.jar
+bsh-2.0b6.jar
 
 
 MYBATIS(iBATIS) 
@@ -142,7 +141,7 @@ hamcrest-core-1.3.jar
 HikariCP
 https://github.com/brettwooldridge/HikariCP
 ===============================================
-HikariCP-3.1.0.jar
+HikariCP-3.2.0.jar
 
 
 Groovy
