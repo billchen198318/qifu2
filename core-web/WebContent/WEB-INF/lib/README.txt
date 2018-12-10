@@ -216,24 +216,24 @@ jsch-0.1.54.jar
 
 http://pdfbox.apache.org/index.html
 ===============================================
-fontbox-2.0.5.jar
-pdfbox-2.0.5.jar
-pdfbox-tools-2.0.5.jar
-preflight-2.0.5.jar
-xmpbox-2.0.5.jar
+fontbox-2.0.13.jar
+pdfbox-2.0.13.jar
+pdfbox-tools-2.0.13.jar
+preflight-2.0.13.jar
+xmpbox-2.0.13.jar
 
 
 Apache POI
 ===============================================
-curvesapi-1.04.jar
-poi-3.16.jar
-poi-examples-3.16.jar
-poi-excelant-3.16.jar
-poi-ooxml-3.16.jar
-poi-ooxml-schemas-3.16.jar
-poi-scratchpad-3.16.jar
+poi-3.17.jar
+poi-examples-3.17.jar
+poi-excelant-3.17.jar
+poi-ooxml-3.17.jar
+poi-ooxml-schemas-3.17.jar
+poi-scratchpad-3.17.jar
+xmlbeans-2.6.0.jar
 stax-api-1.0.1.jar
-xmlbeans-2.6.0.jar (remove it, if has Apache CXF xmlbeans-2.6.0.jar )
+curvesapi-1.04.jar
 
 
 ZIP4J							
