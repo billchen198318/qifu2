@@ -132,6 +132,10 @@ public abstract class SimpleService<E extends java.io.Serializable, PK extends j
 		org.springframework.beans.BeanUtils.copyProperties(source, target);
 	}
 	
+	public void copyProperties(Object source, Object target, String... ignoredNames) throws org.springframework.beans.BeansException {
+		org.springframework.beans.BeanUtils.copyProperties(source, target, ignoredNames);
+	}
+	
 	public void populate(Object bean, Map<String, Object> properties) throws IllegalAccessException, InvocationTargetException {
 		org.apache.commons.beanutils.BeanUtils.populate(bean, properties);
 	}

@@ -44,6 +44,7 @@ public interface ISimpleService<E extends java.io.Serializable, PK extends java.
 	public String defaultString(String source);
 	public Date generateDate();
 	public void copyProperties(Object source, Object target) throws org.springframework.beans.BeansException;
+	public void copyProperties(Object source, Object target, String... ignoredNames) throws org.springframework.beans.BeansException;
 	public void fillToValueObject(
 			Object destObject, Object origObject) throws ServiceException, IllegalAccessException, InvocationTargetException; 
 	public void fillToPersisentObject(

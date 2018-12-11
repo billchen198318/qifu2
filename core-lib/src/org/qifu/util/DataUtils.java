@@ -25,8 +25,8 @@ import java.sql.Connection;
 import java.sql.DatabaseMetaData;
 import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.util.ArrayList;
-import java.util.HashMap;
+import java.util.LinkedHashMap;
+import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
 
@@ -87,7 +87,7 @@ public class DataUtils {
 		DatabaseMetaData metaData = connection.getMetaData();
 		String[] types = {"TABLE"};
 		ResultSet rs = metaData.getTables(null, null, "%", types);
-		List<String> tables = new ArrayList<String>();
+		List<String> tables = new LinkedList<String>();
 		while (rs.next()) {
 			tables.add(rs.getString("TABLE_NAME"));
 		}
@@ -97,11 +97,11 @@ public class DataUtils {
 	}
 	
 	public static Map<String, Map<String, String>> getTableMetadata(Connection connection, String tableName) throws Exception {
-		Map<String, Map<String, String>> tableMetadatas = new HashMap<String, Map<String, String>>();
+		Map<String, Map<String, String>> tableMetadatas = new LinkedHashMap<String, Map<String, String>>();
 		DatabaseMetaData metadata = connection.getMetaData();
 		ResultSet resultSet = metadata.getColumns(null, null, tableName, null);
 		while (resultSet.next()) {
-			Map<String, String> metaDataMap = new HashMap<String, String>();
+			Map<String, String> metaDataMap = new LinkedHashMap<String, String>();
 			String name = resultSet.getString("COLUMN_NAME");
 			String type = resultSet.getString("TYPE_NAME");
 			int size = resultSet.getInt("COLUMN_SIZE");
@@ -134,7 +134,7 @@ public class DataUtils {
 	
 	public List<String> getEntityNameList(Session session) throws Exception {		
 		Map<String, ClassMetadata> classMetadataMap = getClassMetadata(session);
-		List<String> names = new ArrayList<String>();
+		List<String> names = new LinkedList<String>();
 		for (Map.Entry<String, ClassMetadata> entry : classMetadataMap.entrySet()) {
 			names.add(entry.getValue().getEntityName());
 		}		
