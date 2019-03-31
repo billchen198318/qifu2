@@ -481,3 +481,9 @@ opennlp-uima-1.8.3.jar
 osgi-resource-locator-1.0.1.jar
 validation-api-1.1.0.Final.jar
 
+
+Apache ActiveMQ
+===============================================
+activemq-all-5.15.9.jar
+commons-pool2-2.4.2.jar
+
