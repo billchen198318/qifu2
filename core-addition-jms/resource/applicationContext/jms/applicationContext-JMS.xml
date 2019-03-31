@@ -11,13 +11,27 @@
     http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-4.1.xsd
     http://activemq.apache.org/schema/core http://activemq.apache.org/schema/core/activemq-core.xsd">
     
+    <!-- embed broker -->
+    <bean id="brokerService" class="org.apache.activemq.broker.BrokerService" init-method="start" destroy-method="stop">
+        <property name="brokerName" value="broker1"/>
+        <property name="persistent" value="false"/>
+        <property name="transportConnectorURIs">
+            <list>
+                <value>tcp://localhost:61616</value>
+            </list>
+        </property>
+    </bean>   
+    
+    
     <!-- a pooling based JMS provider -->
     <bean id="targetConnectionFactory" class="org.apache.activemq.pool.PooledConnectionFactory" destroy-method="stop">
     	<property name="connectionFactory">
     		<bean class="org.apache.activemq.ActiveMQConnectionFactory">
     			<property name="brokerURL" value="tcp://localhost:61616" />
+    			<!--  
     			<property name="userName" value="system"/>
     			<property name="password" value="manager"/>    			
+    			-->
     		</bean>
     	</property>
     </bean>
@@ -30,7 +44,7 @@
 	
     
 	<bean id="connectionFactory" class="org.springframework.jms.connection.SingleConnectionFactory">  
-	    <property name="targetConnectionFactory" ref="pooledConnectionFactory"/>  
+	    <property name="targetConnectionFactory" ref="targetConnectionFactory"/>  
 	</bean>  
     
     
@@ -49,6 +63,20 @@
     <bean id="topicDestination" class="org.apache.activemq.command.ActiveMQTopic">  
         <constructor-arg value="topic"/>  
     </bean>  
+    
+    
+    <!-- ##### TEST ##### -->
+    <bean id="productMessageListener" class="org.qifu.test.ProductMessageListener"/>
+    
+	<bean id="productJmsContainer" class="org.springframework.jms.listener.DefaultMessageListenerContainer">  
+	    <property name="connectionFactory" ref="connectionFactory" />  
+	    <property name="destination" ref="queueDestination" />  
+	    <property name="messageListener" ref="productMessageListener" />  
+	</bean>      
+	
+	<bean id="test.jms.ProducerService" class="org.qifu.test.ProducerServiceImpl"/>
+	
+    <!-- ##### TEST ##### -->
     
     
 </beans>    
