@@ -3,7 +3,6 @@
 	<name>core-addition-jms</name>
 	<comment></comment>
 	<projects>
-		<project>core-base</project>
 	</projects>
 	<buildSpec>
 		<buildCommand>

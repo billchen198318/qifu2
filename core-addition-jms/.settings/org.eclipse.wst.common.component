@@ -2,8 +2,5 @@
     <wb-module deploy-name="core-addition-jms">
         <wb-resource deploy-path="/" source-path="/src"/>
         <wb-resource deploy-path="/" source-path="/resource"/>
-        <dependent-module archiveName="core-base.jar" deploy-path="/" handle="module:/resource/core-base/core-base">
-            <dependency-type>uses</dependency-type>
-        </dependent-module>
     </wb-module>
 </project-modules>
