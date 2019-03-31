@@ -9,6 +9,9 @@
         <dependent-module archiveName="core-base.jar" deploy-path="/WEB-INF/lib" handle="module:/resource/core-base/core-base">
             <dependency-type>uses</dependency-type>
         </dependent-module>
+        <dependent-module archiveName="core-addition-jms.jar" deploy-path="/WEB-INF/lib" handle="module:/resource/core-addition-jms/core-addition-jms">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
         <property name="context-root" value="core-web"/>
         <property name="java-output-path" value="/core-web/build/classes"/>
     </wb-module>

@@ -78,9 +78,7 @@
     
           
     <!-- JMS MQ -->
-    <!--    
     <import resource="classpath*:applicationContext/applicationContext-STANDARD-JMS.xml" />
-    -->
     
     
     <!-- Quartz -->  

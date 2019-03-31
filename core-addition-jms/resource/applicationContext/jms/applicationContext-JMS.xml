@@ -11,11 +11,8 @@
     http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-4.1.xsd
     http://activemq.apache.org/schema/core http://activemq.apache.org/schema/core/activemq-core.xsd">
     
-    <import resource="classpath*:applicationContext/jms/applicationContext-JMS.xml" />
-    
     <!-- a pooling based JMS provider -->
-    <!-- 
-    <bean id="jmsFactory" class="org.apache.activemq.pool.PooledConnectionFactory" destroy-method="stop">
+    <bean id="targetConnectionFactory" class="org.apache.activemq.pool.PooledConnectionFactory" destroy-method="stop">
     	<property name="connectionFactory">
     		<bean class="org.apache.activemq.ActiveMQConnectionFactory">
     			<property name="brokerURL" value="tcp://localhost:61616" />
@@ -24,35 +21,34 @@
     		</bean>
     	</property>
     </bean>
-    -->
     
-    <!--  Default Destination Queue Definition-->
-    <!--  
-    <bean id="defaultDestination" class="org.apache.activemq.command.ActiveMQQueue">
-    	<constructor-arg index="0" value="test_mqQueue"/>
-    </bean>
-    -->
+    
+	<bean id="pooledConnectionFactory" class="org.apache.activemq.pool.PooledConnectionFactory">  
+	    <property name="connectionFactory" ref="targetConnectionFactory"/>  
+	    <property name="maxConnections" value="10"/>  
+	</bean>  
+	
+    
+	<bean id="connectionFactory" class="org.springframework.jms.connection.SingleConnectionFactory">  
+	    <property name="targetConnectionFactory" ref="pooledConnectionFactory"/>  
+	</bean>  
+    
     
     <!-- Spring JMS Template -->
-    <!--
     <bean id="jmsTemplate" class="org.springframework.jms.core.JmsTemplate">
-    	<property name="connectionFactory" ref="jmsFactory" />
-    	<property name="defaultDestination" ref="defaultDestination" />
+    	<property name="connectionFactory" ref="connectionFactory" />
     </bean>
-    -->
     
-    <!-- Message Receiver Definition -->
-    <!--
-    <bean id="testMessageReceiver" class="test.TestReceiverJMS">
-    </bean>
-    -->
     
-    <!--    
-    <bean class="org.springframework.jms.listener.SimpleMessageListenerContainer">
-        <property name="connectionFactory" ref="jmsFactory" />
-        <property name="destinationName" value="test_mqQueue" />
-        <property name="messageListener" ref="testMessageReceiver" />
-    </bean>    
-    -->
+    <bean id="queueDestination" class="org.apache.activemq.command.ActiveMQQueue">  
+        <constructor-arg>  
+            <value>queue</value>  
+        </constructor-arg>  
+    </bean>  
+    
+    <bean id="topicDestination" class="org.apache.activemq.command.ActiveMQTopic">  
+        <constructor-arg value="topic"/>  
+    </bean>  
+    
     
 </beans>    
