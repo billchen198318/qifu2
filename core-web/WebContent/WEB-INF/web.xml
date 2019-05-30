@@ -109,9 +109,37 @@
     <servlet-mapping>
         <servlet-name>spring-mvc</servlet-name>
         <url-pattern>*.do</url-pattern>
-    </servlet-mapping> 	  
-
-
+    </servlet-mapping> 	
+    
+    
+    <!-- ############### swagger2 ############### -->
+	<servlet-mapping>
+	    <servlet-name>spring-mvc</servlet-name>
+	    <url-pattern>/v2/api-docs</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+	    <servlet-name>spring-mvc</servlet-name>
+	    <url-pattern>/swagger-resources</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+	    <servlet-name>spring-mvc</servlet-name>
+	    <url-pattern>/swagger-resources/configuration/ui</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+	    <servlet-name>spring-mvc</servlet-name>
+	    <url-pattern>/swagger-resources/configuration/security</url-pattern>
+	</servlet-mapping>      
+	<servlet-mapping>
+	    <servlet-name>spring-mvc</servlet-name>
+	    <url-pattern>/configuration/ui</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+	    <servlet-name>spring-mvc</servlet-name>
+	    <url-pattern>/configuration/security</url-pattern>
+	</servlet-mapping> 
+	<!-- ############### swagger2 ############### -->
+	
+	
   	<servlet>
     	<servlet-name>kaptcha</servlet-name>
     	<servlet-class>com.google.code.kaptcha.servlet.KaptchaServlet</servlet-class>

@@ -115,6 +115,16 @@
          		/froala_editor/**=anon
          		/tether/**=anon
          		
+         		
+         		/swagger-ui/**=anon
+         		/swagger-ui.html=anon
+         		/configuration/**=anon
+         		/swagger-resources/**=anon
+         		/webjars*=anon
+         		/API/**=anon
+         		/v2/**=anon
+         		
+         		
 			</value> 
    		</property> 
 	</bean>

@@ -487,3 +487,21 @@ Apache ActiveMQ
 activemq-all-5.15.9.jar
 commons-pool2-2.4.2.jar
 
+
+Springfox Swagger2
+===============================================
+spring-plugin-core-1.2.0.RELEASE.jar
+spring-plugin-metadata-1.2.0.RELEASE.jar
+springfox-bean-validators-2.9.2.jar
+springfox-core-2.9.2.jar
+springfox-data-rest-2.9.2.jar
+springfox-petstore-2.9.2.jar
+springfox-schema-2.9.2.jar
+springfox-spi-2.9.2.jar
+springfox-spring-web-2.9.2.jar
+springfox-swagger-common-2.9.2.jar
+springfox-swagger-ui-2.9.2.jar
+springfox-swagger2-2.9.2.jar
+swagger-annotations-1.5.22.jar
+swagger-models-1.5.22.jar
+

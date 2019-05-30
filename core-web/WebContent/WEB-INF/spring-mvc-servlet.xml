@@ -14,6 +14,13 @@
 	http://www.springframework.org/schema/mvc/spring-mvc-4.0.xsd">
     
     <mvc:annotation-driven />
+    <mvc:default-servlet-handler />
+    <context:annotation-config />
+    
+    <!-- ############### swagger2 ############### -->
+    <bean class="org.qifu.base.config.SwaggerConfig"/>
+    <mvc:resources location="classpath:/META-INF/resources/webjars/" mapping="/webjars/**"/>
+    <!-- ############### swagger2 ############### -->
     
     <context:component-scan base-package="org.qifu.controller" />
 
@@ -58,6 +65,17 @@
         	<mvc:exclude-mapping path="/tether*"/>
         	<mvc:exclude-mapping path="/js*"/>
         	<mvc:exclude-mapping path="/css*"/>
+        	
+        	<!-- ############### swagger2 ############### -->
+        	<mvc:exclude-mapping path="/swagger-ui/**"/>
+        	<mvc:exclude-mapping path="/swagger-ui.html"/>
+        	<mvc:exclude-mapping path="/configuration/**"/>
+        	<mvc:exclude-mapping path="/swagger-resources/**"/>
+        	<mvc:exclude-mapping path="/webjars*"/>
+        	<mvc:exclude-mapping path="/API/**"/>
+        	<mvc:exclude-mapping path="/v2/**"/>
+        	<!-- ############### swagger2 ############### -->
+        	
         	<bean class="org.qifu.base.interceptor.LoginHandlerInterceptor"/>
     	</mvc:interceptor>
     	
@@ -76,6 +94,17 @@
         	<mvc:exclude-mapping path="/tether*"/>
         	<mvc:exclude-mapping path="/js*"/>
         	<mvc:exclude-mapping path="/css*"/>        	      	
+        	
+        	<!-- ############### swagger2 ############### -->
+        	<mvc:exclude-mapping path="/swagger-ui/**"/>
+        	<mvc:exclude-mapping path="/swagger-ui.html"/>
+        	<mvc:exclude-mapping path="/configuration/**"/>
+        	<mvc:exclude-mapping path="/swagger-resources/**"/>
+        	<mvc:exclude-mapping path="/webjars*"/>
+        	<mvc:exclude-mapping path="/API/**"/>
+        	<mvc:exclude-mapping path="/v2/**"/>
+        	<!-- ############### swagger2 ############### -->       	
+        	
         	<bean class="org.qifu.base.interceptor.NoCacheHeaderInterceptor"/>
     	</mvc:interceptor>
     	
@@ -98,6 +127,17 @@
         	<mvc:exclude-mapping path="/tether*"/>
         	<mvc:exclude-mapping path="/js*"/>
         	<mvc:exclude-mapping path="/css*"/>        	  
+        	
+        	<!-- ############### swagger2 ############### -->
+        	<mvc:exclude-mapping path="/swagger-ui/**"/>
+        	<mvc:exclude-mapping path="/swagger-ui.html"/>
+        	<mvc:exclude-mapping path="/configuration/**"/>
+        	<mvc:exclude-mapping path="/swagger-resources/**"/>
+        	<mvc:exclude-mapping path="/webjars*"/>
+        	<mvc:exclude-mapping path="/API/**"/>
+        	<mvc:exclude-mapping path="/v2/**"/>
+        	<!-- ############### swagger2 ############### -->    	
+        	
         	<bean class="org.qifu.base.interceptor.ControllerAuthorityCheckInterceptor"/>
     	</mvc:interceptor>    	
     	
@@ -119,7 +159,18 @@
         	<mvc:exclude-mapping path="/froala_editor*"/>
         	<mvc:exclude-mapping path="/tether*"/>
         	<mvc:exclude-mapping path="/js*"/>
-        	<mvc:exclude-mapping path="/css*"/>        	  
+        	<mvc:exclude-mapping path="/css*"/>
+        	
+        	<!-- ############### swagger2 ############### -->
+        	<mvc:exclude-mapping path="/swagger-ui/**"/>
+        	<mvc:exclude-mapping path="/swagger-ui.html"/>
+        	<mvc:exclude-mapping path="/configuration/**"/>
+        	<mvc:exclude-mapping path="/swagger-resources/**"/>
+        	<mvc:exclude-mapping path="/webjars*"/>
+        	<mvc:exclude-mapping path="/API/**"/>
+        	<mvc:exclude-mapping path="/v2/**"/>
+        	<!-- ############### swagger2 ############### -->   	
+        	        	  
         	<bean class="org.qifu.base.interceptor.QueryParamInspectInterceptor"/>
     	</mvc:interceptor>
     	    	
