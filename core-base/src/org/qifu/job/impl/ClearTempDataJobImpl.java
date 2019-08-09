@@ -32,12 +32,14 @@ import org.qifu.job.BaseJob;
 import org.qifu.util.ApplicationSiteUtils;
 import org.qifu.util.UploadSupportUtils;
 import org.qifu.vo.SysVO;
+import org.quartz.DisallowConcurrentExecution;
 import org.quartz.Job;
 import org.quartz.JobExecutionContext;
 import org.quartz.JobExecutionException;
 import org.springframework.jdbc.core.namedparam.NamedParameterJdbcTemplate;
 import org.springframework.web.context.ContextLoader;
 
+@DisallowConcurrentExecution
 public class ClearTempDataJobImpl extends BaseJob implements Job {
 	protected static Logger log = Logger.getLogger(ClearTempDataJobImpl.class);
 	
@@ -52,6 +54,10 @@ public class ClearTempDataJobImpl extends BaseJob implements Job {
 			return;
 		}		
 		log.info("begin....");
+		if (this.checkCurrentlyExecutingJobs(context, this)) {
+			log.warn("Same schedule job, current working...");
+			return;
+		}
 		try {
 			
 			/**

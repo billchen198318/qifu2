@@ -57,7 +57,11 @@ public class SendMailHelperJobImpl extends BaseJob implements Job {
 			log.warn( "ApplicationContext no completed, AppContext.getApplicationContext() == null" );			
 			return;
 		}		
-		//log.info("begin....");		
+		//log.info("begin....");	
+		if (this.checkCurrentlyExecutingJobs(context, this)) {
+			log.warn("Same schedule job, current working...");
+			return;
+		}		
 		try {
 			this.login();
 			//log.info("Background Program userId: " + this.getAccountId());
