@@ -58,10 +58,10 @@ function updateSuccess(data) {
 		return;
 	}
 	parent.toastrInfo( data.message );
-	updateSave();
+	clearUpdate();
 }
 
-function updateSave() {
+function clearUpdate() {
 	clearWarningMessageField(formGroups, msgFields);
 }
 
@@ -127,9 +127,9 @@ function updateSave() {
 			"
 			onclick="btnUpdate();"
 			loadFunction="updateSuccess(data);"
-			errorFunction="updateSave();">
+			errorFunction="clearUpdate();">
 		</q:button>
-		<q:button id="btnClear" label="Clear" onclick="updateSave();"></q:button>
+		<q:button id="btnClear" label="Clear" onclick="clearUpdate();"></q:button>
 	</div>
 </div>
 

@@ -102,7 +102,7 @@ function uploadModal() {
 <div class="form-group" id="form-group1">
 	<div class="row">
 		<div class="col-xs-6 col-md-6 col-lg-6">
-			Activiti BPM file(zip)&nbsp;<font size='RED'>*</font>
+			Activiti BPM file(zip)&nbsp;<font color='RED'>*</font>
 			<p style="margin-bottom: 10px"></p>
 			<q:button id="uploadBtn" label="Upload" onclick="uploadModal();"></q:button><div id="uploadLabel"></div>
 		</div>
