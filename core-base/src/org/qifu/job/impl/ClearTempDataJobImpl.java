@@ -80,9 +80,13 @@ public class ClearTempDataJobImpl extends BaseJob implements Job {
 			 */
 			NamedParameterJdbcTemplate namedParameterJdbcTemplate = (NamedParameterJdbcTemplate)
 					AppContext.getBean("namedParameterJdbcTemplate");
+			
+			// this is OLD code for bambooBSC, the qifu2 no use it.
+			/*
 			Map<String, Object> paramMap = new HashMap<String, Object>();
 			namedParameterJdbcTemplate.update("delete from bb_swot_report_mst", paramMap);
 			namedParameterJdbcTemplate.update("delete from bb_swot_report_dtl", paramMap);
+			*/
 			
 		} catch (ServiceException e) {
 			e.printStackTrace();
