@@ -21,12 +21,16 @@
  */
 package org.qifu.base.model;
 
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.HashMap;
 import java.util.LinkedHashMap;
 import java.util.Map;
 
 import org.apache.commons.lang3.StringUtils;
 import org.qifu.base.Constants;
+import org.qifu.util.SimpleUtils;
 
 import ognl.Ognl;
 import ognl.OgnlException;
@@ -77,6 +81,32 @@ public class DynamicHqlQueryParamHandler implements java.io.Serializable {
 		root.put(key, value);
 		return this;
 	}
+	
+	public DynamicHqlQueryParamHandler stringFieldAsDate(String field, String putVariableName, boolean firstZero_HHmmss) {
+		String value = this.sourceSearchParameter.get(field);
+		if (this.defaultCheckNoBlank(value)) {
+			String dateStr = value.replaceAll("-", "").replaceAll("/", "");
+			if (SimpleUtils.isDate(dateStr)) {
+				String yyyy = dateStr.substring(0, 4);
+				String mm = dateStr.substring(4, 6);
+				String dd = dateStr.substring(6, 8);
+				SimpleDateFormat sdFormat = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss"); 
+				dateStr = yyyy + "-" + mm + "-" + dd;
+				if (firstZero_HHmmss) { // 起日
+					dateStr += " 00:00:00";
+				} else { // 迄日
+					dateStr += " 23:59:59";
+				}
+				try {
+					Date dateObj = sdFormat.parse(dateStr);
+					this.value.put(putVariableName, dateObj);
+				} catch (ParseException e) {
+					e.printStackTrace();
+				}
+			}
+		}
+		return this;
+	}	
 	
 	public DynamicHqlQueryParamHandler fullEquals4TextField(String field) {
 		String value = this.sourceSearchParameter.get(field);
