@@ -58,6 +58,28 @@ public class UIComponentValueUtils {
 		return false;
 	}
 	
+	public static boolean foundHasRoleResult(PageContext pageContext) {
+		if ( pageContext.getAttribute( UIComponent.HasRoleResultVariableName) != null ) {
+			return true;
+		}
+		return false;
+	}	
+	
+	public static void removeHasRoleResult(PageContext pageContext) {
+		pageContext.removeAttribute(UIComponent.HasRoleResultVariableName);
+	}
+	
+	public static void putHasRoleResult(PageContext pageContext, boolean result) {
+		pageContext.setAttribute(UIComponent.HasRoleResultVariableName, result);
+	}
+	
+	public static boolean getHasRoleResult(PageContext pageContext) {
+		if ( pageContext.getAttribute( UIComponent.HasRoleResultVariableName) != null ) {
+			return (Boolean) pageContext.getAttribute( UIComponent.HasRoleResultVariableName );
+		}
+		return false;
+	}		
+	
 	public static Object getObjectFromPageContextOrRequest(PageContext pageContext, String paramName) {
 		HttpServletRequest request = (HttpServletRequest) pageContext.getRequest();
 		/**

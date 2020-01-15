@@ -517,5 +517,23 @@
 		</attribute>
 	</tag>
 	
+	<!-- HasRole -->
+	<tag>
+		<name>hasRole</name>
+		<tag-class>org.qifu.tag.HasRoleTag</tag-class>
+		<body-content>JSP</body-content>
+		<attribute>
+			<name>roleIds</name>
+			<required>true</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>	
+	</tag>
 	
+	<!-- NoRole -->
+	<tag>
+		<name>noRole</name>
+		<tag-class>org.qifu.tag.NoRoleTag</tag-class>
+		<body-content>JSP</body-content>
+	</tag>	
+		
 </taglib>	
