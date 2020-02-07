@@ -96,4 +96,20 @@ public abstract class BaseLogicService {
 		return obj;
 	}	
 	
+	protected void replaceAll(Object obj, String variableName, String regex, String replacement) {
+		try {
+			Object val = Ognl.getValue(variableName, obj);
+			if (val == null) {
+				return;
+			}
+			String  str = (String) val;
+			str = org.apache.commons.lang3.StringUtils.replaceAll(str, regex, replacement);
+			Ognl.setValue(variableName, obj, str);
+		} catch (OgnlException e) {
+			e.printStackTrace();
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+	}	
+	
 }
