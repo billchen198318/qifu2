@@ -6,7 +6,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 <link rel="stylesheet" href="<%=basePath%>/tether/tether.min.css?ver=${jsVerBuild}" >
 <script type="text/javascript" src="<%=basePath%>/tether/tether.min.js?ver=${jsVerBuild}"></script>
 <script type="text/javascript" src="<%=basePath%>/popper-js/umd/popper.min.js?ver=${jsVerBuild}"></script>
-<script type="text/javascript" src="<%=basePath%>/jquery/jquery-3.2.1.min.js?ver=${jsVerBuild}"></script>
+<script type="text/javascript" src="<%=basePath%>/jquery/jquery-3.3.1.min.js?ver=${jsVerBuild}"></script>
 <link rel="stylesheet" href="<%=basePath%>/bootstrap-vali/css/main.css?ver=${jsVerBuild}" >
 <link href="<%=basePath%>/font-awesome/css/font-awesome.min.css?ver=${jsVerBuild}" rel="stylesheet" type="text/css" />
 <script src="<%=basePath%>/bootstrap-vali/js/bootstrap.js?ver=${jsVerBuild}" ></script>
