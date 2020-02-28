@@ -401,7 +401,6 @@ public abstract class BaseDAO<T extends java.io.Serializable, PK extends java.io
 	}
 	
 	public void clear() throws Exception {
-		this.getCurrentSession().flush(); // 2020-01-28 add
 		this.getCurrentSession().clear();
 	}
 	
