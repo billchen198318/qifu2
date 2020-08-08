@@ -160,7 +160,7 @@ public class GreenStepHessianUtils {
 		if (val.length!=4) {
 			return null;
 		}
-		if (val[0].trim().length()<1 || val[1].trim().length()!=8 || !NumberUtils.isCreatable(val[2]) 
+		if (val[0].trim().length()<1 || val[1].trim().length()!=8 || !NumberUtils.isParsable(val[2]) 
 				|| !SimpleUtils.checkBeTrueOf_azAZ09(val[3])) {
 			return null;
 		}

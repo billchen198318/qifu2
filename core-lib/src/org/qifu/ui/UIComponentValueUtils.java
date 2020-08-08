@@ -30,6 +30,7 @@ import javax.servlet.jsp.PageContext;
 
 import org.apache.commons.text.StringEscapeUtils;
 import org.apache.commons.lang3.StringUtils;
+import org.apache.commons.lang3.math.NumberUtils;
 
 import ognl.Ognl;
 import ognl.OgnlException;
@@ -180,7 +181,7 @@ public class UIComponentValueUtils {
 		 * 處理 如: policy.no , policy.amount
 		 */
 		//if (!StringUtils.isBlank(value) && value.indexOf("@") == -1 && value.indexOf("new ") == -1 && value.indexOf(".") >= 1) { // 暫時不需要
-		if (!StringUtils.isBlank(value)) { // TextBox, TextArea, Select, Out tag 會用到
+		if (!StringUtils.isBlank(value) && !NumberUtils.isParsable(value)) { // TextBox, TextArea, Select, Out tag 會用到 , 2020-08-08 add number value no need
 			Object val = null;
 			if ( UIComponent.SCOPE_SESSION.equals(scope) ) {
 				val = getOgnlProcessObjectFromHttpSession(pageContext, value);
