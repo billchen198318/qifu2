@@ -25,7 +25,6 @@ import java.io.IOException;
 import java.util.Properties;
 
 import org.qifu.util.SimpleUtils;
-import org.qifu.util.UploadSupportUtils;
 
 /**
  * config properties file in META-INF/template-code-use.properties
@@ -36,7 +35,7 @@ public class TemplateCode {
 	
 	static {
 		try {
-			props.load(UploadSupportUtils.class.getClassLoader().getResource("META-INF/template-code-use.properties").openStream());
+			props.load(TemplateCode.class.getClassLoader().getResource("META-INF/template-code-use.properties").openStream());
 			_USE_CODE = SimpleUtils.getStr(props.getProperty("CODE")).trim().split(",");
 		} catch (IOException e) {
 			e.printStackTrace();
