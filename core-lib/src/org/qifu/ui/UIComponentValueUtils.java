@@ -143,7 +143,7 @@ public class UIComponentValueUtils {
 		Enumeration<String> aNames = request.getSession().getAttributeNames();
 		while (aNames.hasMoreElements()) {
 			String key = aNames.nextElement();
-			ognlRoot.put(key, request.getAttribute(key));
+			ognlRoot.put(key, request.getSession().getAttribute(key));
 		}
 		if (ognlRoot.size() == 0) {
 			ognlRoot = null;
