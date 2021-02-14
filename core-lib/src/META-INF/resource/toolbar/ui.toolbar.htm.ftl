@@ -1,5 +1,5 @@
 <p style="margin-bottom: 20px"></p><!-- need with .app-title padding 10px -->
-<div class="app-title" style="background: linear-gradient(to top, #f8f9fa, #ffffff); position: fixed; width: 100%; overflow: hidden; z-index: 99999;">
+<div id="${programId}_toolbar" class="app-title" style="background: linear-gradient(to top, #f8f9fa, #ffffff); position: fixed; width: 103vw; overflow: hidden;">
 	<div>
 		<h1>${programName}</h1>
 <#if description?? && description != "">
@@ -23,7 +23,8 @@
 </#if>	
 			
 <#if cancelEnable == "Y" >			
-			&nbsp;<font color="#BDBDBD">|</font>&nbsp;
+			<!-- &nbsp;<font color="#BDBDBD">|</font>&nbsp; -->
+			&nbsp;<i class="icon fa fa-ellipsis-v" style="color:#BDBDBD"></i>&nbsp;
 			<img class="btn btn-light btn-sm" alt="close" title="Close" src="./images/close.png" onclick="${cancelJsMethod}"/>			
 </#if>			
 
@@ -31,10 +32,15 @@
 	</div>    
 	
         <ul class="app-breadcrumb breadcrumb">
-          <li class="breadcrumb-item" title="${programName}"><font color="#6c757d">${programId}</font></li>
+          <li class="breadcrumb-item" title="${programName}"><font color="#6c757d">${programId}</font>&nbsp;&nbsp;&nbsp;</li>
         </ul>
         		
 </div>        
+<script>
+setTimeout(function(){
+	$('#${programId}_toolbar').css('z-index', '90');
+}, 3000);
+</script>
 
 <br>
 <br>

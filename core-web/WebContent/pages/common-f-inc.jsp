@@ -3,12 +3,11 @@
 String path = request.getContextPath();
 String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.getServerPort()+path+"/";
 %>
-<link rel="stylesheet" href="<%=basePath%>/tether/tether.min.css?ver=${jsVerBuild}" >
-<script type="text/javascript" src="<%=basePath%>/tether/tether.min.js?ver=${jsVerBuild}"></script>
 <script type="text/javascript" src="<%=basePath%>/popper-js/umd/popper.min.js?ver=${jsVerBuild}"></script>
 <script type="text/javascript" src="<%=basePath%>/jquery/jquery-3.3.1.min.js?ver=${jsVerBuild}"></script>
-<link rel="stylesheet" href="<%=basePath%>/bootstrap-vali/css/main.css?ver=${jsVerBuild}" >
+<link rel="stylesheet" type="text/css" href="<%=basePath%>/bootstrap-vali/css/main.css?ver=${jsVerBuild}">
 <link href="<%=basePath%>/font-awesome/css/font-awesome.min.css?ver=${jsVerBuild}" rel="stylesheet" type="text/css" />
+<link rel="stylesheet" href="<%=basePath%>/bootstrap-vali/css/main.css?ver=${jsVerBuild}" >
 <script src="<%=basePath%>/bootstrap-vali/js/bootstrap.js?ver=${jsVerBuild}" ></script>
 <script src="<%=basePath%>/configJs.do?ver=${jsVerBuild}" ></script>
 <script src="<%=basePath%>/js/f.js?ver=${jsVerBuild}" ></script>
@@ -22,7 +21,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 /* width for content */
 /* =================================== 2018-03-21 add =================================== */
 body {
-  width: 94%; /* 97% */
+  width: 96vw; /* 2020-09-09 add, before 100% */
   margin:0 auto;
 }
 /* =================================== 2018-03-21 add =================================== */

@@ -20,9 +20,9 @@ iframe {
 }
 
 .nav-tabs {
-	margin-top: -25px; 
+	margin-top: -35px; /* 2021-01-29 rem -25px */
 	margin-left: -25px;
-	height: 43px; /* 2021-02-02 add */
+	height: 40px; /* this height: 40px; only for qifu2 version */
 }
 
 /* 2021-01-29 add */

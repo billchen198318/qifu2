@@ -159,7 +159,7 @@ function ${queryFunction}() {
 				
 				str += '<div class="dataTables_paginate paging_simple_numbers" id="${id}_paginate">';
 				str += '<ul class="pagination">';
-				str += '<li class="paginate_button page-item previous" id="${id}_paginatePrevious"><a href="#" tabindex="0" class="page-link" onclick="changeDataTablePaginate(' + paginatePrevious + ');"><span aria-hidden="true">&laquo;</span><span class="sr-only">Previous</span></a></li>';
+				str += '<li class="paginate_button page-item previous" id="${id}_paginatePrevious"><a href="###" tabindex="0" class="page-link" onclick="changeDataTablePaginate(' + paginatePrevious + ');"><span aria-hidden="true">&laquo;</span><span class="sr-only">Previous</span></a></li>';
 				
 				var midMaxShow = 3;
 				var pStart = data.pageOfSelect - midMaxShow;
@@ -172,9 +172,9 @@ function ${queryFunction}() {
 				}
 				
 				if ( pStart > 1 ) {
-					str += '<li class="paginate_button page-item " id="${id}_paginate_1"><a href="#" tabindex="0" class="page-link" onclick="changeDataTablePaginate(1);">1</a></li>';
+					str += '<li class="paginate_button page-item " id="${id}_paginate_1"><a href="###" tabindex="0" class="page-link" onclick="changeDataTablePaginate(1);">1</a></li>';
 					if (pStart > 2) {
-						str += '<li class="paginate_button page-item disabled" id="${id}_paginate_left_disabled"><a href="#" class="page-link">&#183;&#183;</a></li>';
+						str += '<li class="paginate_button page-item disabled" id="${id}_paginate_left_disabled"><a href="###" class="page-link">&#183;&#183;</a></li>';
 					}
 				} 
 				for ( var p = pStart; p <= pEnd ; p++) {
@@ -182,16 +182,16 @@ function ${queryFunction}() {
 					if (p == data.pageOfSelect) {
 						activeStr = ' active ';
 					}
-					str += '<li class="paginate_button page-item ' + activeStr + '" id="${id}_paginate_' + p + '"><a href="#" tabindex="0" class="page-link" onclick="changeDataTablePaginate(' + p + ');">' + p + '</a></li>';
+					str += '<li class="paginate_button page-item ' + activeStr + '" id="${id}_paginate_' + p + '"><a href="###" tabindex="0" class="page-link" onclick="changeDataTablePaginate(' + p + ');">' + p + '</a></li>';
 				}
 				if ( pEnd < data.pageOfSize ) {
 					if ((pEnd + 1) < data.pageOfSize) {
-						str += '<li class="paginate_button page-item disabled" id="${id}_paginate_right_disabled"><a href="#" class="page-link">&#183;&#183;</a></li>';
+						str += '<li class="paginate_button page-item disabled" id="${id}_paginate_right_disabled"><a href="###" class="page-link">&#183;&#183;</a></li>';
 					}
-					str += '<li class="paginate_button page-item " id="${id}_paginate_' + data.pageOfSize + '"><a href="#" tabindex="0" class="page-link" onclick="changeDataTablePaginate(' + data.pageOfSize + ');">' + data.pageOfSize + '</a></li>';
+					str += '<li class="paginate_button page-item " id="${id}_paginate_' + data.pageOfSize + '"><a href="###" tabindex="0" class="page-link" onclick="changeDataTablePaginate(' + data.pageOfSize + ');">' + data.pageOfSize + '</a></li>';
 				} 				
 				
-				str += '<li class="paginate_button page-item next" id="${id}_paginateNext"><a href="#" tabindex="0" class="page-link" onclick="changeDataTablePaginate(' + paginateNext + ');"><span aria-hidden="true">&raquo;</span><span class="sr-only">Next</span></a></li>';
+				str += '<li class="paginate_button page-item next" id="${id}_paginateNext"><a href="###" tabindex="0" class="page-link" onclick="changeDataTablePaginate(' + paginateNext + ');"><span aria-hidden="true">&raquo;</span><span class="sr-only">Next</span></a></li>';
 				str += '</ul>';
 				str += '</div>';
 				/* ================================ dataTables paginate ================================ */
