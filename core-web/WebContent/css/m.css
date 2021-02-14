@@ -1,3 +1,11 @@
+body {
+	/* 2020-09-09 add */
+	width: 100%;
+	height: 100%;
+	margin:0 auto;
+	overflow-y: hidden;
+}
+
 iframe {
 	width: 100%;
     height: 100%;
@@ -5,6 +13,49 @@ iframe {
 }
 
 .tab-content {
-	height: 85vh;
+	height: 88vh;
 	background: #ffffff;
+	margin-left: -25px;
+	margin-right: -25px;
+}
+
+.nav-tabs {
+	margin-top: -25px; 
+	margin-left: -25px;
+	height: 43px; /* 2021-02-02 add */
+}
+
+/* 2021-01-29 add */
+.tabbable .nav-tabs {
+	overflow-x: auto;
+	overflow-y: hidden;
+	flex-wrap: nowrap;
+}
+.tabbable .nav-tabs .nav-link {
+	white-space: nowrap;
+}
+
+/* Let's get this party started */
+::-webkit-scrollbar {
+	width: 12px;
+	height: 6px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+	-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3); 
+    -webkit-border-radius: 10px;
+    border-radius: 10px;
+}
+ 
+/* Handle */
+::-webkit-scrollbar-thumb {
+    -webkit-border-radius: 10px;
+    border-radius: 10px;
+    background: #38362bcc; 
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.5); 
+}
+
+::-webkit-scrollbar-thumb:window-inactive {
+	background: #38362bcc; 
 }

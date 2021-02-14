@@ -98,7 +98,7 @@ $( document ).ready(function() {
 </head>
 
 
-<body class="app sidebar-mini rtl">
+<body class="app sidebar-mini">
 
 
 <!-- Modal Start here -->
@@ -174,7 +174,7 @@ ${modalHtmlData}
     </aside>
 	
     <main class="app-content">
-	
+	<nav class="tabbable">
 			<ul class="nav nav-tabs" id="myTab" role="tablist">
 
 			</ul>
@@ -184,7 +184,7 @@ ${modalHtmlData}
 				
 
 			</div>
-	  
+	</nav>
     </main>
     
     
