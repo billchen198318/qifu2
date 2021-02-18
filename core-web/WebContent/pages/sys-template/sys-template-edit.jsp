@@ -63,6 +63,7 @@ function updateSuccess(data) {
 
 function clearUpdate() {
 	clearWarningMessageField(formGroups, msgFields);
+	window.location = parent.getProgUrlForOid('CORE_PROG001D0004E', '${template.oid}');
 }
 
 </script>
@@ -92,12 +93,10 @@ function clearUpdate() {
 		<div class="col-xs-6 col-md-6 col-lg-6">
 			<q:textbox name="id" value="template.templateId" id="id" label="Id" requiredFlag="Y" maxlength="10" placeholder="Enter Id" readonly="Y"></q:textbox>
 		</div>
-	</div>
-	<div class="row">
 		<div class="col-xs-6 col-md-6 col-lg-6">
 			<q:textbox name="title" value="template.title" id="title" label="Title" requiredFlag="Y" maxlength="200" placeholder="Enter title"></q:textbox>
-		</div>
-	</div>	
+		</div>		
+	</div>
 </div>
 <div class="form-group" id="form-group2">
 	<q:textarea name="message" id="message" value="template.message" label="Message" requiredFlag="Y" escapeHtml="N"></q:textarea>
@@ -114,7 +113,7 @@ function clearUpdate() {
 
 <div class="row">
 	<div class="col-xs-6 col-md-6 col-lg-6">
-		<q:button id="btnUpdate" label="Save"
+		<q:button id="btnUpdate" label="<i class=\"icon fa fa-floppy-o\"></i>&nbsp;Save"
 			xhrUrl="./core.templateUpdateJson.do"
 			xhrParameter="
 			{
@@ -129,7 +128,7 @@ function clearUpdate() {
 			loadFunction="updateSuccess(data);"
 			errorFunction="clearUpdate();">
 		</q:button>
-		<q:button id="btnClear" label="Clear" onclick="clearUpdate();"></q:button>
+		<q:button id="btnClear" label="<i class=\"icon fa fa-hand-paper-o\"></i>&nbsp;Clear" onclick="clearUpdate();"></q:button>
 	</div>
 </div>
 

@@ -117,7 +117,7 @@ function clearSave() {
 
 <div class="row">
 	<div class="col-xs-6 col-md-6 col-lg-6">
-		<q:button id="btnSave" label="Save"
+		<q:button id="btnSave" label="<i class=\"icon fa fa-floppy-o\"></i>&nbsp;Save"
 			xhrUrl="./core.sysBeanSupportSaveJson.do"
 			xhrParameter="	
 			{
@@ -132,9 +132,12 @@ function clearSave() {
 			loadFunction="saveSuccess(data);"
 			errorFunction="clearSave();">
 		</q:button>
-		<q:button id="btnClear" label="Clear" onclick="clearSave();"></q:button>
+		<q:button id="btnClear" label="<i class=\"icon fa fa-hand-paper-o\"></i>&nbsp;Clear" onclick="clearSave();"></q:button>
 	</div>
 </div>
+
+<br>
+<br>
 
 </body>
 </html>

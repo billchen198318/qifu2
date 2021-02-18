@@ -75,6 +75,7 @@ function clearSave() {
 	$("#methodResultFlag").prop('checked', false);
 	$("#methodParamClass").val('');
 	$("#methodParamIndex").val('');
+	clearWarningMessageField(formGroups, msgFields);
 	clearQueryGridTable();
 }
 
@@ -164,24 +165,24 @@ function deleteRecord(oid) {
 
 <div class="row">
 	<div class="col-xs-6 col-md-6 col-lg-6">
-		<button type="button" class="btn btn-primary" id="btnQuery" onclick="queryGrid();">Query</button>
+		<button type="button" class="btn btn-primary" id="btnQuery" onclick="queryGrid();"><i class="icon fa fa-search"></i>&nbsp;Query</button>
 		&nbsp;	
-		<q:button id="btnSave" label="Save"
+		<q:button id="btnSave" label="<i class=\"icon fa fa-floppy-o\"></i>&nbsp;Save"
 			xhrUrl="./core.sysBeanSupportExpressionParamSaveJson.do"
 			xhrParameter="	
 			{
 				'sysBeanHelpExprOid'	:	'${sysBeanHelpExpr.oid}',
-				'varName'			:	$('#varName').val(),
-				'methodResultFlag'			:	( $('#methodResultFlag').is(':checked') ? 'Y' : 'N' ),
-				'methodParamClass'			:	$('#methodParamClass').val(),
-				'methodParamIndex'			:	( isNaN(parseInt( $('#methodParamIndex').val() )) ? -1 : parseInt( $('#methodParamIndex').val() ) )
+				'varName'				:	$('#varName').val(),
+				'methodResultFlag'		:	( $('#methodResultFlag').is(':checked') ? 'Y' : 'N' ),
+				'methodParamClass'		:	$('#methodParamClass').val(),
+				'methodParamIndex'		:	( isNaN(parseInt( $('#methodParamIndex').val() )) ? -1 : parseInt( $('#methodParamIndex').val() ) )
 			}
 			"
 			onclick="btnSave();"
 			loadFunction="saveSuccess(data);"
 			errorFunction="clearSave();">
 		</q:button>
-		<q:button id="btnClear" label="Clear" onclick="clearSave();"></q:button>
+		<q:button id="btnClear" label="<i class=\"icon fa fa-hand-paper-o\"></i>&nbsp;Clear" onclick="clearSave();"></q:button>
 	</div>
 </div>
 
@@ -191,7 +192,7 @@ function deleteRecord(oid) {
 <q:grid gridFieldStructure="getQueryGridHeader()" 
 	xhrParameter="
 	{
-		'parameter[helpExprOid]'		: '${sysBeanHelpExpr.oid}',
+		'parameter[helpExprOid]'	: '${sysBeanHelpExpr.oid}',
 		'select'					: getQueryGridSelect(),
 		'showRow'					: getQueryGridShowRow()	
 	}
@@ -201,6 +202,9 @@ function deleteRecord(oid) {
 	queryFunction="queryGrid()"
 	clearFunction="clearQueryGridTable()">
 </q:grid>
+
+<br>
+<br>
 
 </body>
 </html>

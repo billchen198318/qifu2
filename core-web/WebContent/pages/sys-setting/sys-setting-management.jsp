@@ -74,10 +74,13 @@ function updateSuccess(data) {
 		</div>
 	</div>	
 	-->
+	
+	<br>
+	
 	<div class="row">
 		<div class="col-xs-6 col-md-6 col-lg-6">
 		
-		<q:button id="btnUpdate" label="Save"
+		<q:button id="btnUpdate" label="<i class=\"icon fa fa-floppy-o\"></i>&nbsp;Save"
 			xhrUrl="./core.sysSettingUpdateJson.do"
 			xhrParameter="
 			{

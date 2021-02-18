@@ -177,11 +177,9 @@ function updateMenuRoleEnable() {
 		<div class="col-xs-6 col-md-6 col-lg-6">
 			<q:select dataSource="sysMap" name="sysOid" id="sysOid" value="" label="System" requiredFlag="Y" onchange="sysChange();"></q:select>
 		</div>
-	</div>
-	<div class="row">
 		<div class="col-xs-6 col-md-6 col-lg-6">
 			<q:select dataSource="progMap" name="progOid" id="progOid" value="" label="System" requiredFlag="Y" onchange="progChange();"></q:select>
-		</div>
+		</div>		
 	</div>
 	<div class="row">&nbsp;</div>
 	<div class="row">

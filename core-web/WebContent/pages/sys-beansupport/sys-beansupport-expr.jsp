@@ -74,6 +74,7 @@ function clearSave() {
 	$("#expressionOid").val( _qifu_please_select_id );
 	$("#runType").val( _qifu_please_select_id );
 	$("#exprSeq").val('');
+	clearWarningMessageField(formGroups, msgFields);
 	clearQueryGridTable();
 }
 
@@ -161,9 +162,9 @@ function deleteRecord(oid) {
 
 <div class="row">
 	<div class="col-xs-6 col-md-6 col-lg-6">
-		<button type="button" class="btn btn-primary" id="btnQuery" onclick="queryGrid();">Query</button>
+		<button type="button" class="btn btn-primary" id="btnQuery" onclick="queryGrid();"><i class="icon fa fa-search"></i>&nbsp;Query</button>
 		&nbsp;	
-		<q:button id="btnSave" label="Save"
+		<q:button id="btnSave" label="<i class=\"icon fa fa-floppy-o\"></i>&nbsp;Save"
 			xhrUrl="./core.sysBeanSupportExpressionSaveJson.do"
 			xhrParameter="	
 			{
@@ -177,7 +178,7 @@ function deleteRecord(oid) {
 			loadFunction="saveSuccess(data);"
 			errorFunction="clearSave();">
 		</q:button>
-		<q:button id="btnClear" label="Clear" onclick="clearSave();"></q:button>
+		<q:button id="btnClear" label="<i class=\"icon fa fa-hand-paper-o\"></i>&nbsp;Clear" onclick="clearSave();"></q:button>
 	</div>
 </div>
 
@@ -197,6 +198,9 @@ function deleteRecord(oid) {
 	queryFunction="queryGrid()"
 	clearFunction="clearQueryGridTable()">
 </q:grid>
+
+<br>
+<br>
 
 </body>
 </html>

@@ -67,7 +67,7 @@ function previewReport() {
 <q:if test=" null != paramList && paramList.size > 0 ">
 	<div class="row">
 		<div class="col-xs-6 col-md-6 col-lg-6">
-			<q:button id="preview" label="Preview" onclick="previewReport();"></q:button>
+			<q:button id="preview" label="<i class=\"icon fa fa-file-pdf-o\"></i>&nbsp;Preview" onclick="previewReport();"></q:button>
 		</div>
 	</div>
 	

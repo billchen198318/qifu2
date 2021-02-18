@@ -99,7 +99,7 @@ function uploadModal() {
 		<div class="col-xs-6 col-md-6 col-lg-6">
 			Activiti BPM file(zip)&nbsp;<font color='RED'>*</font>
 			<p style="margin-bottom: 10px"></p>
-			<q:button id="uploadBtn" label="Upload" onclick="uploadModal();"></q:button><div id="uploadLabel"></div>
+			<q:button id="uploadBtn" label="<i class=\"icon fa fa-upload\"></i>&nbsp;Upload" onclick="uploadModal();"></q:button><div id="uploadLabel"></div>
 		</div>
 	</div>
 	<div class="row">
@@ -125,7 +125,7 @@ function uploadModal() {
 
 <div class="row">
 	<div class="col-xs-6 col-md-6 col-lg-6">
-		<q:button id="btnUpdate" label="Save"
+		<q:button id="btnUpdate" label="<i class=\"icon fa fa-floppy-o\"></i>&nbsp;Save"
 			xhrUrl="./core.sysBpmResourceUpdateJson.do"
 			xhrParameter="	
 			{
@@ -140,9 +140,12 @@ function uploadModal() {
 			loadFunction="updateSuccess(data);"
 			errorFunction="clearUpdate();">
 		</q:button>
-		<q:button id="btnClear" label="Clear" onclick="clearUpdate();"></q:button>
+		<q:button id="btnClear" label="<i class=\"icon fa fa-hand-paper-o\"></i>&nbsp;Clear" onclick="clearUpdate();"></q:button>
 	</div>
 </div>
+
+<br>
+<br>
 
 </body>
 </html>

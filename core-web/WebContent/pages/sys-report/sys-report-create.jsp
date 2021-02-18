@@ -117,7 +117,7 @@ function uploadModal() {
 	</div>
 	<div class="row">
 		<div class="col-xs-6 col-md-6 col-lg-6">
-			<q:button id="uploadBtn" label="Upload file (zip)" cssClass="btn btn-info" onclick="uploadModal();">&nbsp;</q:button><div id="uploadLabel"></div>
+			<q:button id="uploadBtn" label="<i class=\"icon fa fa-upload\"></i>&nbsp;Upload file (zip)" cssClass="btn btn-info" onclick="uploadModal();">&nbsp;</q:button><div id="uploadLabel"></div>
 		</div>
 	</div>
 </div>
@@ -126,7 +126,7 @@ function uploadModal() {
 
 <div class="row">
 	<div class="col-xs-6 col-md-6 col-lg-6">
-		<q:button id="btnSave" label="Save"
+		<q:button id="btnSave" label="<i class=\"icon fa fa-floppy-o\"></i>&nbsp;Save"
 			xhrUrl="./core.sysReportSaveJson.do"
 			xhrParameter="
 			{
@@ -140,7 +140,7 @@ function uploadModal() {
 			loadFunction="saveSuccess(data);"
 			errorFunction="clearSave();">
 		</q:button>
-		<q:button id="btnClear" label="Clear" onclick="clearSave();"></q:button>
+		<q:button id="btnClear" label="<i class=\"icon fa fa-hand-paper-o\"></i>&nbsp;Clear" onclick="clearSave();"></q:button>
 	</div>
 </div>
 

@@ -159,5 +159,8 @@ function loadDiagram(type, objId) {
 		</tbody>
 	</table>	
 
+<br>
+<br>
+
 </body>
 </html>

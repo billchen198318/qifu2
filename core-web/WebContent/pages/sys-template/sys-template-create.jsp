@@ -96,11 +96,9 @@ function clearSave() {
 		<div class="col-xs-6 col-md-6 col-lg-6">
 			<q:textbox name="id" value="" id="id" label="Id" requiredFlag="Y" maxlength="10" placeholder="Enter Id"></q:textbox>
 		</div>
-	</div>
-	<div class="row">
 		<div class="col-xs-6 col-md-6 col-lg-6">
 			<q:textbox name="title" value="" id="title" label="Title" requiredFlag="Y" maxlength="200" placeholder="Enter title"></q:textbox>
-		</div>
+		</div>		
 	</div>	
 </div>
 <div class="form-group" id="form-group2">
@@ -118,7 +116,7 @@ function clearSave() {
 
 <div class="row">
 	<div class="col-xs-6 col-md-6 col-lg-6">
-		<q:button id="btnSave" label="Save"
+		<q:button id="btnSave" label="<i class=\"icon fa fa-floppy-o\"></i>&nbsp;Save"
 			xhrUrl="./core.templateSaveJson.do"
 			xhrParameter="
 			{
@@ -132,7 +130,7 @@ function clearSave() {
 			loadFunction="saveSuccess(data);"
 			errorFunction="clearSave();">
 		</q:button>
-		<q:button id="btnClear" label="Clear" onclick="clearSave();"></q:button>
+		<q:button id="btnClear" label="<i class=\"icon fa fa-hand-paper-o\"></i>&nbsp;Clear" onclick="clearSave();"></q:button>
 	</div>
 </div>
 

@@ -145,7 +145,7 @@ function clearUpdate() {
 
 <div class="row">
 	<div class="col-xs-6 col-md-6 col-lg-6">
-		<q:button id="btnUpdate" label="Save"
+		<q:button id="btnUpdate" label="<i class=\"icon fa fa-floppy-o\"></i>&nbsp;Save"
 			xhrUrl="./core.sysExpressionUpdateJson.do"
 			xhrParameter="	
 			{
@@ -161,9 +161,12 @@ function clearUpdate() {
 			loadFunction="updateSuccess(data);"
 			errorFunction="clearUpdate();">
 		</q:button>
-		<q:button id="btnClear" label="Clear" onclick="clearUpdate();"></q:button>
+		<q:button id="btnClear" label="<i class=\"icon fa fa-hand-paper-o\"></i>&nbsp;Clear" onclick="clearUpdate();"></q:button>
 	</div>
 </div>
+
+<br>
+<br>
 
 </body>
 </html>
