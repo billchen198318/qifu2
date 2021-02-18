@@ -32,6 +32,7 @@ public class TbSysProg extends BaseEntity<String> implements java.io.Serializabl
 	private String progSystem;
 	private String itemType;
 	private String icon;
+	private String fontIconClassId;
 	private String cuserid;
 	private Date cdate;
 	private String uuserid;
@@ -138,6 +139,15 @@ public class TbSysProg extends BaseEntity<String> implements java.io.Serializabl
 	
 	public void setIcon(String icon) {
 		this.icon = icon;
+	}
+	
+	@Column(name="FONT_ICON_CLASS_ID")
+	public String getFontIconClassId() {
+		return fontIconClassId;
+	}
+	
+	public void setFontIconClassId(String fontIconClassId) {
+		this.fontIconClassId = fontIconClassId;
 	}
 	
 	@Override

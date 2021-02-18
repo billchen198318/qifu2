@@ -50,7 +50,11 @@
 		<field>
 			<a>icon</a>
 			<b>icon</b>
-		</field>																											
+		</field>
+		<field>
+			<a>fontIconClassId</a>
+			<b>fontIconClassId</b>
+		</field>																									
 	</mapping>
 
 	<mapping map-id="sysProg.vo2po" >
@@ -99,7 +103,11 @@
 		<field>
 			<a>icon</a>
 			<b>icon</b>
-		</field>				
+		</field>	
+		<field>
+			<a>fontIconClassId</a>
+			<b>fontIconClassId</b>
+		</field>					
 	</mapping>
 	
 </mappings>

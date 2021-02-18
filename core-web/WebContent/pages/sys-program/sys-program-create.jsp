@@ -29,32 +29,37 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 $( document ).ready(function() {
 	
 	$("#icon").trigger("change");
+	$("#fontIconClassId").on("click", function(){
+		showCommonFontIconSelectModal();
+	});	
 	
 });
 
 var msgFields = new Object();
-msgFields['progSystemOid'] 	= 'progSystem';
-msgFields['progId'] 		= 'progId';
-msgFields['name'] 			= 'name';
-msgFields['url']			= 'url';
-msgFields['itemType']		= 'itemType';
-msgFields['iconOid']		= 'icon';
-msgFields['editMode']		= 'editMode';
-msgFields['isDialog']		= 'isDialog';
-msgFields['dialogWidth']	= 'dialogWidth';
-msgFields['dialogHeight']	= 'dialogHeight';
+msgFields['progSystemOid'] 		= 'progSystem';
+msgFields['progId'] 			= 'progId';
+msgFields['name'] 				= 'name';
+msgFields['url']				= 'url';
+msgFields['itemType']			= 'itemType';
+msgFields['iconOid']			= 'icon';
+msgFields['fontIconClassId']	= 'fontIconClassId';
+msgFields['editMode']			= 'editMode';
+msgFields['isDialog']			= 'isDialog';
+msgFields['dialogWidth']		= 'dialogWidth';
+msgFields['dialogHeight']		= 'dialogHeight';
 
 var formGroups = new Object();
-formGroups['progSystem'] 	= 'form-group1';
-formGroups['progId'] 		= 'form-group1';
-formGroups['name'] 			= 'form-group1';
-formGroups['url'] 			= 'form-group2';
-formGroups['itemType'] 		= 'form-group2';
-formGroups['icon'] 			= 'form-group2';
-formGroups['editMode'] 		= 'form-group2';
-formGroups['isDialog'] 		= 'form-group3';
-formGroups['dialogWidth'] 	= 'form-group3';
-formGroups['dialogHeight'] 	= 'form-group3';
+formGroups['progSystem'] 		= 'form-group1';
+formGroups['progId'] 			= 'form-group1';
+formGroups['name'] 				= 'form-group1';
+formGroups['url'] 				= 'form-group2';
+formGroups['itemType'] 			= 'form-group2';
+formGroups['icon'] 				= 'form-group2';
+formGroups['fontIconClassId'] 	= 'form-group2';
+formGroups['editMode'] 			= 'form-group2';
+formGroups['isDialog'] 			= 'form-group3';
+formGroups['dialogWidth'] 		= 'form-group3';
+formGroups['dialogHeight'] 		= 'form-group3';
 
 function saveSuccess(data) {
 	clearWarningMessageField(formGroups, msgFields);
@@ -71,6 +76,12 @@ function clearSave() {
 	clearWarningMessageField(formGroups, msgFields);
 	document.getElementById("CORE_PROG001D0002A_form").reset();
 	$("#icon").trigger("change");
+}
+
+function setSelectFontIcon(fontClass) {
+	$("#fontIconClassId").val(fontClass);
+	hiddenCommonFontIconSelectModal();
+	$("#fontIconClassIdShow").html( '<i class="icon fa fa-' + fontClass + '"></i>' );
 }
 
 </script>
@@ -94,6 +105,10 @@ function clearSave() {
 	description="Create program item.">		
 </q:toolBar>
 <jsp:include page="../common-f-head.jsp"></jsp:include>
+<jsp:include page="../common-fonticonselect-head.jsp">
+	<jsp:param value="CORE_PROG001D0002A" name="programId"/>
+	<jsp:param value="setSelectFontIcon" name="setFontIconFunctionMethodName"/>
+</jsp:include>
 
 <form action="." name="CORE_PROG001D0002A_form" id="CORE_PROG001D0002A_form">
 <div class="form-group" id="form-group1">
@@ -101,15 +116,16 @@ function clearSave() {
 		<div class="col-xs-6 col-md-6 col-lg-6">
 			<q:select dataSource="sysMap" name="progSystem" id="progSystem" value="" label="System" requiredFlag="Y"></q:select>
 		</div>
-	</div>
-	<div class="row">
 		<div class="col-xs-6 col-md-6 col-lg-6">
 			<q:textbox name="progId" value="" id="progId" label="Id" requiredFlag="Y" maxlength="50" placeholder="Enter Program Id"></q:textbox>
-		</div>
+		</div>		
 	</div>
 	<div class="row">
 		<div class="col-xs-6 col-md-6 col-lg-6">
 			<q:textbox name="name" value="" id="name" label="Name" requiredFlag="Y" maxlength="100" placeholder="Enter Program Name"></q:textbox>
+		</div>
+		<div class="col-xs-6 col-md-6 col-lg-6">
+			&nbsp;
 		</div>
 	</div>
 </div>
@@ -118,12 +134,11 @@ function clearSave() {
 		<div class="col-xs-6 col-md-6 col-lg-6">
 			<q:textbox name="url" value="" id="url" label="Url" maxlength="255" placeholder="Enter Program URL"></q:textbox>
 		</div>
-	</div>
-	<div class="row">
 		<div class="col-xs-6 col-md-6 col-lg-6">
 			<q:select dataSource="{ \"FOLDER\":\"FOLDER\", \"ITEM\":\"ITEM\" }" name="itemType" id="itemType" value="" label="Type" requiredFlag="Y"></q:select>
-		</div>
+		</div>		
 	</div>
+	<br>
 	<div class="row">
 		<div class="col-xs-6 col-md-6 col-lg-6">
 			<q:select dataSource="iconMap" name="icon" id="icon" value="" label="Icon" requiredFlag="Y" onchange="showIcon();"></q:select>
@@ -144,10 +159,17 @@ function clearSave() {
 			}
 			</script>			
 		</div>
+		<div class="col-xs-6 col-md-6 col-lg-6">
+			<q:textbox name="fontIconClassId" value="" id="fontIconClassId" label="Menu Font Icon" requiredFlag="Y" readonly="Y" maxlength="100" placeholder="click select font icon." />
+			<div id="fontIconClassIdShow"></div>		
+		</div>
 	</div>	
 	<div class="row">
 		<div class="col-xs-6 col-md-6 col-lg-6">
 			<q:checkbox name="editMode" id="editMode" label="Edit mode"></q:checkbox>
+		</div>
+		<div class="col-xs-6 col-md-6 col-lg-6">
+			&nbsp;
 		</div>
 	</div>
 </div>	
@@ -178,16 +200,17 @@ function clearSave() {
 			xhrUrl="./core.sysProgramSaveJson.do"
 			xhrParameter="
 			{
-				'progSystemOid'	:	$('#progSystem').val(),
-				'progId'		:	$('#progId').val(),
-				'name'			:	$('#name').val(),
-				'url'			:	$('#url').val(),
-				'itemType'		:	$('#itemType').val(),
-				'iconOid'		:	$('#icon').val(),
-				'editMode'		:	( $('#editMode').is(':checked') ? 'Y' : 'N' ),
-				'isDialog'		:	( $('#isDialog').is(':checked') ? 'Y' : 'N' ),
-				'dialogWidth'	:	$('#dialogWidth').val(),
-				'dialogHeight'	:	$('#dialogHeight').val()
+				'progSystemOid'		:	$('#progSystem').val(),
+				'progId'			:	$('#progId').val(),
+				'name'				:	$('#name').val(),
+				'url'				:	$('#url').val(),
+				'itemType'			:	$('#itemType').val(),
+				'iconOid'			:	$('#icon').val(),
+				'editMode'			:	( $('#editMode').is(':checked') ? 'Y' : 'N' ),
+				'isDialog'			:	( $('#isDialog').is(':checked') ? 'Y' : 'N' ),
+				'dialogWidth'		:	$('#dialogWidth').val(),
+				'dialogHeight'		:	$('#dialogHeight').val(),
+				'fontIconClassId'	:	$('#fontIconClassId').val()
 			}
 			"
 			onclick="btnSave();"

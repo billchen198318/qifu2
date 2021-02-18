@@ -237,6 +237,7 @@ public class SystemProgramAction extends BaseController {
 		.testField("iconOid", ( this.noSelect(iconOid) ), "Please select icon!")
 		.testField("dialogWidth", ( (YES.equals(sysProg.getIsDialog()) && !NumberUtils.isCreatable(w)) ), "Please input dialog width!")
 		.testField("dialogHeight", ( (YES.equals(sysProg.getIsDialog()) && !NumberUtils.isCreatable(h)) ), "Please input dialog height!")
+		.testField("fontIconClassId", sysProg, "@org.apache.commons.lang3.StringUtils@isBlank(fontIconClassId)", "Font icon no select!")		
 		.throwMessage();		
 	}
 	

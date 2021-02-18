@@ -4,7 +4,7 @@
 	<query name="findSysProgPageGrid-select">	
 	<![CDATA[
 		SELECT
-			new org.qifu.vo.SysProgVO(sp.oid, sp.progId, sp.name, sp.url, sp.editMode, sp.progSystem, sp.itemType, sp.icon)
+			new org.qifu.vo.SysProgVO(sp.oid, sp.progId, sp.name, sp.url, sp.editMode, sp.progSystem, sp.itemType, sp.icon, sp.fontIconClassId)
 		FROM TbSysProg sp 
 		WHERE 1=1		
 		

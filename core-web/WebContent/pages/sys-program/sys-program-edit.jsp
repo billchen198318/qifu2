@@ -29,32 +29,39 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 $( document ).ready(function() {
 	
 	$("#icon").trigger("change");
+	$("#fontIconClassId").on("click", function(){
+		showCommonFontIconSelectModal();
+	});
+	
+	$("#fontIconClassIdShow").html( '<i class="icon fa fa-${sysProg.fontIconClassId}"></i>' );
 	
 });
 
 var msgFields = new Object();
-msgFields['progSystemOid'] 	= 'progSystem';
-msgFields['progId'] 		= 'progId';
-msgFields['name'] 			= 'name';
-msgFields['url']			= 'url';
-msgFields['itemType']		= 'itemType';
-msgFields['iconOid']		= 'icon';
-msgFields['editMode']		= 'editMode';
-msgFields['isDialog']		= 'isDialog';
-msgFields['dialogWidth']	= 'dialogWidth';
-msgFields['dialogHeight']	= 'dialogHeight';
+msgFields['progSystemOid'] 		= 'progSystem';
+msgFields['progId'] 			= 'progId';
+msgFields['name'] 				= 'name';
+msgFields['url']				= 'url';
+msgFields['itemType']			= 'itemType';
+msgFields['iconOid']			= 'icon';
+msgFields['fontIconClassId']	= 'fontIconClassId';
+msgFields['editMode']			= 'editMode';
+msgFields['isDialog']			= 'isDialog';
+msgFields['dialogWidth']		= 'dialogWidth';
+msgFields['dialogHeight']		= 'dialogHeight';
 
 var formGroups = new Object();
-formGroups['progSystem'] 	= 'form-group1';
-formGroups['progId'] 		= 'form-group1';
-formGroups['name'] 			= 'form-group1';
-formGroups['url'] 			= 'form-group2';
-formGroups['itemType'] 		= 'form-group2';
-formGroups['icon'] 			= 'form-group2';
-formGroups['editMode'] 		= 'form-group2';
-formGroups['isDialog'] 		= 'form-group3';
-formGroups['dialogWidth'] 	= 'form-group3';
-formGroups['dialogHeight'] 	= 'form-group3';
+formGroups['progSystem'] 		= 'form-group1';
+formGroups['progId'] 			= 'form-group1';
+formGroups['name'] 				= 'form-group1';
+formGroups['url'] 				= 'form-group2';
+formGroups['itemType'] 			= 'form-group2';
+formGroups['icon'] 				= 'form-group2';
+formGroups['fontIconClassId'] 	= 'form-group2';
+formGroups['editMode'] 			= 'form-group2';
+formGroups['isDialog'] 			= 'form-group3';
+formGroups['dialogWidth'] 		= 'form-group3';
+formGroups['dialogHeight'] 		= 'form-group3';
 
 function updateSuccess(data) {
 	clearWarningMessageField(formGroups, msgFields);
@@ -70,6 +77,12 @@ function updateSuccess(data) {
 function clearUpdate() {
 	clearWarningMessageField(formGroups, msgFields);
 	window.location=parent.getProgUrlForOid('CORE_PROG001D0002E', '${sysProg.oid}');
+}
+
+function setSelectFontIcon(fontClass) {
+	$("#fontIconClassId").val(fontClass);
+	hiddenCommonFontIconSelectModal();
+	$("#fontIconClassIdShow").html( '<i class="icon fa fa-' + fontClass + '"></i>' );
 }
 
 </script>
@@ -93,6 +106,10 @@ function clearUpdate() {
 	description="Modify program item.">		
 </q:toolBar>
 <jsp:include page="../common-f-head.jsp"></jsp:include>
+<jsp:include page="../common-fonticonselect-head.jsp">
+	<jsp:param value="CORE_PROG001D0002E" name="programId"/>
+	<jsp:param value="setSelectFontIcon" name="setFontIconFunctionMethodName"/>
+</jsp:include>
 
 <form action="." name="CORE_PROG001D0002E_form" id="CORE_PROG001D0002E_form">
 <div class="form-group" id="form-group1">
@@ -100,8 +117,6 @@ function clearUpdate() {
 		<div class="col-xs-6 col-md-6 col-lg-6">
 			<q:select dataSource="sysMap" name="progSystem" id="progSystem" value="sysSelectOid" label="System" requiredFlag="Y"></q:select>
 		</div>
-	</div>
-	<div class="row">
 		<div class="col-xs-6 col-md-6 col-lg-6">
 			<q:textbox name="progId" value="sysProg.progId" id="progId" label="Id" requiredFlag="Y" maxlength="50" placeholder="Enter Program Id" readonly="Y"></q:textbox>
 		</div>
@@ -111,18 +126,22 @@ function clearUpdate() {
 			<q:textbox name="name" value="sysProg.name" id="name" label="Name" requiredFlag="Y" maxlength="100" placeholder="Enter Program Name"></q:textbox>
 		</div>
 	</div>
+	<div class="row">
+		<div class="col-xs-6 col-md-6 col-lg-6">
+			&nbsp;
+		</div>
+	</div>
 </div>
 <div class="form-group" id="form-group2">	
 	<div class="row">
 		<div class="col-xs-6 col-md-6 col-lg-6">
 			<q:textbox name="url" value="sysProg.url" id="url" label="Url" maxlength="255" placeholder="Enter Program URL"></q:textbox>
 		</div>
-	</div>
-	<div class="row">
 		<div class="col-xs-6 col-md-6 col-lg-6">
 			<q:select dataSource="{ \"FOLDER\":\"FOLDER\", \"ITEM\":\"ITEM\" }" name="itemType" id="itemType" value="sysProg.itemType" label="Type" requiredFlag="Y"></q:select>
-		</div>
+		</div>		
 	</div>
+	<br>
 	<div class="row">
 		<div class="col-xs-6 col-md-6 col-lg-6">
 			<q:select dataSource="iconMap" name="icon" id="icon" value="iconSelectOid" label="Icon" requiredFlag="Y" onchange="showIcon();"></q:select>
@@ -143,11 +162,18 @@ function clearUpdate() {
 			}
 			</script>				
 		</div>
+		<div class="col-xs-6 col-md-6 col-lg-6">
+			<q:textbox name="fontIconClassId" value="sysProg.fontIconClassId" id="fontIconClassId" label="Menu Font Icon" requiredFlag="Y" readonly="Y" maxlength="100" placeholder="click select font icon." />
+			<div id="fontIconClassIdShow"></div>			
+		</div>
 	</div>	
 	<div class="row">
 		<div class="col-xs-6 col-md-6 col-lg-6">
 			<q:checkbox name="editMode" id="editMode" label="Edit mode" checkedTest=" \"Y\" == sysProg.editMode "></q:checkbox>			
 		</div>
+		<div class="col-xs-6 col-md-6 col-lg-6">
+			&nbsp;
+		</div>		
 	</div>
 </div>	
 <div class="form-group" id="form-group3">
@@ -177,17 +203,18 @@ function clearUpdate() {
 			xhrUrl="./core.sysProgramUpdateJson.do"
 			xhrParameter="
 			{
-				'oid'			:	'${sysProg.oid}',
-				'progSystemOid'	:	$('#progSystem').val(),
-				'progId'		:	$('#progId').val(),
-				'name'			:	$('#name').val(),
-				'url'			:	$('#url').val(),
-				'itemType'		:	$('#itemType').val(),
-				'iconOid'		:	$('#icon').val(),
-				'editMode'		:	( $('#editMode').is(':checked') ? 'Y' : 'N' ),
-				'isDialog'		:	( $('#isDialog').is(':checked') ? 'Y' : 'N' ),
-				'dialogWidth'	:	$('#dialogWidth').val(),
-				'dialogHeight'	:	$('#dialogHeight').val()
+				'oid'				:	'${sysProg.oid}',
+				'progSystemOid'		:	$('#progSystem').val(),
+				'progId'			:	$('#progId').val(),
+				'name'				:	$('#name').val(),
+				'url'				:	$('#url').val(),
+				'itemType'			:	$('#itemType').val(),
+				'iconOid'			:	$('#icon').val(),
+				'editMode'			:	( $('#editMode').is(':checked') ? 'Y' : 'N' ),
+				'isDialog'			:	( $('#isDialog').is(':checked') ? 'Y' : 'N' ),
+				'dialogWidth'		:	$('#dialogWidth').val(),
+				'dialogHeight'		:	$('#dialogHeight').val(),
+				'fontIconClassId'	:	$('#fontIconClassId').val()
 			}
 			"
 			onclick="btnUpdate();"

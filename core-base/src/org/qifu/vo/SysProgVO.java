@@ -36,6 +36,7 @@ public class SysProgVO extends BaseValueObj implements java.io.Serializable {
 	private String progSystem;
 	private String itemType;
 	private String icon;
+	private String fontIconClassId;
 	
 	public SysProgVO() {
 		
@@ -50,7 +51,7 @@ public class SysProgVO extends BaseValueObj implements java.io.Serializable {
 	}
 	
 	public SysProgVO(String oid, String progId, String name, String url, String editMode, 
-			String progSystem, String itemType, String icon) {
+			String progSystem, String itemType, String icon, String fontIconClassId) {
 		this.oid = oid;
 		this.progId = progId;
 		this.name = name;
@@ -59,6 +60,7 @@ public class SysProgVO extends BaseValueObj implements java.io.Serializable {
 		this.progSystem = progSystem;
 		this.itemType = itemType;
 		this.icon = icon;
+		this.fontIconClassId = fontIconClassId;
 	}
 	
 	/**
@@ -157,6 +159,14 @@ public class SysProgVO extends BaseValueObj implements java.io.Serializable {
 
 	public void setIcon(String icon) {
 		this.icon = icon;
+	}
+
+	public String getFontIconClassId() {
+		return fontIconClassId;
+	}
+
+	public void setFontIconClassId(String fontIconClassId) {
+		this.fontIconClassId = fontIconClassId;
 	}
 
 }

@@ -64,7 +64,7 @@ public class SysMenuDAOImpl extends BaseDAO<TbSysMenu, String> implements ISysMe
 		StringBuilder sb = new StringBuilder();
 		sb.append("SELECT	new org.qifu.vo.SysMenuVO(	");
 		sb.append("		sm.oid, sm.progId, sm.parentOid, sm.enableFlag,	");
-		sb.append("		tsp.name, tsp.url, tsp.progSystem, tsp.itemType, tsp.icon	");
+		sb.append("		tsp.name, tsp.url, tsp.progSystem, tsp.itemType, tsp.icon, tsp.fontIconClassId ");
 		sb.append(")	");
 		sb.append("FROM	");
 		sb.append("TbSysMenu sm, TbSysProg tsp	");
