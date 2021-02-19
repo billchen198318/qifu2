@@ -141,8 +141,10 @@ function deleteRecord(oid) {
 	queryFunction="queryGrid()"
 	clearFunction="clearQueryGridTable()">
 </q:grid>
+
+<br>
+<br>
+<br>
 	
 </body>
-  
-  
 </html>

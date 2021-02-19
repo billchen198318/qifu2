@@ -168,6 +168,10 @@ function clearSave() {
 		<q:button id="btnClear" label="<i class=\"icon fa fa-hand-paper-o\"></i>&nbsp;Clear" onclick="clearSave();"></q:button>
 	</div>
 </div>
-	
+
+<br>
+<br>
+<br>
+
 </body>
 </html>

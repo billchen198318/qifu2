@@ -168,5 +168,9 @@ function queryDesc(type) {
 	clearFunction="clearQueryGridTable()">
 </q:grid>
 
+<br>
+<br>
+<br>
+
 </body>
 </html>

@@ -179,5 +179,9 @@ function deleteRecord(oid) {
 	clearFunction="clearQueryGridTable()">
 </q:grid>
 
+<br>
+<br>
+<br>
+
 </body>
 </html>

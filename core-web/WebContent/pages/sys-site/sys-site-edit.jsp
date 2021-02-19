@@ -167,6 +167,10 @@ function clearUpdate() {
 		<q:button id="btnClear" label="<i class=\"icon fa fa-hand-paper-o\"></i>&nbsp;Clear" onclick="clearUpdate();"></q:button>
 	</div>
 </div>
-	
+
+<br>
+<br>
+<br>
+
 </body>
 </html>
