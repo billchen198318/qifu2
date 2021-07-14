@@ -34,6 +34,10 @@ iframe {
 .tabbable .nav-tabs .nav-link {
 	white-space: nowrap;
 }
+.nav-tabs .nav-link.active {
+	background-color: #f8f9fa;
+	background: linear-gradient(0deg, rgba(255,148,16,1) 0%, rgba(248,249,250,1) 22%);
+}
 
 /* Let's get this party started */
 ::-webkit-scrollbar {
@@ -72,7 +76,7 @@ iframe {
 .btn-circle {
     width: 30px;
     height: 30px;
-    padding: 6px 0px;
+    padding: 5px 0px; /* 6px 0px , 2020-04-22 rem */
     border-radius: 15px;
     text-align: center;
     font-size: 12px;
